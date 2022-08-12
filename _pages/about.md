@@ -17,7 +17,7 @@ news: false  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
-Hello, I am a fourth-year Ph.D candidate at `Department of Materials Science and Engineering, University of California, Berkeley`. I am advised by [Professor Gerbrand Ceder](https://www.ceder.berkeley.edu). I obtained my Bachelor's degree in 2018 from Seoul National University, S. Korea (Major: Nuclear engineering, Minor: Materials Science and Engineering).
+Hello, I am a fourth-year Ph.D candidate at `Department of Materials Science and Engineering, University of California, Berkeley`. I am advised by [Professor Gerbrand Ceder](https://ceder.berkeley.edu). I obtained my Bachelor's degree in 2018 from Seoul National University, S. Korea (Major: Nuclear engineering, Minor: Materials Science and Engineering).
 
 I am a computational materials scientist, working to theoretically understand solid-state ionic diffusion, thermodynamic stability and solid-state reaction in energy materials and guide experimental realization of novel materials with superior materials properties. So far, I have expanded the understanding of the origin of superionic conductivity in both sulfide and oxide based inorganic materials. Based on such design principles, I have developed numerous novel candidates for solid electrolytes.
 
