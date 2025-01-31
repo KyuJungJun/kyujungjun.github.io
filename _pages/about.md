@@ -7,7 +7,7 @@ subtitle: <a href='#'>Affiliations</a>. Postdoc at MIT DMSE, Ph.D. UC Berkeley (
 
 profile:
   align: right
-  image: portrait_upload.jpg
+  image: ecs_portrait_v4.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>555 MIT 13-5041</p>
