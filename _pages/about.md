@@ -33,8 +33,7 @@ My research focuses on the computational discovery and mechanistic understanding
 
 I am particularly excited about harnessing machine learning-driven simulations to extend the spatiotemporal reach of physical insights and uncover unprecedented physical phenomena that were previously unattainable with expensive quantum mechanical calculations or less-accurate classical models.
 
-
-<!-- 
+<!--
 See [Research page](/al-folio/research) for details!
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
