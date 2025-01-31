@@ -27,7 +27,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello, I am a postdoc at MIT, DMSE, working with [Prof. Rafael Gómez-Bombarelli](https://gomezbombarelli.mit.edu/kyujung/). I received my Ph.D. from `Department of Materials Science and Engineering, University of California, Berkeley`, advised by [Professor Gerbrand Ceder](https://ceder.berkeley.edu). I obtained my Bachelor's degree in 2018 from Seoul National University, S. Korea (Major: Nuclear engineering, Minor: Materials Science and Engineering).
+Welcome! 👋
+
+I am a postdoc at MIT, DMSE, working with [Prof. Rafael Gómez-Bombarelli](https://gomezbombarelli.mit.edu/kyujung/). I received my Ph.D. from `Department of Materials Science and Engineering, University of California, Berkeley`, advised by [Professor Gerbrand Ceder](https://ceder.berkeley.edu). I obtained my Bachelor's degree in 2018 from Seoul National University, S. Korea (Major: Nuclear engineering, Minor: Materials Science and Engineering).
 
 My research focuses on the computational discovery and mechanistic understanding of fast Li-ion conductors across diverse chemical spaces, including inorganic crystals, polymers, and molecular systems, for electrochemical energy storage. I leverage quantum mechanical and classical models, machine learning-accelerated simulations, trajectory analysis algorithms, and thermodynamics to uncover design principles that enable safer and more efficient energy storage devices.
 
