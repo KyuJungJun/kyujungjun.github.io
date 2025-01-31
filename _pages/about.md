@@ -10,8 +10,7 @@ profile:
   image: ecs_portrait_v4.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 MIT 13-5041</p>
-    <p>123 your address street</p>
+    <p>MIT Bldg. 13, 5041</p>
     <p>Cambridge, MA 02139</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -28,9 +27,11 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello, I am a fourth-year Ph.D candidate at `Department of Materials Science and Engineering, University of California, Berkeley`. I am advised by [Professor Gerbrand Ceder](https://ceder.berkeley.edu). I obtained my Bachelor's degree in 2018 from Seoul National University, S. Korea (Major: Nuclear engineering, Minor: Materials Science and Engineering).
+Hello, I am a postdoc at MIT, DMSE, working with [Prof. Rafael Gómez-Bombarelli](https://gomezbombarelli.mit.edu/kyujung/). I received my Ph.D. from `Department of Materials Science and Engineering, University of California, Berkeley`, advised by [Professor Gerbrand Ceder](https://ceder.berkeley.edu). I obtained my Bachelor's degree in 2018 from Seoul National University, S. Korea (Major: Nuclear engineering, Minor: Materials Science and Engineering).
 
-I am a computational materials scientist, working to theoretically understand solid-state ionic diffusion, thermodynamic stability and solid-state reaction in energy materials and guide experimental realization of novel materials with superior materials properties. So far, I have expanded the understanding of the origin of superionic conductivity in both sulfide and oxide based inorganic materials. Based on such design principles, I have developed numerous novel candidates for solid electrolytes.
+My research focuses on the computational discovery and mechanistic understanding of fast Li-ion conductors across diverse chemical spaces, including inorganic crystals, polymers, and molecular systems, for electrochemical energy storage. I leverage quantum mechanical and classical models, machine learning-accelerated simulations, trajectory analysis algorithms, and thermodynamics to uncover design principles that enable safer and more efficient energy storage devices.
+
+I am particularly excited about harnessing machine learning-driven simulations to extend the spatiotemporal reach of physical insights and uncover unprecedented physical phenomena that were previously unattainable with expensive quantum mechanical calculations or less-accurate classical models.
 
 See [Research page](/al-folio/research) for details!
 
