@@ -45,7 +45,19 @@ ninja.data = [{
           window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
         
       },
-    },{
+    },{id: "news-kyujung-receives-mrs-graduate-student-award-silver-medal-at-boston",
+          title: 'KyuJung receives MRS Graduate Student Award, Silver medal at Boston!',
+          description: "",
+          section: "News",},{id: "news-kyujung-receives-ecs-battery-division-graduate-student-award-at-gothenburg-sweden-i-was-honored-to-give-an-award-presentation-to-the-battery-community-talking-about-how-we-can-utilize-high-throughput-computing-to-discover-li-superionic-conductors-as-well-as-how-computational-models-can-shed-light-on-the-correlation-between-rotational-motion-of-polyhedra-and-lithium-ion-hops",
+          title: 'KyuJung receives ECS Battery Division Graduate Student Award at Gothenburg, Sweden! I was...',
+          description: "",
+          section: "News",},{id: "news-kyujung-receives-ph-d-from-uc-berkeley-department-of-materials-science-and-engineering-excited-to-move-on-to-the-next-journey-in-the-east-coast",
+          title: 'KyuJung receives Ph.D. from UC Berkeley, Department of Materials Science and Engineering! Excited...',
+          description: "",
+          section: "News",},{id: "news-kyujung-starts-postdoctoral-position-at-mit-dmse-to-work-with-prof-rafael-gómez-bombarelli-i-will-be-expanding-my-research-to-explore-polymer-based-li-ion-conductors-design-of-molecular-systems-for-organic-based-flow-batteries-as-well-as-machine-learning-accelerated-simulations-of-materials",
+          title: 'KyuJung starts postdoctoral position at MIT DMSE to work with Prof. Rafael Gómez-Bombarelli....',
+          description: "",
+          section: "News",},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
