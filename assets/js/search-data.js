@@ -57,6 +57,12 @@ ninja.data = [{
           section: "News",},{id: "news-kyujung-starts-postdoctoral-position-at-mit-dmse-to-work-with-prof-rafael-gómez-bombarelli-i-will-be-expanding-my-research-to-explore-polymer-based-li-ion-conductors-design-of-molecular-systems-for-organic-based-flow-batteries-as-well-as-machine-learning-accelerated-simulations-of-materials",
           title: 'KyuJung starts postdoctoral position at MIT DMSE to work with Prof. Rafael Gómez-Bombarelli....',
           description: "",
+          section: "News",},{id: "news-at-mrs-2024-fall-in-boston-i-am-participating-in-the-meet-the-faculty-candidates-poster-session-feel-free-to-drop-by-to-discuss-about-my-research-vision",
+          title: 'At MRS 2024 Fall in Boston, I am participating in the “Meet the...',
+          description: "",
+          section: "News",},{id: "news-i-will-be-attending-acs-2025-spring-at-san-diego-at-this-conference-i-will-be-giving-a-talk-on-quantifying-transport-mechanisms-in-molecular-dynamics-simulations-of-electrolytes-via-event-detection-algorithms-in-synthesis-amp-amp-characterization-of-novel-liquid-electrolytes-for-rechargeable-batteries-session-on-march-26th-2025",
+          title: 'I will be attending ACS 2025 Spring at San Diego! At this conference,...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
