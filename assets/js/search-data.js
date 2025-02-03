@@ -65,7 +65,12 @@ ninja.data = [{
             },},{id: "news-at-mrs-2024-fall-in-boston-i-am-participating-in-the-meet-the-faculty-candidates-poster-session-feel-free-to-drop-by-to-discuss-about-my-research-vision",
           title: 'At MRS 2024 Fall in Boston, I am participating in the “Meet the...',
           description: "",
-          section: "News",},{id: "news-i-will-be-attending-acs-2025-spring-at-san-diego-at-this-conference-i-will-be-giving-a-talk-on-quantifying-transport-mechanisms-in-molecular-dynamics-simulations-of-electrolytes-via-event-detection-algorithms-in-synthesis-amp-amp-characterization-of-novel-liquid-electrolytes-for-rechargeable-batteries-session-on-march-26th-2025",
+          section: "News",},{id: "news-advanced-energy-materials-article-published-on-high-throughput-search-of-sacrificial-cathode-additives",
+          title: 'Advanced Energy Materials article published on high-throughput search of sacrificial cathode additives!',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2025_AEM_sacrificial_additive/";
+            },},{id: "news-i-will-be-attending-acs-2025-spring-at-san-diego-at-this-conference-i-will-be-giving-a-talk-on-quantifying-transport-mechanisms-in-molecular-dynamics-simulations-of-electrolytes-via-event-detection-algorithms-in-synthesis-amp-amp-characterization-of-novel-liquid-electrolytes-for-rechargeable-batteries-session-on-march-26th-2025",
           title: 'I will be attending ACS 2025 Spring at San Diego! At this conference,...',
           description: "",
           section: "News",},{
