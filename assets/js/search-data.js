@@ -70,6 +70,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2025_AEM_sacrificial_additive/";
+            },},{id: "news-matter-article-published-on-lithium-oxychlorides",
+          title: 'Matter article published on Lithium oxychlorides!',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2025_Matter/";
             },},{id: "news-i-will-be-attending-acs-2025-spring-at-san-diego-at-this-conference-i-will-be-giving-a-talk-on-quantifying-transport-mechanisms-in-molecular-dynamics-simulations-of-electrolytes-via-event-detection-algorithms-in-synthesis-amp-amp-characterization-of-novel-liquid-electrolytes-for-rechargeable-batteries-session-on-march-26th-2025",
           title: 'I will be attending ACS 2025 Spring at San Diego! At this conference,...',
           description: "",
