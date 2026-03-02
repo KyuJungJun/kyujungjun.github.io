@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 
-subtitle: **Korea University**, School of Mechanical Engineering and School of Smart Mobility
+subtitle: Korea University, School of Mechanical Engineering and School of Smart Mobility
 
 profile:
   align: right
