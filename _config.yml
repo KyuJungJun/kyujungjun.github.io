@@ -143,6 +143,9 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
+  people:
+    output: true
+    permalink: /people/:name/
   news:
     defaults:
       layout: post

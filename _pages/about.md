@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 
-subtitle: <a href='#'>Affiliations</a>. MINDS: Materials Intelligence for Design and Simulations Lab
+subtitle: MINDS - Materials Intelligence for Design and Simulations Lab
 
 profile:
   align: right
