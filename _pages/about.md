@@ -3,15 +3,15 @@ layout: about
 title: about
 permalink: /
 
-subtitle: <a href='#'>Affiliations</a>. Postdoc at MIT DMSE, Ph.D. UC Berkeley (2024)
+subtitle: <a href='#'>Affiliations</a>. MINDS: Materials Intelligence for Design and Simulations Lab
 
 profile:
   align: right
   image: 2026_professional_portrait.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>MIT Bldg. 13, 5041</p>
-    <p>Cambridge, MA 02139</p>
+    <p>정운오 IT 교양관 709호</p>
+    <p>서울특별시 성북구 안암로 145 고려대학교</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

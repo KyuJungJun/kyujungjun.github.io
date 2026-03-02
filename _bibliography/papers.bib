@@ -1,15 +1,66 @@
-@article{Jun2024Onsager,
-  author = {Jun, KyuJung and Leon Pablo and G\'omez-Bombarelli Rafael},
-  title = {Universal algorithms to decompose Onsager transport coefficients towards quantification of ion transport mechanisms in solid polymer electrolytes},
-  journal = {in preparation},
-  year = {2025}
+
+@article{10.48550/arxiv.2601.06384, 
+year = {2026}, 
+title = {{Mechanisms of alkali ionic transport in amorphous oxyhalides solid state conductors}}, 
+author = {Binci, Luca and Jun, KyuJung and Deng, Bowen and Ceder, Gerbrand}, 
+journal = {arXiv}, 
+doi = {10.48550/arxiv.2601.06384}, 
+eprint = {2601.06384}, 
+abstract = {{Amorphous oxyhalides have attracted significant attention due to their relatively high ionic conductivity (\$>\$1 mS cm\$\textasciicircum\{-1\}\$), excellent chemical stability, mechanical softness, and facile synthesis routes via standard solid-state reactions. These materials exhibit an ionic conductivity that is almost independent of the underlying chemistry, in stark contrast to what occurs in crystalline conductors. In this work, we employ an accurately fine-tuned machine learning interatomic potential to construct large-scale molecular dynamics trajectories encompassing hundreds of nanoseconds to obtain statistically converged transport properties. We find that the amorphous state consists of chain fragments of metal-anion tetrahedra of various lenght. By analyzing the residence time of alkali cations migrating around tetrahedrally-coordinated trivalent metal ions, we find that oxygen anions on the metal-anion tetrahedra limit alkali diffusion. By computing the full Einstein expression of the ionic conductivity, we demonstrate that the alkali transference number of these materials is strongly influenced by distinct-particles correlations, while at the same time they are characterized by an alkali Haven ratio close to one, implying that ionic transport is largely dictated by uncorrelated self-diffusion. Finally, by extending this analysis to chemical compositions \$AMX\_\{2.5\}\textbackslashtextsf\{O\}\_\{0.75\}\$, spanning different alkaline (\$A\$ = Li, Na, K), metallic (\$M\$ = Al, Ga, In), and halogen (\$X\$ = Cl, Br, I) species, we clarify why the diffusion properties of these materials remain largely insensitive to variations in atomic chemistry.}}, 
+keywords = {}
+}
+
+
+@article{10.48550/arxiv.2602.17595, 
+year = {2026}, 
+title = {{Discovery of Polymer Electrolytes with Bayesian Optimization and High-Throughput Molecular Dynamics simulations}}, 
+author = {Kuhn, Antonia S and Ruža, Jurğis and Jun, KyuJung and Leon, Pablo and Gómez-Bombarelli, Rafael}, 
+journal = {arXiv}, 
+doi = {10.48550/arxiv.2602.17595}, 
+eprint = {2602.17595}, 
+abstract = {{Polymer electrolytes are critical for safe, high-energy-density solid-state batteries, yet discovering candidates that balance high ionic conductivity with high transference numbers remains a significant challenge. In this work, we develop a high-throughput screening platform that utilizes molecular dynamics simulations to navigate a chemical space of 1.7 million hypothetical polymer electrolyte candidates. Data from previous literature is used to warm-start batch Bayesian optimization for iteratively selecting new polymer electrolytes to evaluate. We iteratively identified, evaluated and analyzed 767 homopolymers as potential candidates. Our results reveal several candidates with transport properties exceeding the benchmark polyethylene oxide (PEO)/LiTFSI system. Crucially, our optimization campaigns for ionic conductivity and Li-diffusivity demonstrate that branched architectures and ketone functional groups significantly enhance ion-hopping mechanisms within the polymer matrix. We provide an in-depth mechanistic comparison of Li vs. Na cation transport and offer our open-source framework to accelerate the discovery of liquid, gel, and multi-cation electrolyte systems.}}, 
+keywords = {}
+}
+
+
+@article{10.48550/arxiv.2602.16636, 
+year = {2026}, 
+title = {{Universal Framework for Decomposing Ionic Transport into Interpretable Mechanisms}}, 
+author = {Jun, KyuJung and Leon, Pablo A and Ruža, Jurğis and Nam, Juno and Gómez-Bombarelli, Rafael}, 
+journal = {arXiv}, 
+doi = {10.48550/arxiv.2602.16636}, 
+eprint = {2602.16636}, 
+abstract = {{Understanding mechanisms of ion transport in bulk materials is central to designing next-generation ion conductors for energy storage devices, yet studies employing all-atom molecular dynamics (MD) have largely been limited to reporting overall transport coefficients without a quantitative, spatiotemporally resolved breakdown of \textbackslashemph\{how\} charge is carried. We present a computational framework that analyzes MD trajectories to quantitatively interpret macroscopic transport by decomposing it into additive contributions from physically motivated events. They are defined either through heuristically identified microscopic transitions, capturing events such as single-ion hops, multi-ion hops, and vehicular motion, or through transitions between chemically interpretable coordination macrostates. The construction guarantees that attributed contributions sum exactly to the Onsager transport coefficients estimated via the Green-Kubo/Einstein formalism, while scanning the sampling window exposes characteristic temporal scales at which distinct transport mechanisms emerge and dominate. Applied across three prototypical electrolytes-inorganic crystals, liquids, and polymers-the framework quantitatively resolves long-standing debates (e.g., the role of concerted motion and exchange), identifies dominant mechanisms and rate-limiting steps, quantifies their frequencies and effectiveness, and extracts activation energies for distinct transport modes, thereby distilling design rules for fast conduction. This general and reproducible analysis tool turns MD trajectories into quantitative mechanism maps, enabling the ion-conductor community to adjudicate mechanistic hypotheses and accelerate discovery.}}, 
+keywords = {},
+selected = true,
+altmetric = true,
+dimensions = true,
+}
+
+
+@article{10.1021/acs.jpclett.5c02680, 
+year = {2025}, 
+rating = {5}, 
+title = {{Mechanistic Decomposition of Ion Transport in Amorphous Polymer Electrolytes via Molecular Dynamics}}, 
+author = {Leon, Pablo A and Jun, KyuJung and Gordiz, Kiarash and Shao-Horn, Yang and Gomez-Bombarelli, Rafael}, 
+journal = {The Journal of Physical Chemistry Letters}, 
+issn = {1948-7185}, 
+doi = {10.1021/acs.jpclett.5c02680}, 
+pmid = {41269126}, 
+abstract = {{Understanding ion transport in polymer electrolytes is critical for designing next-generation energy storage systems. Molecular dynamics simulations offer complete atomistic information, but disentangling the contributions of distinct diffusion modes in cation transport remains a challenge. Here, we introduce a mathematical algorithm that decomposes the transport coefficient into a sum of interpretable diffusion mechanisms based on changes in local atomic environment. Applying this framework to a prototypical polymer electrolyte, we quantify the contributions of proposed transport modes. We identify a rare lithium diffusion mechanism associated with the disassembly of existing solvation environments which contributes an order of magnitude more to lithium transport properties per event than all other mechanisms. Finally, we characterize the spectrum of microscopic diffusion events, providing a detailed and quantitative understanding of ion transport in polymer electrolytes. Our approach offers a promising path toward a more quantitative and mechanistic understanding of ion transport in soft matter electrolytes.}}, 
+pages = {12419--12427}, 
+keywords = {}, 
+altmetric = true,
+dimensions = true,
+selected = true,
+local-url = {file://localhost/Users/kjun/Documents/Papers%20Library/Leon-Mechanistic%20Decomposition%20of%20Ion%20Transport%20in%20Amorphous%20Polymer%20Electrolytes%20via%20Molecular%20Dynamics-2025-The%20Journal%20of%20Physical%20Chemistry%20Letters.pdf}
 }
 
 @article{Li2024MLIP,
-  author = {Li†, Zhuohan† and Jun†, KyuJung and Ceder, Gerbrand},
+  author = {Li†, Zhuohan† and Jun†, KyuJung and Deng, Bowen and Ceder, Gerbrand},
   title = {MLIP-DFT combined high-throughput screening of alkaline stable oxide Li-ion conductors},
-  journal = {in preparation},
-  year = {2025}
+  journal = {just accepted at Cell Press Blue},
+  year = {2026}
 }
 
 @article{Jun2024vdW,
@@ -19,11 +70,19 @@
   year = {2025}
 }
 
-@article{Lin2024Polaronic,
-  author = {Lin, Jiawei and Jun*, KyuJung and Ceder, Gerbrand},
-  title = {Investigation of Polaronic Conduction in Li-NASICONs},
-  journal = {under review},
-  year = {2025}
+
+@article{10.1039/d5ta00367a, 
+year = {2025}, 
+title = {{Computational design of polaronic conductive Li-NASICON mixed ionic–electronic conductors}}, 
+author = {Lin, Jiawei and Jun, KyuJung and Ceder, Gerbrand}, 
+journal = {Journal of Materials Chemistry A}, 
+issn = {2050-7488}, 
+doi = {10.1039/d5ta00367a}, 
+abstract = {{The polaron-conductive Li-NASICONs featuring three-dimensional corner-sharing frameworks are potential candidates for mixed ionic electronic conductors in electrochemical energy storage devices.}}, 
+pages = {15659--15672}, 
+number = {21}, 
+volume = {13}, 
+keywords = {}
 }
 
 @article{10.1002/aenm.202403946, 
@@ -41,19 +100,48 @@ local-url = {file://localhost/Users/kjun/Documents/PapersLibrary/Kim-Screening%2
 }
 
 
-
-@article{Jun2024SoftCradle,
-  author = {Jun†, KyuJung and Wei, Grace and Ceder, Gerbrand},
-  title = {Exploring the Soft Cradle Effect and Ionic Transport Mechanisms in the LiMXCl4 Superionic Conductor Family},
-  journal = {Matter},
-  year = {2025},
-  note = {Just accepted},
-  url = {https://chemrxiv.org/engage/chemrxiv/article-details/66b691aac9c6a5c07aac9b48},
-  google_scholar_id = {ULOm3_A8WrAC},
-  dimensions = true,
-  altmetric=true
+@article{10.1016/j.matt.2025.102001, 
+year = {2025}, 
+title = {{Exploring the soft cradle effect and ionic transport mechanisms in the LiMXCl4 superionic conductor family}}, 
+author = {Jun, KyuJung and Wei, Grace and Yang, Xiaochen and Chen, Yu and Ceder, Gerbrand}, 
+journal = {Matter}, 
+issn = {2590-2385}, 
+doi = {10.1016/j.matt.2025.102001}, 
+abstract = {{LiMXCl4, a recently discovered lithium superionic conductor, achieves Li conductivity up to 12.4 mS/cm at room temperature. Notably, LiNbOCl4 features flexible, rotating polyhedra, potentially explaining its high ionic conductivity. However, the generalizability of these findings across different chemistries and the direct link between polyhedra rotations and Li-ion mobility remain unclear. In this study, we explore various M-cation and X-anion substitutions in the LiMXCl4 system, identifying fluoro-chlorides as promising for enhancing electrochemical stability while maintaining high ionic conductivity. Meyer-Neldel analysis on ab initio simulations reveals that LiMXCl4 outperforms existing halide conductors, with projected conductivities of 10–100 mS/cm. Our probabilistic analysis of lithium-ion hops and small-angle tilting events reveals a “soft cradle effect,” where weakly bound M-octahedra tilt in conjunction with Li-ion hops, optimizing the energy landscape. This work provides fundamental insights into the factors driving high ionic conductivity in non-close-packed oxyhalide systems and suggests exciting directions for further improving these materials.}}, 
+pages = {102001}, 
+keywords = {}, 
+local-url = {file://localhost/Users/kjun/Documents/Papers%20Library/Jun-Exploring%20the%20soft%20cradle%20effect%20and%20ionic%20transport%20mechanisms%20in%20the%20LiMXCl4%20superionic%20conductor%20family-2025-Matter.pdf}
 }
 
+
+@article{10.1021/acs.macromol.5c00930, 
+year = {2025}, 
+title = {{Benchmarking Classical Molecular Dynamics Simulations for Computational Screening of Lithium Polymer Electrolytes}}, 
+author = {Ruža, Jurğis and Leon, Pablo and Jun, KyuJung and Johnson, Jeremiah and Shao-Horn, Yang and Gómez-Bombarelli, Rafael}, 
+journal = {Macromolecules}, 
+issn = {0024-9297}, 
+doi = {10.1021/acs.macromol.5c00930}, 
+abstract = {{Polymer electrolytes may play a crucial role in the development of safe, efficient, and energy-dense batteries thanks to their unique ability to facilitate ion transport while maintaining structural stability. However, experimental discovery is limited by the complexity of synthesizing and testing new monomer and polymer chemistries. In this study, we benchmark the ability of molecular dynamics (MD) simulations with Class 1 force fields to model the transport and structural properties of polymer electrolytes in a high-throughput screening setting. By systematically comparing simulation results to experimental data for 19 polymers, we evaluate the effect of simulation choices in predicting key transport properties. In particular, we evaluate the convergence of diffusivities and conductivities as a function of simulation length and how inaccuracies in modeling polymer glass-transition temperature carry over to ion transport properties. The results highlight both the strengths and limitations of affordable high-throughput MD simulations for these complex systems, providing insights into the optimization of MD simulations for polymer electrolyte research and recommendations for modeling choices with optimal cost-accuracy trade-offs. Furthermore, we perform in-depth transport and structural property analysis across the polymer space to gain insights into the design of new polymer electrolytes.}}, 
+keywords = {}, 
+local-url = {file://localhost/Users/kjun/Documents/Papers%20Library/Ruža-Benchmarking%20Classical%20Molecular%20Dynamics%20Simulations%20for%20Computational%20Screening%20of%20Lithium%20Polymer%20Electrolytes-2025-Macromolecules.pdf}
+}
+
+
+@article{Jun.Ceder.Proceedings of the National Academy of Sciences.2025, 
+year = {2025}, 
+title = {{Reply to Smith and Siegel: Most lithium hops in paddlewheel-claimed conductors occur without spatially and temporally correlated anion-group rotations}}, 
+author = {Jun, KyuJung and Ceder, Gerbrand}, 
+journal = {Proceedings of the National Academy of Sciences}, 
+issn = {0027-8424}, 
+doi = {10.1073/pnas.2423194122}, 
+pmid = {39993198}, 
+pmcid = {PMC11892637}, 
+pages = {e2423194122}, 
+number = {9}, 
+volume = {122}, 
+keywords = {}, 
+local-url = {file://localhost/Users/kjun/Documents/Papers%20Library/Jun-Reply%20to%20Smith%20and%20Siegel-%20Most%20lithium%20hops%20in%20paddlewheel-claimed%20conductors%20occur%20without%20spatially%20and%20temporally%20correlated%20anion-group%20rotations-2025-Proceedings%20of%20the%20National%20Academy%20of%20Sciences.pdf}
+}
 
 @article{Jun2024Nitride, 
 year = {2024}, 
@@ -227,19 +315,16 @@ altmetric=true
 
 
 
-@article{undefined, 
-year = {2024}, 
-title = {{Flow Matching for Accelerated Simulation of Atomic Transport in Materials}}, 
+
+@article{10.1038/s42256-025-01125-4, 
+year = {2025}, 
+title = {{Flow matching for accelerated simulation of atomic transport in crystalline materials}}, 
 author = {Nam, Juno and Liu, Sulin and Winter, Gavin and Jun, KyuJung and Yang, Soojung and Gómez-Bombarelli, Rafael}, 
-journal = {arXiv}, 
-eprint = {2410.01464}, 
-abstract = {{We introduce LiFlow, a generative framework to accelerate molecular dynamics (MD) simulations for crystalline materials that formulates the task as conditional generation of atomic displacements. The model uses flow matching, with a Propagator submodel to generate atomic displacements and a Corrector to locally correct unphysical geometries, and incorporates an adaptive prior based on the Maxwell-Boltzmann distribution to account for chemical and thermal conditions. We benchmark LiFlow on a dataset comprising 25-ps trajectories of lithium diffusion across 4,186 solid-state electrolyte (SSE) candidates at four temperatures. The model obtains a consistent Spearman rank correlation of 0.7-0.8 for lithium mean squared displacement (MSD) predictions on unseen compositions. Furthermore, LiFlow generalizes from short training trajectories to larger supercells and longer simulations while maintaining high accuracy. With speed-ups of up to 600,000\$\textbackslashtimes\$ compared to first-principles methods, LiFlow enables scalable simulations at significantly larger length and time scales.}}, 
-keywords = {}, 
-local-url = {file://localhost/Users/kjun/Documents/PapersLibrary/Nam-Flow%20Matching%20for%20Accelerated%20Simulation%20of%20Atomic%20Transport%20in%20Materials-2024-arXiv.pdf},
-selected = true,
-google_scholar_id = {qxL8FJ1GzNcC},
-dimensions = true,
-altmetric=true
+journal = {Nature Machine Intelligence}, 
+doi = {10.1038/s42256-025-01125-4}, 
+abstract = {{Atomic transport underpins the performance of materials in technologies such as energy storage and electronics, yet its simulation remains computationally demanding. In particular, modelling ionic diffusion in solid-state electrolytes requires methods that can overcome the scale limitations of traditional ab initio molecular dynamics. We introduce LiFlow, a generative framework to accelerate MD simulations for crystalline materials that formulates the task as the conditional generation of atomic displacements. The model uses flow matching, with a Propagator submodel to generate atomic displacements and a Corrector to locally correct unphysical geometries, and incorporates an adaptive prior based on the Maxwell–Boltzmann distribution to account for chemical and thermal conditions. We benchmark LiFlow on a dataset comprising 25-ps trajectories of lithium diffusion across 4,186 solid-state electrolyte candidates at four temperatures. The model obtains a consistent Spearman rank correlation of 0.7–0.8 for lithium mean squared displacement predictions on unseen compositions. Furthermore, LiFlow generalizes from short training trajectories to larger supercells and longer simulations and maintains high accuracy. With speed-ups of up to 600,000× compared with first-principles methods, LiFlow enables scalable simulations at significantly larger length scales and timescales.}}, 
+pages = {1--11}, 
+keywords = {}
 }
 
 @article{10.1021/acs.chemmater.3c01793, 
