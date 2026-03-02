@@ -3,8 +3,8 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-",
-    title: "",
+    id: "nav-about",
+    title: "about",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
@@ -78,7 +78,12 @@ ninja.data = [{
             },},{id: "news-i-will-be-attending-acs-2025-spring-at-san-diego-at-this-conference-i-will-be-giving-a-talk-on-quantifying-transport-mechanisms-in-molecular-dynamics-simulations-of-electrolytes-via-event-detection-algorithms-in-synthesis-amp-amp-characterization-of-novel-liquid-electrolytes-for-rechargeable-batteries-session-on-march-26th-2025",
           title: 'I will be attending ACS 2025 Spring at San Diego! At this conference,...',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "people-assistant-professor",
+          title: 'Assistant Professor',
+          description: "",
+          section: "People",handler: () => {
+              window.location.href = "/people/kyujung-jun/";
+            },},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
