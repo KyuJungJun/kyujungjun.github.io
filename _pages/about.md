@@ -7,7 +7,7 @@ subtitle: <a href='#'>Affiliations</a>. Postdoc at MIT DMSE, Ph.D. UC Berkeley (
 
 profile:
   align: right
-  image: ecs_portrait_v4.png
+  image: 2026_professional_portrait.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>MIT Bldg. 13, 5041</p>
@@ -26,15 +26,14 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-
 Welcome! 👋
 
-I am a postdoc at MIT, DMSE, working with [Prof. Rafael Gómez-Bombarelli](https://gomezbombarelli.mit.edu/kyujung/). I received my Ph.D. from `Department of Materials Science and Engineering, University of California, Berkeley`, advised by [Professor Gerbrand Ceder](https://ceder.berkeley.edu). I obtained my Bachelor's degree in 2018 from Seoul National University, S. Korea (Major: Nuclear engineering, Minor: Materials Science and Engineering).
+At MINDS Lab, we build materials intelligence to design, discover, and mechanistically understand dynamic atomic systems for energy and electrochemical applications. Our research integrates high-throughput discovery, machine-learning-driven materials design, and large-scale atomistic simulations to uncover the fundamental physics of ion transport across inorganic crystals, polymers, and molecular systems. By extending simulations beyond conventional quantum mechanical limits while preserving physical rigor, we bridge quantum accuracy with long spatiotemporal scales to reveal phenomena that govern ionic conduction and enable next-generation energy storage technologies.
 
-My research focuses on the computational discovery and mechanistic understanding of fast Li-ion conductors across diverse chemical spaces, including inorganic crystals, polymers, and molecular systems, for electrochemical energy storage. I leverage quantum mechanical and classical models, machine learning-accelerated simulations, trajectory analysis algorithms, and thermodynamics to uncover design principles that enable safer and more efficient energy storage devices.
+I am an Assistant Professor at Korea University in the School of Mechanical Engineering and the School of Smart Mobility (starting March 1, 2026). Previously, I was a postdoctoral researcher at MIT in the Department of Materials Science and Engineering, working with [Prof. Rafael Gómez-Bombarelli](https://gomezbombarelli.mit.edu/kyujung/). I received my Ph.D. from the ₩Department of Materials Science and Engineering at UC Berkeley₩, advised by [Prof. Gerbrand Ceder](https://ceder.berkeley.edu), and obtained my B.S. from Seoul National University (Nuclear Engineering, Minor in Materials Science and Engineering).
 
-I am particularly excited about harnessing machine learning-driven simulations to extend the spatiotemporal reach of physical insights and uncover unprecedented physical phenomena that were previously unattainable with expensive quantum mechanical calculations or less-accurate classical models.
-
+We are actively recruiting motivated undergraduate researchers, graduate students, and postdoctoral scholars. Please contact me at `kyujung@korea.ac.kr`.
+---
 <!--
 See [Research page](/al-folio/research) for details!
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
