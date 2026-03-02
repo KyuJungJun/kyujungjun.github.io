@@ -195,7 +195,6 @@ exclude:
   - readme_preview/
   - vendor
   - _posts
-  - _pages
   - _projects
   - _scripts
   - _news/announcement_1.md

@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 
 subtitle: Korea University, School of Mechanical Engineering and School of Smart Mobility

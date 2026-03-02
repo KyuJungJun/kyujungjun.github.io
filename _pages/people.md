@@ -2,6 +2,9 @@
 layout: page
 title: People
 permalink: /people/
+description: Group members
+nav: true
+nav_order: 2
 ---
 
 {% assign sections = "pi,phd,ms,visiting,alumni" | split: "," %}
