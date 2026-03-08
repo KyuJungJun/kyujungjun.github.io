@@ -37,6 +37,15 @@ nav_order: 2
               {% if p.affiliation %}{% if p.title %}, {% endif %}{{ p.affiliation }}{% endif %}
             </div>
 
+            {% if p.education and p.education.size > 0 %}
+              <div class="small text-muted mb-2">
+                <strong>Education</strong>
+                {% for e in p.education %}
+                  <div>{{ e.degree }}{% if e.dept %}, {{ e.dept }}{% endif %} — {{ e.school }}{% if e.year %} ({{ e.year }}){% endif %}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
             <div class="small">
               {% if p.email %}<div><a href="mailto:{{ p.email }}">{{ p.email }}</a></div>{% endif %}
               {% if p.website %}<div><a href="{{ p.website }}">Website</a></div>{% endif %}
