@@ -5,7 +5,7 @@ role: pi            # pi | phd | ms | visiting | alumni
 title: Assistant Professor
 affiliation: Korea University, School of Mechanical Engineering (joint affiliation with School of Smart Mobility)
 email: kyujung@korea.ac.kr
-photo: assets/img/2026_professional_portrait.jpeg #people/kyujung.jpg
+photo: 2026_professional_portrait.jpeg #people/kyujung.jpg
 website: https://kyujungjun.github.io
 scholar: https://scholar.google.com/citations?user=SmYXEicAAAAJ&hl=en&oi=ao
 github: https://github.com/kyujungjun
