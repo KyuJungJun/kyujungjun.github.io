@@ -5,7 +5,7 @@ role: phd            # pi | phd | ms | visiting | alumni
 title: Ph.D. candidate (KAIST), visiting student (Korea University)
 affiliation: KAIST Department of Materials Science and Engineering
 email: zjark10@kaist.ac.kr
-photo: assets/img/HJ_Lee.jpg # Add photo path if available, e.g. assets/img/junho_lim.jpg
+photo: HJ_Lee.jpg # Add photo path if available, e.g. assets/img/junho_lim.jpg
 website: 
 scholar:
 github: https://github.com/zjark10 

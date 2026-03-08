@@ -5,7 +5,7 @@ role: visiting            # pi | phd | ms | visiting | alumni
 title: Researcher
 affiliation: Korea University, School of Mechanical Engineering
 email: junholim@postech.ac.kr
-photo: assets/img/Junholim_3.jpg # Add photo path if available, e.g. assets/img/junho_lim.jpg
+photo: Junholim_3.jpg # Add photo path if available, e.g. assets/img/junho_lim.jpg
 website: 
 scholar: https://scholar.google.com/citations?view_op=list_works&hl=ko&user=Ji9qKPQAAAAJ
 github: 
