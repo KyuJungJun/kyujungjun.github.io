@@ -95,8 +95,8 @@ ninja.data = [{
           description: "",
           section: "People",handler: () => {
               window.location.href = "/people/junho-lim/";
-            },},{id: "people-assistant-professor",
-          title: 'Assistant Professor',
+            },},{id: "people-",
+          title: '',
           description: "",
           section: "People",handler: () => {
               window.location.href = "/people/kyujung-jun/";
