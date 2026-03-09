@@ -11,7 +11,7 @@ scholar: https://scholar.google.com/citations?view_op=list_works&hl=ko&user=Ji9q
 github: 
 order: 0            # Assign order as needed within a section
 education:
-  - degree: M.S.
+  - degree: B.S.
     school: POSTECH
     year: "2026"
     dept: Chemistry and Physics
