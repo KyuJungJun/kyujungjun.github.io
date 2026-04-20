@@ -13,7 +13,7 @@ order: 0            # Assign order as needed within a section
 education:
   - degree: B.S.
     school: POSTECH
-    year: "2026"
+    year: "2020-2026"
     dept: Chemistry and Physics
 ---
 

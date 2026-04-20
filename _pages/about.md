@@ -28,8 +28,14 @@ latest_posts:
 ---
 Welcome! 👋
 
-At MINDS Lab, we build materials intelligence to design, discover, and mechanistically understand dynamic atomic systems for energy and electrochemical applications. Our research integrates high-throughput discovery, machine-learning-driven materials design, and large-scale atomistic simulations to uncover the fundamental physics of ion transport across inorganic crystals, polymers, and molecular systems. By extending simulations beyond conventional quantum mechanical limits while preserving physical rigor, we bridge quantum accuracy with long spatiotemporal scales to reveal phenomena that govern ionic conduction and enable next-generation energy storage technologies.
+At **MINDS Lab**, we build materials intelligence to design, discover, and mechanistically understand dynamic atomic systems for energy and electrochemical applications.
+
+Our research integrates high-throughput discovery, machine-learning-driven materials design, and large-scale atomistic simulations to uncover the fundamental physics of ion transport across inorganic crystals, polymers, and molecular systems. By extending simulations beyond conventional quantum mechanical limits while preserving physical rigor, we bridge quantum accuracy with long spatiotemporal scales to reveal phenomena that govern ionic conduction and enable next-generation energy storage technologies.
 
 I am an Assistant Professor at Korea University in the [School of Mechanical Engineering](https://me.korea.ac.kr/eng/main/main.html) and the [School of Smart Mobility](https://mobility.korea.ac.kr/) (starting March 1, 2026). Previously, I was a postdoctoral researcher at MIT in the Department of Materials Science and Engineering, working with [Prof. Rafael Gómez-Bombarelli](https://gomezbombarelli.mit.edu/kyujung/). I received my Ph.D. from the Department of Materials Science and Engineering at UC Berkeley, advised by [Prof. Gerbrand Ceder](https://ceder.berkeley.edu), and obtained my B.S. from Seoul National University (Major in Nuclear Engineering, Minor in Materials Science and Engineering).
 
-We are actively recruiting motivated undergraduate researchers, graduate students, and postdoctoral scholars. Please contact me at <a href="mailto:kyujung@korea.ac.kr">kyujung@korea.ac.kr</a>.
+<div class="alert alert-primary" role="alert" style="font-size: 1.05rem; margin-top: 1.5rem;">
+  <strong>📣 We have open positions!</strong> We are recruiting undergraduate researchers, M.S./Ph.D. students, and postdocs — see the <a href="{{ '/openings/' | relative_url }}"><strong>Open Positions</strong></a> page for details.
+  <br><br>
+  <strong>📣 연구실에서 함께 할 학생·연구원을 모집합니다!</strong> 학부 연구 인턴, 석·박사과정 대학원생, 박사후연구원 모집 중이며, 자세한 내용은 <a href="{{ '/openings/' | relative_url }}"><strong>Open Positions</strong></a> 페이지를 참고해 주세요.
+</div>
