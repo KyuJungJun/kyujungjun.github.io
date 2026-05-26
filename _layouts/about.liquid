@@ -3,15 +3,13 @@ layout: default
 ---
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
+    <h1 class="post-title" style="text-align: center; margin-bottom: 8px;">
+      <img src="{{ '/assets/img/minds-logo-horizontal.svg' | relative_url }}"
+           alt="MINDS Lab — Materials Intelligence for Design and Simulations"
+           class="img-fluid"
+           style="max-width: 600px; width: 100%; height: auto;">
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    <p class="desc" style="text-align: center;">{{ page.subtitle }}</p>
   </header>
 
   <article>
@@ -35,6 +33,11 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
+        <!-- MINDS Lab small badge -->
+        <div class="lab-badge" style="display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12px; color: #777; justify-content: flex-end;">
+          <img src="{{ '/assets/img/minds-logo.svg' | relative_url }}" alt="MINDS Lab" style="height: 22px; width: 22px; flex-shrink: 0;">
+          <span style="font-weight: 600; color: #1f2937;">MINDS Lab</span>
+        </div>
       </div>
     {% endif %}
 

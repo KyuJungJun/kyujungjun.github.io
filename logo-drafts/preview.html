@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MINDS Lab — Logo Drafts</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: #f7f7f8;
+    color: #1f2937;
+    margin: 0;
+    padding: 40px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 28px; margin-bottom: 6px; }
+  .lede { color: #555; margin-bottom: 30px; }
+  .concept {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .concept h2 { margin-top: 0; font-size: 20px; }
+  .concept p.desc { color: #555; margin-top: 4px; margin-bottom: 18px; font-size: 14px; }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .variant {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+  }
+  .variant.dark { background: #0f172a; border-color: #0f172a; }
+  .variant .label { font-size: 12px; color: #888; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .variant.dark .label { color: #9ca3af; }
+  .icon-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .icon-box svg { display: block; }
+  .horiz-box { display: flex; align-items: center; gap: 12px; }
+  .wordmark { display: flex; flex-direction: column; line-height: 1.1; }
+  .wordmark .name { font-weight: 700; font-size: 22px; letter-spacing: 0.02em; }
+  .wordmark .sub { font-size: 9.5px; color: #6b7280; margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .variant.dark .wordmark .name { color: #f9fafb; }
+  .variant.dark .wordmark .sub { color: #9ca3af; }
+  .wordmark.navy .name { color: #1a3a6e; }
+  .wordmark.mono .name { color: #1f2937; }
+  hr { border: none; border-top: 1px dashed #ddd; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<h1>MINDS Lab — Logo Drafts</h1>
+<p class="lede">4 컨셉 × 2 컬러 스킴 (Navy + Amber / Charcoal + Red). 각 카드에는 아이콘과 가로 워드마크 버전이 들어있어요. 마음에 드는 조합을 알려 주시면 그걸로 정리해서 최종 SVG 파일을 만들어 드립니다.</p>
+
+<!-- ========== CONCEPT A: Atomic M Monogram ========== -->
+<div class="concept">
+  <h2>Concept A — Atomic M Monogram</h2>
+  <p class="desc">"M" 글자를 원자 결합 구조로 형상화. 5개 vertex에 원자(circle), 4개 stroke에 결합(line). 가운데 vertex가 다른 색(intelligence node).</p>
+  <div class="row">
+    <!-- Color 2: Navy + Amber -->
+    <div class="variant">
+      <div class="label">Navy + Amber</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="80" height="80" viewBox="0 0 120 120">
+            <line x1="20" y1="95" x2="20" y2="25" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <line x1="20" y1="25" x2="60" y2="65" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <line x1="60" y1="65" x2="100" y2="25" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <line x1="100" y1="25" x2="100" y2="95" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="20" cy="95" r="8" fill="#1a3a6e"/>
+            <circle cx="20" cy="25" r="8" fill="#1a3a6e"/>
+            <circle cx="100" cy="25" r="8" fill="#1a3a6e"/>
+            <circle cx="100" cy="95" r="8" fill="#1a3a6e"/>
+            <circle cx="60" cy="65" r="10" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="50" height="50" viewBox="0 0 120 120">
+            <line x1="20" y1="95" x2="20" y2="25" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <line x1="20" y1="25" x2="60" y2="65" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <line x1="60" y1="65" x2="100" y2="25" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <line x1="100" y1="25" x2="100" y2="95" stroke="#1a3a6e" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="20" cy="95" r="8" fill="#1a3a6e"/>
+            <circle cx="20" cy="25" r="8" fill="#1a3a6e"/>
+            <circle cx="100" cy="25" r="8" fill="#1a3a6e"/>
+            <circle cx="100" cy="95" r="8" fill="#1a3a6e"/>
+            <circle cx="60" cy="65" r="10" fill="#f5a623"/>
+          </svg>
+          <div class="wordmark navy">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Color 3: Mono + Red -->
+    <div class="variant">
+      <div class="label">Charcoal + Red</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="80" height="80" viewBox="0 0 120 120">
+            <line x1="20" y1="95" x2="20" y2="25" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <line x1="20" y1="25" x2="60" y2="65" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <line x1="60" y1="65" x2="100" y2="25" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <line x1="100" y1="25" x2="100" y2="95" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="20" cy="95" r="8" fill="#1f2937"/>
+            <circle cx="20" cy="25" r="8" fill="#1f2937"/>
+            <circle cx="100" cy="25" r="8" fill="#1f2937"/>
+            <circle cx="100" cy="95" r="8" fill="#1f2937"/>
+            <circle cx="60" cy="65" r="10" fill="#ef4444"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="50" height="50" viewBox="0 0 120 120">
+            <line x1="20" y1="95" x2="20" y2="25" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <line x1="20" y1="25" x2="60" y2="65" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <line x1="60" y1="65" x2="100" y2="25" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <line x1="100" y1="25" x2="100" y2="95" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="20" cy="95" r="8" fill="#1f2937"/>
+            <circle cx="20" cy="25" r="8" fill="#1f2937"/>
+            <circle cx="100" cy="25" r="8" fill="#1f2937"/>
+            <circle cx="100" cy="95" r="8" fill="#1f2937"/>
+            <circle cx="60" cy="65" r="10" fill="#ef4444"/>
+          </svg>
+          <div class="wordmark mono">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONCEPT B: Ion-in-Lattice ========== -->
+<div class="concept">
+  <h2>Concept B — Ion in Hexagonal Lattice</h2>
+  <p class="desc">육각형 결정 격자(honeycomb) + 가운데 이온(Li+). 격자 vertex는 원자, 이동 경로는 dashed line. 연구 주제(이온 전도, 에너지 저장)를 가장 직접적으로 표현.</p>
+  <div class="row">
+    <!-- Color 2 -->
+    <div class="variant">
+      <div class="label">Navy + Amber</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="90" height="90" viewBox="0 0 120 120">
+            <polygon points="60,15 99,37.5 99,82.5 60,105 21,82.5 21,37.5"
+                     fill="none" stroke="#1a3a6e" stroke-width="2.5"/>
+            <line x1="60" y1="15" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="37.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="82.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="60" y1="105" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="82.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="37.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <path d="M 21 37.5 Q 60 60 99 82.5" stroke="#f5a623" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+            <circle cx="60" cy="15" r="5" fill="#1a3a6e"/>
+            <circle cx="99" cy="37.5" r="5" fill="#1a3a6e"/>
+            <circle cx="99" cy="82.5" r="5" fill="#1a3a6e"/>
+            <circle cx="60" cy="105" r="5" fill="#1a3a6e"/>
+            <circle cx="21" cy="82.5" r="5" fill="#1a3a6e"/>
+            <circle cx="21" cy="37.5" r="5" fill="#1a3a6e"/>
+            <circle cx="60" cy="60" r="9" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="56" height="56" viewBox="0 0 120 120">
+            <polygon points="60,15 99,37.5 99,82.5 60,105 21,82.5 21,37.5" fill="none" stroke="#1a3a6e" stroke-width="2.5"/>
+            <line x1="60" y1="15" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="37.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="82.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="60" y1="105" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="82.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="37.5" x2="60" y2="60" stroke="#1a3a6e" stroke-width="1.5" opacity="0.4"/>
+            <path d="M 21 37.5 Q 60 60 99 82.5" stroke="#f5a623" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+            <circle cx="60" cy="15" r="5" fill="#1a3a6e"/>
+            <circle cx="99" cy="37.5" r="5" fill="#1a3a6e"/>
+            <circle cx="99" cy="82.5" r="5" fill="#1a3a6e"/>
+            <circle cx="60" cy="105" r="5" fill="#1a3a6e"/>
+            <circle cx="21" cy="82.5" r="5" fill="#1a3a6e"/>
+            <circle cx="21" cy="37.5" r="5" fill="#1a3a6e"/>
+            <circle cx="60" cy="60" r="9" fill="#f5a623"/>
+          </svg>
+          <div class="wordmark navy">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Color 3 -->
+    <div class="variant">
+      <div class="label">Charcoal + Red</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="90" height="90" viewBox="0 0 120 120">
+            <polygon points="60,15 99,37.5 99,82.5 60,105 21,82.5 21,37.5" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+            <line x1="60" y1="15" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="37.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="82.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="60" y1="105" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="82.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="37.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <path d="M 21 37.5 Q 60 60 99 82.5" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+            <circle cx="60" cy="15" r="5" fill="#1f2937"/>
+            <circle cx="99" cy="37.5" r="5" fill="#1f2937"/>
+            <circle cx="99" cy="82.5" r="5" fill="#1f2937"/>
+            <circle cx="60" cy="105" r="5" fill="#1f2937"/>
+            <circle cx="21" cy="82.5" r="5" fill="#1f2937"/>
+            <circle cx="21" cy="37.5" r="5" fill="#1f2937"/>
+            <circle cx="60" cy="60" r="9" fill="#ef4444"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="56" height="56" viewBox="0 0 120 120">
+            <polygon points="60,15 99,37.5 99,82.5 60,105 21,82.5 21,37.5" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+            <line x1="60" y1="15" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="37.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="99" y1="82.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="60" y1="105" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="82.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <line x1="21" y1="37.5" x2="60" y2="60" stroke="#1f2937" stroke-width="1.5" opacity="0.4"/>
+            <path d="M 21 37.5 Q 60 60 99 82.5" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+            <circle cx="60" cy="15" r="5" fill="#1f2937"/>
+            <circle cx="99" cy="37.5" r="5" fill="#1f2937"/>
+            <circle cx="99" cy="82.5" r="5" fill="#1f2937"/>
+            <circle cx="60" cy="105" r="5" fill="#1f2937"/>
+            <circle cx="21" cy="82.5" r="5" fill="#1f2937"/>
+            <circle cx="21" cy="37.5" r="5" fill="#1f2937"/>
+            <circle cx="60" cy="60" r="9" fill="#ef4444"/>
+          </svg>
+          <div class="wordmark mono">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONCEPT C: Atom + Neural Orbits ========== -->
+<div class="concept">
+  <h2>Concept C — Atom with Neural Orbits</h2>
+  <p class="desc">고전적인 원자 모델(핵 + 3개 orbital ellipse)에 ML/AI 의미의 노드(작은 점)를 orbit 위에 배치. 핵은 accent color, 한 orbital 위 노드도 강조.</p>
+  <div class="row">
+    <!-- Color 2 -->
+    <div class="variant">
+      <div class="label">Navy + Amber</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="90" height="90" viewBox="0 0 120 120">
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1a3a6e" stroke-width="2"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1a3a6e" stroke-width="2" transform="rotate(60 60 60)"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1a3a6e" stroke-width="2" transform="rotate(120 60 60)"/>
+            <circle cx="108" cy="60" r="4" fill="#1a3a6e"/>
+            <circle cx="36" cy="18.5" r="4" fill="#1a3a6e"/>
+            <circle cx="36" cy="101.5" r="4" fill="#f5a623"/>
+            <circle cx="60" cy="60" r="8" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="56" height="56" viewBox="0 0 120 120">
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1a3a6e" stroke-width="2"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1a3a6e" stroke-width="2" transform="rotate(60 60 60)"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1a3a6e" stroke-width="2" transform="rotate(120 60 60)"/>
+            <circle cx="108" cy="60" r="4" fill="#1a3a6e"/>
+            <circle cx="36" cy="18.5" r="4" fill="#1a3a6e"/>
+            <circle cx="36" cy="101.5" r="4" fill="#f5a623"/>
+            <circle cx="60" cy="60" r="8" fill="#f5a623"/>
+          </svg>
+          <div class="wordmark navy">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Color 3 -->
+    <div class="variant">
+      <div class="label">Charcoal + Red</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="90" height="90" viewBox="0 0 120 120">
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1f2937" stroke-width="2"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1f2937" stroke-width="2" transform="rotate(60 60 60)"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1f2937" stroke-width="2" transform="rotate(120 60 60)"/>
+            <circle cx="108" cy="60" r="4" fill="#1f2937"/>
+            <circle cx="36" cy="18.5" r="4" fill="#1f2937"/>
+            <circle cx="36" cy="101.5" r="4" fill="#ef4444"/>
+            <circle cx="60" cy="60" r="8" fill="#ef4444"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="56" height="56" viewBox="0 0 120 120">
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1f2937" stroke-width="2"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1f2937" stroke-width="2" transform="rotate(60 60 60)"/>
+            <ellipse cx="60" cy="60" rx="48" ry="18" fill="none" stroke="#1f2937" stroke-width="2" transform="rotate(120 60 60)"/>
+            <circle cx="108" cy="60" r="4" fill="#1f2937"/>
+            <circle cx="36" cy="18.5" r="4" fill="#1f2937"/>
+            <circle cx="36" cy="101.5" r="4" fill="#ef4444"/>
+            <circle cx="60" cy="60" r="8" fill="#ef4444"/>
+          </svg>
+          <div class="wordmark mono">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONCEPT D: Tetrahedron + AI core ========== -->
+<div class="concept">
+  <h2>Concept D — Tetrahedron with AI Core</h2>
+  <p class="desc">3D 사면체(crystal motif)의 4 vertex에 원자, 중심에 accent color로 AI 코어. 결정 구조 + 인공지능을 가장 미니멀하게 결합.</p>
+  <div class="row">
+    <!-- Color 2 -->
+    <div class="variant">
+      <div class="label">Navy + Amber</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="90" height="90" viewBox="0 0 120 120">
+            <line x1="60" y1="15" x2="60" y2="68" stroke="#1a3a6e" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+            <line x1="20" y1="100" x2="60" y2="68" stroke="#1a3a6e" stroke-width="1.5" opacity="0.5"/>
+            <line x1="100" y1="100" x2="60" y2="68" stroke="#1a3a6e" stroke-width="1.5" opacity="0.5"/>
+            <line x1="60" y1="15" x2="20" y2="100" stroke="#1a3a6e" stroke-width="3" stroke-linecap="round"/>
+            <line x1="60" y1="15" x2="100" y2="100" stroke="#1a3a6e" stroke-width="3" stroke-linecap="round"/>
+            <line x1="20" y1="100" x2="100" y2="100" stroke="#1a3a6e" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="60" cy="15" r="7" fill="#1a3a6e"/>
+            <circle cx="20" cy="100" r="7" fill="#1a3a6e"/>
+            <circle cx="100" cy="100" r="7" fill="#1a3a6e"/>
+            <circle cx="60" cy="68" r="5" fill="#1a3a6e" opacity="0.6"/>
+            <circle cx="60" cy="65" r="9" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="56" height="56" viewBox="0 0 120 120">
+            <line x1="60" y1="15" x2="60" y2="68" stroke="#1a3a6e" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+            <line x1="20" y1="100" x2="60" y2="68" stroke="#1a3a6e" stroke-width="1.5" opacity="0.5"/>
+            <line x1="100" y1="100" x2="60" y2="68" stroke="#1a3a6e" stroke-width="1.5" opacity="0.5"/>
+            <line x1="60" y1="15" x2="20" y2="100" stroke="#1a3a6e" stroke-width="3" stroke-linecap="round"/>
+            <line x1="60" y1="15" x2="100" y2="100" stroke="#1a3a6e" stroke-width="3" stroke-linecap="round"/>
+            <line x1="20" y1="100" x2="100" y2="100" stroke="#1a3a6e" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="60" cy="15" r="7" fill="#1a3a6e"/>
+            <circle cx="20" cy="100" r="7" fill="#1a3a6e"/>
+            <circle cx="100" cy="100" r="7" fill="#1a3a6e"/>
+            <circle cx="60" cy="68" r="5" fill="#1a3a6e" opacity="0.6"/>
+            <circle cx="60" cy="65" r="9" fill="#f5a623"/>
+          </svg>
+          <div class="wordmark navy">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Color 3 -->
+    <div class="variant">
+      <div class="label">Charcoal + Red</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="90" height="90" viewBox="0 0 120 120">
+            <line x1="60" y1="15" x2="60" y2="68" stroke="#1f2937" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+            <line x1="20" y1="100" x2="60" y2="68" stroke="#1f2937" stroke-width="1.5" opacity="0.5"/>
+            <line x1="100" y1="100" x2="60" y2="68" stroke="#1f2937" stroke-width="1.5" opacity="0.5"/>
+            <line x1="60" y1="15" x2="20" y2="100" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+            <line x1="60" y1="15" x2="100" y2="100" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+            <line x1="20" y1="100" x2="100" y2="100" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="60" cy="15" r="7" fill="#1f2937"/>
+            <circle cx="20" cy="100" r="7" fill="#1f2937"/>
+            <circle cx="100" cy="100" r="7" fill="#1f2937"/>
+            <circle cx="60" cy="68" r="5" fill="#1f2937" opacity="0.6"/>
+            <circle cx="60" cy="65" r="9" fill="#ef4444"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="56" height="56" viewBox="0 0 120 120">
+            <line x1="60" y1="15" x2="60" y2="68" stroke="#1f2937" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+            <line x1="20" y1="100" x2="60" y2="68" stroke="#1f2937" stroke-width="1.5" opacity="0.5"/>
+            <line x1="100" y1="100" x2="60" y2="68" stroke="#1f2937" stroke-width="1.5" opacity="0.5"/>
+            <line x1="60" y1="15" x2="20" y2="100" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+            <line x1="60" y1="15" x2="100" y2="100" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+            <line x1="20" y1="100" x2="100" y2="100" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="60" cy="15" r="7" fill="#1f2937"/>
+            <circle cx="20" cy="100" r="7" fill="#1f2937"/>
+            <circle cx="100" cy="100" r="7" fill="#1f2937"/>
+            <circle cx="60" cy="68" r="5" fill="#1f2937" opacity="0.6"/>
+            <circle cx="60" cy="65" r="9" fill="#ef4444"/>
+          </svg>
+          <div class="wordmark mono">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p style="color:#666;font-size:14px;margin-top:30px;">
+어떤 컨셉/컬러 조합이 마음에 드시는지 알려 주세요 (예: <em>"B + Navy"</em>, <em>"A + Charcoal"</em>). 정해 주시면 SVG 파일과 PNG export, favicon, 그리고 사이트 헤더에 적용할 가로 워드마크를 모두 정리해서 만들어 드립니다. 기존 디자인을 더 다듬을 필요가 있다면 (예: 더 굵게, 더 미니멀하게, 컬러 톤 조정 등) 함께 말씀 주세요.
+</p>
+
+</body>
+</html>
