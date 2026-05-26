@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MINDS Lab — Logo Drafts v2 (AI + Atom Fusion)</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: #f7f7f8;
+    color: #1f2937;
+    margin: 0;
+    padding: 40px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 28px; margin-bottom: 6px; }
+  .lede { color: #555; margin-bottom: 30px; }
+  .concept {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .concept h2 { margin-top: 0; font-size: 20px; }
+  .concept p.desc { color: #555; margin-top: 4px; margin-bottom: 18px; font-size: 14px; }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .variant {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+  }
+  .variant .label { font-size: 12px; color: #888; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .icon-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .icon-box svg { display: block; }
+  .horiz-box { display: flex; align-items: center; gap: 12px; }
+  .wordmark { display: flex; flex-direction: column; line-height: 1.1; }
+  .wordmark .name { font-weight: 700; font-size: 22px; letter-spacing: 0.02em; }
+  .wordmark .sub { font-size: 9.5px; color: #6b7280; margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .wordmark.navy .name { color: #1a3a6e; }
+  .wordmark.mono .name { color: #1f2937; }
+</style>
+</head>
+<body>
+
+<h1>MINDS Lab — Logo Drafts v2</h1>
+<p class="lede">AI (fully-connected network) + 원자 / 결정 격자 / Li 융합 컨셉 3종을 두 컬러 스킴으로 만들었습니다. 직선과 노드만 사용하는 미니멀 + 예술적 방향이에요.</p>
+
+<!-- ========== CONCEPT E: Fully Connected Crystal ========== -->
+<div class="concept">
+  <h2>Concept E — Fully Connected Crystal</h2>
+  <p class="desc">육각형 결정 격자(6 vertex 원자) + 중심 Li 이온, 그리고 <strong>모든 노드가 서로 연결된 fully-connected graph</strong>. 결정 구조와 신경망의 형태가 한 형상 안에 겹쳐 보이도록, 엣지마다 다른 opacity로 weighted connection을 표현. 두 개의 엣지는 accent color로 강조 — "학습된" pathway / 이온 전도 경로 의미.</p>
+  <div class="row">
+
+    <!-- Color 2: Navy + Amber -->
+    <div class="variant">
+      <div class="label">Navy + Amber</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="100" height="100" viewBox="0 0 120 120">
+            <!-- All-to-all edges between 6 hex vertices -->
+            <g stroke="#1a3a6e" fill="none" stroke-linecap="round">
+              <!-- hexagon perimeter -->
+              <line x1="60" y1="20" x2="94.64" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="40" x2="94.64" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="80" x2="60" y2="100" stroke-width="1" opacity="0.4"/>
+              <line x1="60" y1="100" x2="25.36" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="80" x2="25.36" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="40" x2="60" y2="20" stroke-width="1" opacity="0.4"/>
+              <!-- diagonals (skip-one) -->
+              <line x1="60" y1="20" x2="94.64" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="40" x2="60" y2="100" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="60" y1="100" x2="25.36" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="80" x2="60" y2="20" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="40" x2="94.64" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <!-- diameters (opposite vertices) -->
+              <line x1="60" y1="20" x2="60" y2="100" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="40" x2="25.36" y2="80" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="40" stroke-width="0.7" opacity="0.13"/>
+              <!-- center to all vertices -->
+              <line x1="60" y1="60" x2="60" y2="20" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="40" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="60" y2="100" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="40" stroke-width="1.1" opacity="0.55"/>
+            </g>
+            <!-- Accent "learned" pathway -->
+            <line x1="25.36" y1="40" x2="60" y2="60" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="60" y1="60" x2="94.64" y2="80" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <!-- Vertex atoms -->
+            <circle cx="60" cy="20" r="4.5" fill="#1a3a6e"/>
+            <circle cx="94.64" cy="40" r="4.5" fill="#1a3a6e"/>
+            <circle cx="94.64" cy="80" r="4.5" fill="#1a3a6e"/>
+            <circle cx="60" cy="100" r="4.5" fill="#1a3a6e"/>
+            <circle cx="25.36" cy="80" r="4.5" fill="#1a3a6e"/>
+            <circle cx="25.36" cy="40" r="4.5" fill="#1a3a6e"/>
+            <!-- Central Li (with halo) -->
+            <circle cx="60" cy="60" r="13" fill="#f5a623" opacity="0.18"/>
+            <circle cx="60" cy="60" r="8.5" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="60" height="60" viewBox="0 0 120 120">
+            <g stroke="#1a3a6e" fill="none" stroke-linecap="round">
+              <line x1="60" y1="20" x2="94.64" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="40" x2="94.64" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="80" x2="60" y2="100" stroke-width="1" opacity="0.4"/>
+              <line x1="60" y1="100" x2="25.36" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="80" x2="25.36" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="40" x2="60" y2="20" stroke-width="1" opacity="0.4"/>
+              <line x1="60" y1="20" x2="94.64" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="40" x2="60" y2="100" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="60" y1="100" x2="25.36" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="80" x2="60" y2="20" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="40" x2="94.64" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <line x1="60" y1="20" x2="60" y2="100" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="40" x2="25.36" y2="80" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="40" stroke-width="0.7" opacity="0.13"/>
+              <line x1="60" y1="60" x2="60" y2="20" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="40" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="60" y2="100" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="40" stroke-width="1.1" opacity="0.55"/>
+            </g>
+            <line x1="25.36" y1="40" x2="60" y2="60" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="60" y1="60" x2="94.64" y2="80" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="60" cy="20" r="4.5" fill="#1a3a6e"/>
+            <circle cx="94.64" cy="40" r="4.5" fill="#1a3a6e"/>
+            <circle cx="94.64" cy="80" r="4.5" fill="#1a3a6e"/>
+            <circle cx="60" cy="100" r="4.5" fill="#1a3a6e"/>
+            <circle cx="25.36" cy="80" r="4.5" fill="#1a3a6e"/>
+            <circle cx="25.36" cy="40" r="4.5" fill="#1a3a6e"/>
+            <circle cx="60" cy="60" r="13" fill="#f5a623" opacity="0.18"/>
+            <circle cx="60" cy="60" r="8.5" fill="#f5a623"/>
+          </svg>
+          <div class="wordmark navy">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color 3: Charcoal + Red -->
+    <div class="variant">
+      <div class="label">Charcoal + Red</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="100" height="100" viewBox="0 0 120 120">
+            <g stroke="#1f2937" fill="none" stroke-linecap="round">
+              <line x1="60" y1="20" x2="94.64" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="40" x2="94.64" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="80" x2="60" y2="100" stroke-width="1" opacity="0.4"/>
+              <line x1="60" y1="100" x2="25.36" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="80" x2="25.36" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="40" x2="60" y2="20" stroke-width="1" opacity="0.4"/>
+              <line x1="60" y1="20" x2="94.64" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="40" x2="60" y2="100" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="60" y1="100" x2="25.36" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="80" x2="60" y2="20" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="40" x2="94.64" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <line x1="60" y1="20" x2="60" y2="100" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="40" x2="25.36" y2="80" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="40" stroke-width="0.7" opacity="0.13"/>
+              <line x1="60" y1="60" x2="60" y2="20" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="40" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="60" y2="100" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="40" stroke-width="1.1" opacity="0.55"/>
+            </g>
+            <line x1="25.36" y1="40" x2="60" y2="60" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="60" y1="60" x2="94.64" y2="80" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="60" cy="20" r="4.5" fill="#1f2937"/>
+            <circle cx="94.64" cy="40" r="4.5" fill="#1f2937"/>
+            <circle cx="94.64" cy="80" r="4.5" fill="#1f2937"/>
+            <circle cx="60" cy="100" r="4.5" fill="#1f2937"/>
+            <circle cx="25.36" cy="80" r="4.5" fill="#1f2937"/>
+            <circle cx="25.36" cy="40" r="4.5" fill="#1f2937"/>
+            <circle cx="60" cy="60" r="13" fill="#ef4444" opacity="0.18"/>
+            <circle cx="60" cy="60" r="8.5" fill="#ef4444"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="60" height="60" viewBox="0 0 120 120">
+            <g stroke="#1f2937" fill="none" stroke-linecap="round">
+              <line x1="60" y1="20" x2="94.64" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="40" x2="94.64" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="94.64" y1="80" x2="60" y2="100" stroke-width="1" opacity="0.4"/>
+              <line x1="60" y1="100" x2="25.36" y2="80" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="80" x2="25.36" y2="40" stroke-width="1" opacity="0.4"/>
+              <line x1="25.36" y1="40" x2="60" y2="20" stroke-width="1" opacity="0.4"/>
+              <line x1="60" y1="20" x2="94.64" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="40" x2="60" y2="100" stroke-width="0.8" opacity="0.18"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="80" stroke-width="0.8" opacity="0.18"/>
+              <line x1="60" y1="100" x2="25.36" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="80" x2="60" y2="20" stroke-width="0.8" opacity="0.18"/>
+              <line x1="25.36" y1="40" x2="94.64" y2="40" stroke-width="0.8" opacity="0.18"/>
+              <line x1="60" y1="20" x2="60" y2="100" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="40" x2="25.36" y2="80" stroke-width="0.7" opacity="0.13"/>
+              <line x1="94.64" y1="80" x2="25.36" y2="40" stroke-width="0.7" opacity="0.13"/>
+              <line x1="60" y1="60" x2="60" y2="20" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="40" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="94.64" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="60" y2="100" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="80" stroke-width="1.1" opacity="0.55"/>
+              <line x1="60" y1="60" x2="25.36" y2="40" stroke-width="1.1" opacity="0.55"/>
+            </g>
+            <line x1="25.36" y1="40" x2="60" y2="60" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="60" y1="60" x2="94.64" y2="80" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="60" cy="20" r="4.5" fill="#1f2937"/>
+            <circle cx="94.64" cy="40" r="4.5" fill="#1f2937"/>
+            <circle cx="94.64" cy="80" r="4.5" fill="#1f2937"/>
+            <circle cx="60" cy="100" r="4.5" fill="#1f2937"/>
+            <circle cx="25.36" cy="80" r="4.5" fill="#1f2937"/>
+            <circle cx="25.36" cy="40" r="4.5" fill="#1f2937"/>
+            <circle cx="60" cy="60" r="13" fill="#ef4444" opacity="0.18"/>
+            <circle cx="60" cy="60" r="8.5" fill="#ef4444"/>
+          </svg>
+          <div class="wordmark mono">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONCEPT F: Layered FCN of Atoms ========== -->
+<div class="concept">
+  <h2>Concept F — Layered Neural Net of Atoms</h2>
+  <p class="desc">전형적인 fully-connected neural net 구조(3-layer, all-to-all). 각 노드를 원자(원형)로 그려서 결정 격자 / 분자 구조의 느낌을 더함. 중앙 hidden layer 가운데 노드를 Li 이온으로 강조 — "AI가 Li 화학을 추론한다"는 메타포.</p>
+  <div class="row">
+
+    <!-- Navy + Amber -->
+    <div class="variant">
+      <div class="label">Navy + Amber</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="120" height="100" viewBox="0 0 160 120">
+            <!-- Bipartite edges: left to mid -->
+            <g stroke="#1a3a6e" stroke-width="0.9" opacity="0.4">
+              <line x1="25" y1="30" x2="80" y2="30"/>
+              <line x1="25" y1="30" x2="80" y2="60"/>
+              <line x1="25" y1="30" x2="80" y2="90"/>
+              <line x1="25" y1="60" x2="80" y2="30"/>
+              <line x1="25" y1="60" x2="80" y2="60"/>
+              <line x1="25" y1="60" x2="80" y2="90"/>
+              <line x1="25" y1="90" x2="80" y2="30"/>
+              <line x1="25" y1="90" x2="80" y2="60"/>
+              <line x1="25" y1="90" x2="80" y2="90"/>
+            </g>
+            <!-- Bipartite edges: mid to right -->
+            <g stroke="#1a3a6e" stroke-width="0.9" opacity="0.4">
+              <line x1="80" y1="30" x2="135" y2="30"/>
+              <line x1="80" y1="30" x2="135" y2="60"/>
+              <line x1="80" y1="30" x2="135" y2="90"/>
+              <line x1="80" y1="60" x2="135" y2="30"/>
+              <line x1="80" y1="60" x2="135" y2="60"/>
+              <line x1="80" y1="60" x2="135" y2="90"/>
+              <line x1="80" y1="90" x2="135" y2="30"/>
+              <line x1="80" y1="90" x2="135" y2="60"/>
+              <line x1="80" y1="90" x2="135" y2="90"/>
+            </g>
+            <!-- Highlighted pathway through Li -->
+            <line x1="25" y1="30" x2="80" y2="60" stroke="#f5a623" stroke-width="1.8" opacity="0.95"/>
+            <line x1="80" y1="60" x2="135" y2="90" stroke="#f5a623" stroke-width="1.8" opacity="0.95"/>
+            <!-- Nodes (atoms) -->
+            <g fill="#1a3a6e">
+              <circle cx="25" cy="30" r="6"/>
+              <circle cx="25" cy="60" r="6"/>
+              <circle cx="25" cy="90" r="6"/>
+              <circle cx="80" cy="30" r="6"/>
+              <circle cx="80" cy="90" r="6"/>
+              <circle cx="135" cy="30" r="6"/>
+              <circle cx="135" cy="60" r="6"/>
+              <circle cx="135" cy="90" r="6"/>
+            </g>
+            <!-- Li atom in center -->
+            <circle cx="80" cy="60" r="13" fill="#f5a623" opacity="0.18"/>
+            <circle cx="80" cy="60" r="9" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="80" height="60" viewBox="0 0 160 120">
+            <g stroke="#1a3a6e" stroke-width="0.9" opacity="0.4">
+              <line x1="25" y1="30" x2="80" y2="30"/>
+              <line x1="25" y1="30" x2="80" y2="60"/>
+              <line x1="25" y1="30" x2="80" y2="90"/>
+              <line x1="25" y1="60" x2="80" y2="30"/>
+              <line x1="25" y1="60" x2="80" y2="60"/>
+              <line x1="25" y1="60" x2="80" y2="90"/>
+              <line x1="25" y1="90" x2="80" y2="30"/>
+              <line x1="25" y1="90" x2="80" y2="60"/>
+              <line x1="25" y1="90" x2="80" y2="90"/>
+              <line x1="80" y1="30" x2="135" y2="30"/>
+              <line x1="80" y1="30" x2="135" y2="60"/>
+              <line x1="80" y1="30" x2="135" y2="90"/>
+              <line x1="80" y1="60" x2="135" y2="30"/>
+              <line x1="80" y1="60" x2="135" y2="60"/>
+              <line x1="80" y1="60" x2="135" y2="90"/>
+              <line x1="80" y1="90" x2="135" y2="30"/>
+              <line x1="80" y1="90" x2="135" y2="60"/>
+              <line x1="80" y1="90" x2="135" y2="90"/>
+            </g>
+            <line x1="25" y1="30" x2="80" y2="60" stroke="#f5a623" stroke-width="1.8" opacity="0.95"/>
+            <line x1="80" y1="60" x2="135" y2="90" stroke="#f5a623" stroke-width="1.8" opacity="0.95"/>
+            <g fill="#1a3a6e">
+              <circle cx="25" cy="30" r="6"/>
+              <circle cx="25" cy="60" r="6"/>
+              <circle cx="25" cy="90" r="6"/>
+              <circle cx="80" cy="30" r="6"/>
+              <circle cx="80" cy="90" r="6"/>
+              <circle cx="135" cy="30" r="6"/>
+              <circle cx="135" cy="60" r="6"/>
+              <circle cx="135" cy="90" r="6"/>
+            </g>
+            <circle cx="80" cy="60" r="13" fill="#f5a623" opacity="0.18"/>
+            <circle cx="80" cy="60" r="9" fill="#f5a623"/>
+          </svg>
+          <div class="wordmark navy">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charcoal + Red -->
+    <div class="variant">
+      <div class="label">Charcoal + Red</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="120" height="100" viewBox="0 0 160 120">
+            <g stroke="#1f2937" stroke-width="0.9" opacity="0.4">
+              <line x1="25" y1="30" x2="80" y2="30"/>
+              <line x1="25" y1="30" x2="80" y2="60"/>
+              <line x1="25" y1="30" x2="80" y2="90"/>
+              <line x1="25" y1="60" x2="80" y2="30"/>
+              <line x1="25" y1="60" x2="80" y2="60"/>
+              <line x1="25" y1="60" x2="80" y2="90"/>
+              <line x1="25" y1="90" x2="80" y2="30"/>
+              <line x1="25" y1="90" x2="80" y2="60"/>
+              <line x1="25" y1="90" x2="80" y2="90"/>
+              <line x1="80" y1="30" x2="135" y2="30"/>
+              <line x1="80" y1="30" x2="135" y2="60"/>
+              <line x1="80" y1="30" x2="135" y2="90"/>
+              <line x1="80" y1="60" x2="135" y2="30"/>
+              <line x1="80" y1="60" x2="135" y2="60"/>
+              <line x1="80" y1="60" x2="135" y2="90"/>
+              <line x1="80" y1="90" x2="135" y2="30"/>
+              <line x1="80" y1="90" x2="135" y2="60"/>
+              <line x1="80" y1="90" x2="135" y2="90"/>
+            </g>
+            <line x1="25" y1="30" x2="80" y2="60" stroke="#ef4444" stroke-width="1.8" opacity="0.95"/>
+            <line x1="80" y1="60" x2="135" y2="90" stroke="#ef4444" stroke-width="1.8" opacity="0.95"/>
+            <g fill="#1f2937">
+              <circle cx="25" cy="30" r="6"/>
+              <circle cx="25" cy="60" r="6"/>
+              <circle cx="25" cy="90" r="6"/>
+              <circle cx="80" cy="30" r="6"/>
+              <circle cx="80" cy="90" r="6"/>
+              <circle cx="135" cy="30" r="6"/>
+              <circle cx="135" cy="60" r="6"/>
+              <circle cx="135" cy="90" r="6"/>
+            </g>
+            <circle cx="80" cy="60" r="13" fill="#ef4444" opacity="0.18"/>
+            <circle cx="80" cy="60" r="9" fill="#ef4444"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="80" height="60" viewBox="0 0 160 120">
+            <g stroke="#1f2937" stroke-width="0.9" opacity="0.4">
+              <line x1="25" y1="30" x2="80" y2="30"/>
+              <line x1="25" y1="30" x2="80" y2="60"/>
+              <line x1="25" y1="30" x2="80" y2="90"/>
+              <line x1="25" y1="60" x2="80" y2="30"/>
+              <line x1="25" y1="60" x2="80" y2="60"/>
+              <line x1="25" y1="60" x2="80" y2="90"/>
+              <line x1="25" y1="90" x2="80" y2="30"/>
+              <line x1="25" y1="90" x2="80" y2="60"/>
+              <line x1="25" y1="90" x2="80" y2="90"/>
+              <line x1="80" y1="30" x2="135" y2="30"/>
+              <line x1="80" y1="30" x2="135" y2="60"/>
+              <line x1="80" y1="30" x2="135" y2="90"/>
+              <line x1="80" y1="60" x2="135" y2="30"/>
+              <line x1="80" y1="60" x2="135" y2="60"/>
+              <line x1="80" y1="60" x2="135" y2="90"/>
+              <line x1="80" y1="90" x2="135" y2="30"/>
+              <line x1="80" y1="90" x2="135" y2="60"/>
+              <line x1="80" y1="90" x2="135" y2="90"/>
+            </g>
+            <line x1="25" y1="30" x2="80" y2="60" stroke="#ef4444" stroke-width="1.8" opacity="0.95"/>
+            <line x1="80" y1="60" x2="135" y2="90" stroke="#ef4444" stroke-width="1.8" opacity="0.95"/>
+            <g fill="#1f2937">
+              <circle cx="25" cy="30" r="6"/>
+              <circle cx="25" cy="60" r="6"/>
+              <circle cx="25" cy="90" r="6"/>
+              <circle cx="80" cy="30" r="6"/>
+              <circle cx="80" cy="90" r="6"/>
+              <circle cx="135" cy="30" r="6"/>
+              <circle cx="135" cy="60" r="6"/>
+              <circle cx="135" cy="90" r="6"/>
+            </g>
+            <circle cx="80" cy="60" r="13" fill="#ef4444" opacity="0.18"/>
+            <circle cx="80" cy="60" r="9" fill="#ef4444"/>
+          </svg>
+          <div class="wordmark mono">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONCEPT G: Atomic Constellation ========== -->
+<div class="concept">
+  <h2>Concept G — Atomic Constellation</h2>
+  <p class="desc">불규칙하지만 균형 잡힌 6개 원자의 산포 + 모든 원자가 서로 연결된 fully-connected graph. 결정 격자의 정형성보다 신경망 / 별자리 / 분자 클러스터의 예술적 느낌. 중앙에 가까운 한 원자가 Li 이온(accent).</p>
+  <div class="row">
+
+    <!-- Navy + Amber -->
+    <div class="variant">
+      <div class="label">Navy + Amber</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="100" height="100" viewBox="0 0 120 120">
+            <!-- 6 atom positions:
+                 a=(58,60) Li center
+                 b=(28,30), c=(95,28), d=(102,72), e=(75,103), f=(18,88) -->
+            <g stroke="#1a3a6e" stroke-linecap="round" fill="none">
+              <line x1="28" y1="30" x2="95" y2="28" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="102" y2="72" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="75" y2="103" stroke-width="0.9" opacity="0.25"/>
+              <line x1="28" y1="30" x2="18" y2="88" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="102" y2="72" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="75" y2="103" stroke-width="0.9" opacity="0.3"/>
+              <line x1="95" y1="28" x2="18" y2="88" stroke-width="0.9" opacity="0.2"/>
+              <line x1="102" y1="72" x2="75" y2="103" stroke-width="0.9" opacity="0.4"/>
+              <line x1="102" y1="72" x2="18" y2="88" stroke-width="0.9" opacity="0.25"/>
+              <line x1="75" y1="103" x2="18" y2="88" stroke-width="0.9" opacity="0.35"/>
+              <!-- center Li to all -->
+              <line x1="58" y1="60" x2="28" y2="30" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="95" y2="28" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="102" y2="72" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="75" y2="103" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="18" y2="88" stroke-width="1.2" opacity="0.55"/>
+            </g>
+            <!-- highlighted edges -->
+            <line x1="28" y1="30" x2="58" y2="60" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="58" y1="60" x2="102" y2="72" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <!-- atoms -->
+            <g fill="#1a3a6e">
+              <circle cx="28" cy="30" r="5"/>
+              <circle cx="95" cy="28" r="5"/>
+              <circle cx="102" cy="72" r="5"/>
+              <circle cx="75" cy="103" r="5"/>
+              <circle cx="18" cy="88" r="5"/>
+            </g>
+            <!-- Li -->
+            <circle cx="58" cy="60" r="13" fill="#f5a623" opacity="0.18"/>
+            <circle cx="58" cy="60" r="8.5" fill="#f5a623"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="60" height="60" viewBox="0 0 120 120">
+            <g stroke="#1a3a6e" stroke-linecap="round" fill="none">
+              <line x1="28" y1="30" x2="95" y2="28" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="102" y2="72" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="75" y2="103" stroke-width="0.9" opacity="0.25"/>
+              <line x1="28" y1="30" x2="18" y2="88" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="102" y2="72" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="75" y2="103" stroke-width="0.9" opacity="0.3"/>
+              <line x1="95" y1="28" x2="18" y2="88" stroke-width="0.9" opacity="0.2"/>
+              <line x1="102" y1="72" x2="75" y2="103" stroke-width="0.9" opacity="0.4"/>
+              <line x1="102" y1="72" x2="18" y2="88" stroke-width="0.9" opacity="0.25"/>
+              <line x1="75" y1="103" x2="18" y2="88" stroke-width="0.9" opacity="0.35"/>
+              <line x1="58" y1="60" x2="28" y2="30" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="95" y2="28" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="102" y2="72" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="75" y2="103" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="18" y2="88" stroke-width="1.2" opacity="0.55"/>
+            </g>
+            <line x1="28" y1="30" x2="58" y2="60" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="58" y1="60" x2="102" y2="72" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+            <g fill="#1a3a6e">
+              <circle cx="28" cy="30" r="5"/>
+              <circle cx="95" cy="28" r="5"/>
+              <circle cx="102" cy="72" r="5"/>
+              <circle cx="75" cy="103" r="5"/>
+              <circle cx="18" cy="88" r="5"/>
+            </g>
+            <circle cx="58" cy="60" r="13" fill="#f5a623" opacity="0.18"/>
+            <circle cx="58" cy="60" r="8.5" fill="#f5a623"/>
+          </svg>
+          <div class="wordmark navy">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charcoal + Red -->
+    <div class="variant">
+      <div class="label">Charcoal + Red</div>
+      <div class="icon-row">
+        <div class="icon-box">
+          <svg width="100" height="100" viewBox="0 0 120 120">
+            <g stroke="#1f2937" stroke-linecap="round" fill="none">
+              <line x1="28" y1="30" x2="95" y2="28" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="102" y2="72" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="75" y2="103" stroke-width="0.9" opacity="0.25"/>
+              <line x1="28" y1="30" x2="18" y2="88" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="102" y2="72" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="75" y2="103" stroke-width="0.9" opacity="0.3"/>
+              <line x1="95" y1="28" x2="18" y2="88" stroke-width="0.9" opacity="0.2"/>
+              <line x1="102" y1="72" x2="75" y2="103" stroke-width="0.9" opacity="0.4"/>
+              <line x1="102" y1="72" x2="18" y2="88" stroke-width="0.9" opacity="0.25"/>
+              <line x1="75" y1="103" x2="18" y2="88" stroke-width="0.9" opacity="0.35"/>
+              <line x1="58" y1="60" x2="28" y2="30" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="95" y2="28" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="102" y2="72" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="75" y2="103" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="18" y2="88" stroke-width="1.2" opacity="0.55"/>
+            </g>
+            <line x1="28" y1="30" x2="58" y2="60" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="58" y1="60" x2="102" y2="72" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <g fill="#1f2937">
+              <circle cx="28" cy="30" r="5"/>
+              <circle cx="95" cy="28" r="5"/>
+              <circle cx="102" cy="72" r="5"/>
+              <circle cx="75" cy="103" r="5"/>
+              <circle cx="18" cy="88" r="5"/>
+            </g>
+            <circle cx="58" cy="60" r="13" fill="#ef4444" opacity="0.18"/>
+            <circle cx="58" cy="60" r="8.5" fill="#ef4444"/>
+          </svg>
+        </div>
+        <div class="horiz-box">
+          <svg width="60" height="60" viewBox="0 0 120 120">
+            <g stroke="#1f2937" stroke-linecap="round" fill="none">
+              <line x1="28" y1="30" x2="95" y2="28" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="102" y2="72" stroke-width="0.9" opacity="0.3"/>
+              <line x1="28" y1="30" x2="75" y2="103" stroke-width="0.9" opacity="0.25"/>
+              <line x1="28" y1="30" x2="18" y2="88" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="102" y2="72" stroke-width="0.9" opacity="0.4"/>
+              <line x1="95" y1="28" x2="75" y2="103" stroke-width="0.9" opacity="0.3"/>
+              <line x1="95" y1="28" x2="18" y2="88" stroke-width="0.9" opacity="0.2"/>
+              <line x1="102" y1="72" x2="75" y2="103" stroke-width="0.9" opacity="0.4"/>
+              <line x1="102" y1="72" x2="18" y2="88" stroke-width="0.9" opacity="0.25"/>
+              <line x1="75" y1="103" x2="18" y2="88" stroke-width="0.9" opacity="0.35"/>
+              <line x1="58" y1="60" x2="28" y2="30" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="95" y2="28" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="102" y2="72" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="75" y2="103" stroke-width="1.2" opacity="0.55"/>
+              <line x1="58" y1="60" x2="18" y2="88" stroke-width="1.2" opacity="0.55"/>
+            </g>
+            <line x1="28" y1="30" x2="58" y2="60" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="58" y1="60" x2="102" y2="72" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+            <g fill="#1f2937">
+              <circle cx="28" cy="30" r="5"/>
+              <circle cx="95" cy="28" r="5"/>
+              <circle cx="102" cy="72" r="5"/>
+              <circle cx="75" cy="103" r="5"/>
+              <circle cx="18" cy="88" r="5"/>
+            </g>
+            <circle cx="58" cy="60" r="13" fill="#ef4444" opacity="0.18"/>
+            <circle cx="58" cy="60" r="8.5" fill="#ef4444"/>
+          </svg>
+          <div class="wordmark mono">
+            <span class="name">MINDS Lab</span>
+            <span class="sub">Materials Intelligence for Design and Simulations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p style="color:#666;font-size:14px;margin-top:30px;">
+세 컨셉의 차이 요약:
+<br>• <strong>E (Fully Connected Crystal)</strong> — 가장 대칭적, 결정 / FCN 둘 다 강함
+<br>• <strong>F (Layered FCN of Atoms)</strong> — AI 모델 형상이 가장 또렷, "물질을 예측하는 ML" 메타포
+<br>• <strong>G (Atomic Constellation)</strong> — 가장 예술적 / 유기적, 분자 클러스터 + 별자리 + 신경망 느낌
+<br><br>
+마음에 드는 컨셉 + 컬러 조합 알려 주세요 (예: <em>"E + Navy"</em>). 또는 다듬을 부분 (예: 엣지 더 굵게, accent edge 다른 위치로, atom 크기 조정 등) 말씀해 주시면 그에 맞춰 다시 만들어 드립니다.
+</p>
+
+</body>
+</html>
