@@ -1,0 +1,156 @@
+---
+// Hero animation: Li ions (amber) hopping between interstitial sites of a host lattice (grey).
+// Schematic only. Replace with a real trajectory rendering later if wanted.
+const { height = 360 } = Astro.props;
+---
+<div class="ionhop" style={`--h:${height}px`}>
+  <canvas aria-label="Animation of lithium ions hopping between sites in a crystal lattice" role="img"></canvas>
+  <span class="ionhop-cap label">Schematic: Li<sup>+</sup> hops between interstitial sites in a host framework</span>
+</div>
+
+<style>
+  .ionhop { position: relative; width: 100%; height: var(--h); max-height: 70vw; border-radius: var(--radius); overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
+  canvas { width: 100%; height: 100%; display: block; }
+  .ionhop-cap { position: absolute; left: 12px; bottom: 10px; background: color-mix(in srgb, var(--panel) 85%, transparent); padding: 2px 8px; border-radius: 4px; font-size: 11px; text-transform: none; letter-spacing: .02em; }
+</style>
+
+<script>
+  function start(root: HTMLElement) {
+    const canvas = root.querySelector('canvas') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d')!;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let W = 0, H = 0, dpr = 1, a = 46;
+    type Site = { x: number; y: number; nb: number[]; occ: number };
+    type Ion = { s: number; t: number; from: number; to: number; p: number; trail: { x: number; y: number }[] };
+    let anions: { x: number; y: number; ph: number }[] = [];
+    let sites: Site[] = [];
+    let ions: Ion[] = [];
+    let colors = { lattice: '#c5ccd6', amber: '#f59e0b', ink: '#1f2937', bond: '#e2e5ea' };
+
+    function readColors() {
+      const cs = getComputedStyle(document.documentElement);
+      colors = {
+        lattice: cs.getPropertyValue('--lattice').trim() || colors.lattice,
+        amber: cs.getPropertyValue('--amber').trim() || colors.amber,
+        ink: cs.getPropertyValue('--ink').trim() || colors.ink,
+        bond: cs.getPropertyValue('--line').trim() || colors.bond,
+      };
+    }
+
+    function build() {
+      const r = canvas.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width; H = r.height;
+      canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      a = W < 500 ? 40 : 48;
+      const nx = Math.ceil(W / a) + 2, ny = Math.ceil(H / a) + 2;
+      const ox = (W - (nx - 1) * a) / 2, oy = (H - (ny - 1) * a) / 2;
+      anions = [];
+      for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) anions.push({ x: ox + i * a, y: oy + j * a, ph: Math.random() * 6.28 });
+      // interstitial sites: square centers and edge midpoints
+      sites = [];
+      const idx = new Map<string, number>();
+      const add = (x: number, y: number) => { const k = `${Math.round(x * 2)},${Math.round(y * 2)}`; if (!idx.has(k)) { idx.set(k, sites.length); sites.push({ x, y, nb: [], occ: -1 }); } return idx.get(k)!; };
+      for (let j = 0; j < ny - 1; j++) for (let i = 0; i < nx - 1; i++) {
+        const cx = ox + (i + 0.5) * a, cy = oy + (j + 0.5) * a;
+        const c = add(cx, cy);
+        const e = [add(cx, cy - a / 2), add(cx, cy + a / 2), add(cx - a / 2, cy), add(cx + a / 2, cy)];
+        for (const k of e) { sites[c].nb.push(k); sites[k].nb.push(c); }
+      }
+      ions = [];
+      const n = Math.round(sites.length * 0.15);
+      const order = sites.map((_, i) => i).sort(() => Math.random() - 0.5);
+      for (let k = 0; k < n; k++) { const s = order[k]; sites[s].occ = k; ions.push({ s, t: 0, from: s, to: s, p: 1, trail: [] }); }
+    }
+
+    function pos(ion: Ion) {
+      const A = sites[ion.from], B = sites[ion.to];
+      const e = ion.p < 1 ? (1 - Math.cos(Math.PI * ion.p)) / 2 : 1;
+      return { x: A.x + (B.x - A.x) * e, y: A.y + (B.y - A.y) * e };
+    }
+
+    function step(dt: number) {
+      for (const ion of ions) {
+        if (ion.p < 1) {
+          ion.p = Math.min(1, ion.p + dt / 0.42);
+          if (ion.p >= 1) { sites[ion.from].occ = -1; ion.s = ion.to; ion.from = ion.to; }
+          continue;
+        }
+        if (Math.random() < dt * 0.35) {
+          const nb = sites[ion.s].nb;
+          const free = nb.filter((k) => sites[k].occ === -1);
+          if (free.length) {
+            const to = free[(Math.random() * free.length) | 0];
+            sites[to].occ = 1; ion.from = ion.s; ion.to = to; ion.p = 0;
+          }
+        }
+      }
+    }
+
+    function draw(time: number) {
+      ctx.clearRect(0, 0, W, H);
+      // framework bonds
+      ctx.strokeStyle = colors.bond; ctx.lineWidth = 1;
+      ctx.beginPath();
+      const nx = Math.ceil(W / a) + 2;
+      for (let k = 0; k < anions.length; k++) {
+        const A = anions[k];
+        if ((k + 1) % nx !== 0 && anions[k + 1]) { ctx.moveTo(A.x, A.y); ctx.lineTo(anions[k + 1].x, anions[k + 1].y); }
+        if (anions[k + nx]) { ctx.moveTo(A.x, A.y); ctx.lineTo(anions[k + nx].x, anions[k + nx].y); }
+      }
+      ctx.stroke();
+      // host anions with small thermal vibration
+      ctx.fillStyle = colors.lattice;
+      const amp = reduce ? 0 : 1.2;
+      for (const A of anions) {
+        ctx.beginPath();
+        ctx.arc(A.x + amp * Math.sin(time * 0.003 + A.ph), A.y + amp * Math.cos(time * 0.0027 + A.ph * 1.3), a * 0.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      // ions and trails
+      for (const ion of ions) {
+        const P = pos(ion);
+        if (!reduce) {
+          ion.trail.push(P); if (ion.trail.length > 18) ion.trail.shift();
+          if (ion.trail.length > 1) {
+            for (let i = 1; i < ion.trail.length; i++) {
+              ctx.strokeStyle = colors.amber; ctx.globalAlpha = (i / ion.trail.length) * 0.5; ctx.lineWidth = 2.2;
+              ctx.beginPath(); ctx.moveTo(ion.trail[i - 1].x, ion.trail[i - 1].y); ctx.lineTo(ion.trail[i].x, ion.trail[i].y); ctx.stroke();
+            }
+            ctx.globalAlpha = 1;
+          }
+        }
+        ctx.fillStyle = colors.amber; ctx.globalAlpha = 0.22;
+        ctx.beginPath(); ctx.arc(P.x, P.y, 9, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.beginPath(); ctx.arc(P.x, P.y, 5, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+
+    let last = performance.now(), running = true, raf = 0;
+    function loop(t: number) {
+      const dt = Math.min(0.05, (t - last) / 1000); last = t;
+      step(dt); draw(t);
+      if (running) raf = requestAnimationFrame(loop);
+    }
+
+    readColors(); build();
+    if (reduce) {
+      for (let i = 0; i < 40; i++) step(0.05);
+      draw(0);
+    } else {
+      const io = new IntersectionObserver((es) => {
+        const vis = es[0].isIntersecting;
+        if (vis && !running) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); }
+        if (!vis) { running = false; cancelAnimationFrame(raf); }
+      });
+      io.observe(root);
+      raf = requestAnimationFrame(loop);
+    }
+    let rt = 0;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = window.setTimeout(() => { build(); if (reduce) draw(0); }, 150); });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readColors(); if (reduce) draw(0); });
+  }
+  document.querySelectorAll<HTMLElement>('.ionhop').forEach(start);
+</script>

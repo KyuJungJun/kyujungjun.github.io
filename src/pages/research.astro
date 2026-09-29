@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import Figure from '../components/Figure.astro';
+import PaperItem from '../components/PaperItem.astro';
+import { getCollection, render } from 'astro:content';
+import { paperByDoiOrKey } from '../lib/papers';
+
+const areas = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
+const items = await Promise.all(areas.map(async (a) => ({
+  a,
+  Content: (await render(a)).Content,
+  papers: a.data.papers.map((id) => {
+    const p = paperByDoiOrKey(id);
+    if (!p) console.warn(`[research] paper not found in papers.bib: ${id} (area ${a.id})`);
+    return p;
+  }).filter(Boolean),
+})));
+---
+<Base title="Research" description="Research areas of MINDS Lab at Korea University.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">Research</span>
+      <h1>Research areas</h1>
+      <p>We combine machine-learning models with atomistic simulations to understand ion transport in energy materials and to find new battery materials. The work spans inorganic crystals, amorphous solids, polymers, and liquids.</p>
+      <nav class="toc" aria-label="Areas">
+        {areas.map((a, i) => <a href={`#${a.id}`}>{String(i + 1).padStart(2, '0')} {a.data.title}</a>)}
+      </nav>
+    </header>
+
+    {items.map(({ a, Content, papers }, i) => (
+      <section id={a.id} class="area panel">
+        <div class="fig-col"><Figure name={a.data.figure} image={a.data.image} alt={a.data.title} /></div>
+        <div class="txt">
+          <span class="label">Area {String(i + 1).padStart(2, '0')}</span>
+          <h2>{a.data.title}</h2>
+          <p class="q">{a.data.question}</p>
+          <div class="prose"><Content /></div>
+          {a.data.methods.length > 0 && (
+            <div class="methods">
+              <span class="label">Methods</span>
+              <ul>{a.data.methods.map((m) => <li>{m}</li>)}</ul>
+            </div>
+          )}
+          {papers.length > 0 && (
+            <div class="rp">
+              <span class="label">Representative papers</span>
+              {papers.map((p) => <PaperItem paper={p!} showBib={false} />)}
+            </div>
+          )}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
+<style>
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .toc a { font-size: 13.5px; text-decoration: none; color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 4px 12px; background: var(--panel); }
+  .toc a:hover { color: var(--ink); border-color: var(--amber); }
+  .area { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 28px; padding: 24px; scroll-margin-top: 84px; }
+  .area + .area { margin-top: 20px; }
+  .fig-col { position: sticky; top: 90px; align-self: start; }
+  .txt { display: flex; flex-direction: column; gap: 12px; }
+  .txt h2 { font-size: 22px; }
+  .q { font-size: 17px; color: var(--ink); font-weight: 500; }
+  .methods ul { margin: 6px 0 0; padding-left: 20px; color: var(--ink-2); }
+  .rp { margin-top: 6px; }
+  @media (max-width: 820px) { .area { grid-template-columns: 1fr; padding: 18px; } .fig-col { position: static; } }
+</style>

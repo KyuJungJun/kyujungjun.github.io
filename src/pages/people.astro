@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import PersonCard from '../components/PersonCard.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('people');
+const sections = [
+  { role: 'pi', title: 'Principal Investigator' },
+  { role: 'postdoc', title: 'Postdoctoral Researchers' },
+  { role: 'phd', title: 'Ph.D. Students' },
+  { role: 'ms', title: 'M.S. Students' },
+  { role: 'visiting', title: 'Visiting and Exchange Students' },
+  { role: 'ug', title: 'Undergraduate Researchers' },
+  { role: 'alumni', title: 'Alumni' },
+];
+const bodyText = (e: any) => (e.body || '').trim();
+---
+<Base title="People" description="Members and alumni of MINDS Lab at Korea University.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">People</span>
+      <h1>Members</h1>
+    </header>
+    {sections.map((s) => {
+      const members = all.filter((p) => p.data.role === s.role).sort((a, b) => a.data.order - b.data.order || (a.data.start || '').localeCompare(b.data.start || ''));
+      return members.length > 0 && (
+        <section>
+          <div class="sec-head"><h2>{s.title}</h2></div>
+          <div class="people-grid">{members.map((m) => <PersonCard p={m.data} body={bodyText(m)} />)}</div>
+        </section>
+      );
+    })}
+  </div>
+</Base>

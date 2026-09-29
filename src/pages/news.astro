@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { monthYear } from '../lib/format';
+const news = (await getCollection('news', (n) => !n.data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+const items = await Promise.all(news.map(async (n) => ({ n, C: (await render(n)).Content })));
+---
+<Base title="News" description="News from MINDS Lab at Korea University.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">News</span>
+      <h1>News</h1>
+    </header>
+    <div class="news-list">
+      {items.map(({ n, C }) => (
+        <article class="news-item" id={n.id}>
+          <time datetime={n.data.date.toISOString()}>{monthYear(n.data.date)}</time>
+          <div class="nbody">
+            {n.data.title && <h3>{n.data.title}</h3>}
+            <div class="prose"><C /></div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Base>

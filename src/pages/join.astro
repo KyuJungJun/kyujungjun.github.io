@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const updated = '2026-09-29';
+---
+<Base title="Join" description="Open positions at MINDS Lab, Korea University: M.S./Ph.D. students, undergraduate researchers, postdocs.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">Join · 모집</span>
+      <h1>Open positions</h1>
+      <p>We are recruiting M.S. and Ph.D. students, undergraduate researchers, and postdoctoral researchers. Last updated {updated}.</p>
+      <nav class="lang"><a href="#en">English</a><a href="#ko">한국어</a></nav>
+    </header>
+
+    <div class="cols">
+      <article id="en" class="panel doc">
+        <h2>Who can apply</h2>
+        <ul>
+          <li><b>School of Mechanical Engineering students:</b> undergraduate research internships, M.S., and Ph.D. positions.</li>
+          <li><b>School of Smart Mobility students:</b> undergraduate research internships, and master's research in the energy track (batteries and fuel cells).</li>
+          <li><b>Postdoctoral researchers.</b></li>
+          <li><b>Backgrounds:</b> mechanical engineering, materials science, chemical engineering, physics, chemistry, energy engineering, and related fields.</li>
+        </ul>
+
+        <h2>What the lab provides</h2>
+        <ul>
+          <li>Competitive funding and research support.</li>
+          <li>Access to multiple CPU and GPU computing clusters.</li>
+          <li>Weekly one-on-one meetings with the PI.</li>
+          <li>Collaborations with research groups at MIT and UC Berkeley.</li>
+        </ul>
+
+        <h2>Undergraduate research internships</h2>
+        <ul>
+          <li>Each intern works on an individual research topic.</li>
+          <li>School of Smart Mobility students can meet with the PI about an internship at any time. The start date is arranged individually.</li>
+        </ul>
+
+        <h2>How to apply</h2>
+        <p>Email <a href={`mailto:${site.email}`}>{site.email}</a> with your CV and a short note on your research interests. See <a href="/research/">Research</a> for current topics.</p>
+      </article>
+
+      <article id="ko" class="panel doc" lang="ko">
+        <h2>지원 대상</h2>
+        <ul>
+          <li><b>기계공학부 학생:</b> 학부 연구 인턴, 석사과정, 박사과정 지원 가능합니다.</li>
+          <li><b>스마트모빌리티학부 학생:</b> 학부 연구 인턴, 그리고 에너지 트랙(배터리·연료전지) 관련 석사 연구 지원 가능합니다.</li>
+          <li><b>박사후연구원</b></li>
+          <li><b>전공 배경:</b> 기계공학, 신소재공학, 화학공학, 물리학, 화학, 에너지공학 등</li>
+        </ul>
+
+        <h2>연구실 지원 사항</h2>
+        <ul>
+          <li>최고 수준의 연구 지원 및 연구 시설</li>
+          <li>다수의 CPU·GPU 계산 클러스터 사용</li>
+          <li>지도교수와 매주 1:1 미팅</li>
+          <li>MIT, UC Berkeley 연구 그룹과의 공동연구</li>
+        </ul>
+
+        <h2>학부 연구 인턴</h2>
+        <ul>
+          <li>인턴도 각자 개별 연구 주제로 연구를 진행합니다.</li>
+          <li>스마트모빌리티학부 학생은 학부 인턴 면담이 언제든지 가능합니다. 인턴 시작 시점은 개별적으로 조율합니다.</li>
+        </ul>
+
+        <h2>지원 방법</h2>
+        <p><a href={`mailto:${site.email}`}>{site.email}</a>로 CV와 간단한 연구 관심 분야를 보내 주세요. 현재 연구 주제는 <a href="/research/">Research</a> 페이지를 참고해 주세요.</p>
+      </article>
+    </div>
+  </div>
+</Base>
+<style>
+  .lang { display: flex; gap: 12px; font-size: 14px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .doc { padding: 24px 28px; display: flex; flex-direction: column; gap: 10px; scroll-margin-top: 84px; }
+  .doc h2 { font-size: 18px; margin-top: 12px; }
+  .doc h2:first-child { margin-top: 0; }
+  .doc ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: var(--ink-2); }
+  .doc b { color: var(--ink); }
+  .doc p { color: var(--ink-2); }
+  @media (max-width: 860px) { .cols { grid-template-columns: 1fr; } .doc { padding: 20px; } }
+</style>

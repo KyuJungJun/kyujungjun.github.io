@@ -1,0 +1,81 @@
+---
+// Placeholder schematics for research areas. Each area can instead set `image:` in its Markdown file
+// (put the file in public/img/research/), which replaces the schematic.
+interface Props { name?: string; image?: string; alt?: string; }
+const { name = 'lattice', image, alt = '' } = Astro.props;
+---
+<div class="fig">
+  {image ? <img src={image} alt={alt} loading="lazy" /> : (
+    <svg viewBox="0 0 320 190" role="img" aria-label={alt}>
+      {name === 'loop' && (
+        <g>
+          <g font-family="var(--sans)" font-size="11.5" font-weight="600" fill="currentColor" text-anchor="middle">
+            <rect x="112" y="14" width="96" height="34" rx="7" class="box" /><text x="160" y="35">ML model</text>
+            <rect x="222" y="78" width="88" height="34" rx="7" class="box" /><text x="266" y="99">Propose</text>
+            <rect x="112" y="142" width="96" height="34" rx="7" class="box" /><text x="160" y="163">Make + test</text>
+            <rect x="10" y="78" width="88" height="34" rx="7" class="box" /><text x="54" y="99">Update</text>
+          </g>
+          <g fill="none" stroke="var(--amber)" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ah)">
+            <path d="M210 36 Q 262 42 266 72" /><path d="M266 116 Q 262 150 214 158" />
+            <path d="M108 158 Q 58 150 54 118" /><path d="M54 74 Q 58 42 106 36" />
+          </g>
+          <circle cx="160" cy="96" r="18" fill="var(--amber)" opacity=".18" /><circle cx="160" cy="96" r="7" fill="var(--amber)" />
+        </g>
+      )}
+      {name === 'lattice' && (
+        <g>
+          {Array.from({ length: 8 }).map((_, i) => Array.from({ length: 5 }).map((_, j) => (
+            <rect x={20 + i * 38} y={16 + j * 38} width="22" height="22" rx="3" transform={`rotate(${(i + j) % 2 ? 8 : -8} ${31 + i * 38} ${27 + j * 38})`} fill="var(--lattice)" />
+          )))}
+          <path d="M50 65 C 70 60, 80 100, 107 103 S 150 70, 183 65 S 222 100, 240 103" fill="none" stroke="var(--amber)" stroke-width="2.4" stroke-dasharray="4 5" />
+          {[[50, 65], [107, 103], [183, 65], [240, 103]].map(([x, y], k) => (
+            <circle cx={x} cy={y} r={k === 3 ? 8 : 5} fill="var(--amber)" opacity={k === 3 ? 1 : 0.45} />
+          ))}
+        </g>
+      )}
+      {name === 'decomposition' && (
+        <g font-family="var(--sans)" font-size="11" fill="currentColor">
+          <line x1="40" y1="160" x2="300" y2="160" stroke="currentColor" opacity=".35" />
+          <line x1="40" y1="20" x2="40" y2="160" stroke="currentColor" opacity=".35" />
+          {[['Single hops', 70, 1], ['Correlated', 40, 0.65], ['Vehicular', 26, 0.4]].reduce((acc: any, [lab, h, op]: any, i: number) => {
+            const y = acc.y - h; acc.els.push(<rect x="70" y={y} width="56" height={h} fill="var(--amber)" opacity={op} />, <text x="136" y={y + h / 2 + 4}>{lab}</text>); acc.y = y; return acc;
+          }, { y: 160, els: [] as any[] }).els}
+          <rect x="210" y="24" width="56" height="136" fill="none" stroke="currentColor" stroke-dasharray="4 4" opacity=".6" />
+          <text x="238" y="176" text-anchor="middle" opacity=".7">Total σ</text>
+          <text x="98" y="176" text-anchor="middle" opacity=".7">Σ events</text>
+        </g>
+      )}
+      {name === 'funnel' && (
+        <g font-family="var(--mono)" font-size="11" fill="currentColor" text-anchor="middle">
+          <path d="M30 20 H290 L220 70 H100 Z" fill="var(--lattice)" />
+          <path d="M100 78 H220 L190 118 H130 Z" fill="var(--lattice)" opacity=".8" />
+          <path d="M130 126 H190 L172 158 H148 Z" fill="var(--amber)" opacity=".85" />
+          <text x="160" y="48">candidates</text><text x="160" y="102">stable + fast</text>
+          <circle cx="160" cy="176" r="6" fill="var(--amber)" />
+        </g>
+      )}
+      {name === 'network' && (
+        <g>
+          {(() => {
+            const pts = [[50, 50], [110, 30], [170, 60], [240, 36], [80, 120], [150, 130], [220, 110], [280, 140], [130, 170]];
+            const edges = [[0, 1], [1, 2], [2, 3], [0, 4], [4, 5], [5, 2], [5, 6], [6, 3], [6, 7], [5, 8], [4, 8], [1, 5], [2, 6]];
+            return [
+              ...edges.map(([a, b], k) => <line x1={pts[a][0]} y1={pts[a][1]} x2={pts[b][0]} y2={pts[b][1]} stroke={k % 4 === 0 ? 'var(--amber)' : 'currentColor'} stroke-width={k % 4 === 0 ? 2.4 : 1.2} opacity={k % 4 === 0 ? 0.9 : 0.35} />),
+              ...pts.map(([x, y], k) => <circle cx={x} cy={y} r={k === 5 ? 9 : 6} fill={k === 5 ? 'var(--amber)' : 'var(--lattice)'} />),
+            ];
+          })()}
+        </g>
+      )}
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--amber)" />
+        </marker>
+      </defs>
+    </svg>
+  )}
+</div>
+<style>
+  .fig { background: var(--bg); border-radius: 8px; aspect-ratio: 320 / 190; overflow: hidden; color: var(--ink); display: grid; place-items: center; }
+  .fig svg, .fig img { width: 100%; height: 100%; object-fit: cover; }
+  .box { fill: var(--panel); stroke: var(--line-2); }
+</style>

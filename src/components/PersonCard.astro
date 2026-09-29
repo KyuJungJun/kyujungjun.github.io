@@ -1,0 +1,28 @@
+---
+interface Props { p: any; body?: string; }
+const { p, body } = Astro.props;
+const initials = p.name.split(/\s+/).map((w: string) => w[0]).join('').slice(0, 2);
+const isAlum = p.role === 'alumni';
+---
+<article class="person panel">
+  {p.photo
+    ? <img class="photo" src={`/img/people/${p.photo}`} alt={p.name} loading="lazy" />
+    : <div class="photo empty" aria-hidden="true">{initials}</div>}
+  <div class="pbody">
+    <h3>{p.website && p.website.startsWith('/') ? <a href={p.website} style="color:inherit">{p.name}</a> : p.name}</h3>
+    <span class="ptitle">{p.title}{p.affiliation && p.role !== 'pi' ? ` · ${p.affiliation}` : ''}</span>
+    {body && <span class="topic">{body}</span>}
+    {isAlum && p.next_position && <span class="next"><b>Now:</b> {p.next_position}</span>}
+    {isAlum && (p.start || p.end) && <span class="edu">In the lab: {[p.start, p.end].filter(Boolean).join(' – ')}</span>}
+    {!isAlum && p.education?.length > 0 && (
+      <span class="edu">{p.education.map((e: any) => <span>{e.degree}, {e.school}{e.year ? ` (${e.year})` : ''}</span>)}</span>
+    )}
+    <div class="plinks">
+      {!isAlum && p.email && <a class="tag" href={`mailto:${p.email}`}>Email</a>}
+      {p.website && !p.website.startsWith('/') && <a class="tag" href={p.website}>Website</a>}
+      {p.scholar && <a class="tag" href={p.scholar}>Scholar</a>}
+      {p.github && <a class="tag" href={p.github}>GitHub</a>}
+      {p.linkedin && <a class="tag" href={p.linkedin}>LinkedIn</a>}
+    </div>
+  </div>
+</article>

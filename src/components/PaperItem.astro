@@ -1,0 +1,27 @@
+---
+import type { Paper } from '../lib/papers';
+import { formatAuthor } from '../lib/papers';
+interface Props { paper: Paper; showBib?: boolean; }
+const { paper: p, showBib = true } = Astro.props;
+const venueBits = [p.volume, p.number ? `(${p.number})` : '', p.pages].filter(Boolean).join(' ');
+const doiUrl = p.doi && !p.doi.toLowerCase().includes('arxiv') ? `https://doi.org/${p.doi}` : undefined;
+---
+<article class="paper" data-year={p.year} data-selected={p.selected ? '1' : '0'} data-text={`${p.title} ${p.authors.map(formatAuthor).join(' ')} ${p.journal} ${p.year}`.toLowerCase()}>
+  <span class="ptitle">{p.title}</span>
+  <span class="pauth">
+    {p.authors.map((a, i) => (<>{a.isPI ? <b>{formatAuthor(a)}</b> : formatAuthor(a)}{i < p.authors.length - 1 ? ', ' : ''}</>))}
+  </span>
+  <span class="pvenue"><i>{p.journal}</i>{venueBits && `, ${venueBits}`}{p.year ? ` (${p.year})` : ''}</span>
+  <div class="plinks">
+    {doiUrl && <a class="tag" href={doiUrl}>DOI</a>}
+    {p.arxiv && <a class="tag" href={`https://arxiv.org/abs/${p.arxiv}`}>arXiv</a>}
+    {p.url && !doiUrl && <a class="tag" href={p.url}>Link</a>}
+    {showBib && (
+      <details>
+        <summary class="tag">BibTeX</summary>
+        <pre>{p.bibtex}</pre>
+      </details>
+    )}
+    {p.selected && <span class="tag sel">Selected</span>}
+  </div>
+</article>

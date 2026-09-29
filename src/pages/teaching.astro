@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const courses = (await getCollection('teaching')).map((c) => c.data);
+const terms = [...new Map(courses.sort((a, b) => b.term_order - a.term_order).map((c) => [c.term, c.term_order])).keys()];
+---
+<Base title="Teaching" description="Courses taught by KyuJung Jun at Korea University.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">Teaching</span>
+      <h1>Teaching</h1>
+      <p>Courses taught at Korea University.</p>
+    </header>
+    {terms.map((t) => (
+      <section>
+        <div class="sec-head"><h2>{t}</h2></div>
+        <div class="courses">
+          {courses.filter((c) => c.term === t).map((c) => (
+            <article class="course panel">
+              <h3>{c.title}{c.title_ko && <span class="ko" lang="ko"> · {c.title_ko}</span>}</h3>
+              <span class="meta">{[c.code, c.level, c.unit].filter(Boolean).join(' · ')}</span>
+              {c.schedule && <span class="meta">Schedule: {c.schedule}</span>}
+              {c.description && <p>{c.description}</p>}
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
+<style>
+  .courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .course { padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+  .course h3 { font-size: 17px; }
+  .ko { font-weight: 500; color: var(--ink-2); }
+  .meta { font-size: 13.5px; color: var(--ink-3); }
+  .course p { color: var(--ink-2); font-size: 15px; margin-top: 4px; }
+</style>

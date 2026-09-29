@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="KyuJung Jun" description="KyuJung Jun, Assistant Professor, Korea University.">
+  <div class="wrap">
+    <div class="pi">
+      <img src="/img/people/kyujung-jun.jpg" alt="KyuJung Jun" />
+      <div class="txt">
+        <span class="label">Principal Investigator</span>
+        <h1>KyuJung Jun</h1>
+        <p class="role">Assistant Professor<br />School of Mechanical Engineering and School of Smart Mobility, Korea University</p>
+        <div class="prose">
+          <p>I am an Assistant Professor at Korea University in the <a href="https://me.korea.ac.kr/eng/main/main.html">School of Mechanical Engineering</a> and the <a href="https://mobility.korea.ac.kr/">School of Smart Mobility</a>. Previously, I was a postdoctoral researcher at MIT in the Department of Materials Science and Engineering, working with <a href="https://gomezbombarelli.mit.edu/">Prof. Rafael Gómez-Bombarelli</a>. I received my Ph.D. from the Department of Materials Science and Engineering at UC Berkeley, advised by <a href="https://ceder.berkeley.edu">Prof. Gerbrand Ceder</a>, and my B.S. from Seoul National University (major in Nuclear Engineering, minor in Materials Science and Engineering).</p>
+        </div>
+        <div class="links">
+          <a class="tag" href={`mailto:${site.email}`}>{site.email}</a>
+          <a class="tag" href={site.links.scholar}>Google Scholar</a>
+          <a class="tag" href={site.links.github}>GitHub</a>
+          <a class="tag" href={site.links.linkedin}>LinkedIn</a>
+          <a class="tag" href={site.links.orcid}>ORCID</a>
+        </div>
+        <p class="office">Office: {site.address_ko}</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section>
+        <div class="sec-head"><h2>Appointments</h2></div>
+        <dl>
+          <dt>2026–</dt><dd>Assistant Professor, School of Mechanical Engineering and School of Smart Mobility, Korea University</dd>
+          <dt>2024–2026</dt><dd>Postdoctoral Associate, Department of Materials Science and Engineering, MIT</dd>
+        </dl>
+      </section>
+      <section>
+        <div class="sec-head"><h2>Education</h2></div>
+        <dl>
+          <dt>2024</dt><dd>Ph.D., Materials Science and Engineering, UC Berkeley</dd>
+          <dt>2018</dt><dd>B.S., Nuclear Engineering (minor: Materials Science and Engineering), Seoul National University</dd>
+        </dl>
+      </section>
+      <section>
+        <div class="sec-head"><h2>Awards</h2></div>
+        <dl>
+          <dt>2023</dt><dd>ECS Battery Division Student Research Award</dd>
+          <dt>2022</dt><dd>MRS Graduate Student Award, Silver</dd>
+          <dt>2018–2023</dt><dd>Kwanjeong Educational Foundation Scholarship</dd>
+        </dl>
+      </section>
+      <section>
+        <div class="sec-head"><h2>Teaching</h2></div>
+        <p><a href="/teaching/">Courses at Korea University</a></p>
+      </section>
+    </div>
+  </div>
+</Base>
+<style>
+  .pi { display: grid; grid-template-columns: 260px 1fr; gap: 36px; padding-block: 48px 32px; align-items: start; }
+  .pi img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+  .txt { display: flex; flex-direction: column; gap: 12px; }
+  .txt h1 { font-size: clamp(30px, 4vw, 40px); }
+  .role { color: var(--ink-2); }
+  .links { display: flex; flex-wrap: wrap; gap: 6px; }
+  .office { font-size: 14px; color: var(--ink-3); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+  .grid section { margin-top: 36px; }
+  dl { display: grid; grid-template-columns: 88px 1fr; gap: 8px 16px; margin: 0; }
+  dt { font-family: var(--mono); font-size: 13px; color: var(--ink-3); padding-top: 2px; }
+  dd { margin: 0; color: var(--ink-2); }
+  @media (max-width: 760px) { .pi { grid-template-columns: 1fr; } .pi img { max-width: 240px; } .grid { grid-template-columns: 1fr; } }
+</style>

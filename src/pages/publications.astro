@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import PaperItem from '../components/PaperItem.astro';
+import { getPapers } from '../lib/papers';
+import { site } from '../data/site';
+
+const papers = getPapers();
+const review = papers.filter((p) => p.underReview);
+const published = papers.filter((p) => !p.underReview);
+const years = [...new Set(published.map((p) => p.year))].sort((a, b) => b - a);
+---
+<Base title="Publications" description="Publications of MINDS Lab and KyuJung Jun.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">Publications</span>
+      <h1>Publications</h1>
+      <p>{published.length} papers and preprints. Full list on <a href={site.links.scholar}>Google Scholar</a>.</p>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Show">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="selected" aria-pressed="false">Selected</button>
+        </div>
+        <label class="search"><span class="label">Search</span><input id="q" type="search" placeholder="title, author, journal, year" /></label>
+      </div>
+    </header>
+
+    {review.length > 0 && (
+      <section class="yr" data-group="review">
+        <div class="sec-head"><h2>Under review</h2></div>
+        {review.map((p) => <PaperItem paper={p} showBib={false} />)}
+      </section>
+    )}
+    {years.map((y) => (
+      <section class="yr">
+        <div class="sec-head"><h2>{y}</h2></div>
+        {published.filter((p) => p.year === y).map((p) => <PaperItem paper={p} />)}
+      </section>
+    ))}
+    <p id="none" hidden>No papers match.</p>
+  </div>
+</Base>
+<style>
+  .controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin-top: 8px; }
+  .seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 8px; overflow: hidden; }
+  .seg button { font: inherit; font-size: 14px; font-weight: 600; padding: 7px 14px; border: 0; background: var(--panel); color: var(--ink-2); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .search { display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; max-width: 420px; }
+  .search input { font: inherit; font-size: 15px; padding: 8px 12px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--panel); color: var(--ink); }
+  .yr + .yr { margin-top: 36px; }
+</style>
+<script>
+  const q = document.getElementById('q') as HTMLInputElement;
+  const btns = document.querySelectorAll<HTMLButtonElement>('.seg button');
+  let mode = 'all';
+  function apply() {
+    const term = q.value.trim().toLowerCase();
+    let shown = 0;
+    document.querySelectorAll<HTMLElement>('.yr').forEach((sec) => {
+      let n = 0;
+      sec.querySelectorAll<HTMLElement>('.paper').forEach((el) => {
+        const ok = (mode === 'all' || el.dataset.selected === '1') && (!term || (el.dataset.text || '').includes(term));
+        el.hidden = !ok; if (ok) n++;
+      });
+      sec.hidden = n === 0; shown += n;
+    });
+    (document.getElementById('none') as HTMLElement).hidden = shown > 0;
+  }
+  btns.forEach((b) => b.addEventListener('click', () => { mode = b.dataset.filter!; btns.forEach((x) => x.setAttribute('aria-pressed', String(x === b))); apply(); }));
+  q.addEventListener('input', apply);
+</script>
