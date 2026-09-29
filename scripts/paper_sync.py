@@ -5,7 +5,8 @@ What it does (run by .github/workflows/paper-sync.yml, results arrive as a pull 
   1. Lists KyuJung Jun's works from OpenAlex (by ORCID) and arXiv (by name).
   2. Adds works that are not yet in src/data/papers.bib (BibTeX fetched from doi.org).
   3. If a new journal article has the same title as an arXiv-only entry, updates that entry
-     (journal, year, DOI) instead of adding a duplicate.
+     (journal, year, DOI) instead of adding a duplicate. If an entry's DOI matches but the
+     published title differs, replaces the title with the published one.
   4. Writes one news item per paper published within the last N days (default 180) that does
      not have a news item yet. News items are linked to papers by the `paper:` field.
   5. Writes a summary to pr-body.md for the pull request.
@@ -232,7 +233,7 @@ def main() -> int:
         elif t in seen and w["journal"] == "arXiv" and not seen[t]["arxiv"]:
             seen[t]["arxiv"] = w["arxiv"]
 
-    added, updated, news = [], [], []
+    added, updated, retitled, news = [], [], [], []
     new_text = text
     for t, w in seen.items():
         if w["type"] in ("peer-review", "erratum", "paratext", "dataset"):
@@ -241,6 +242,14 @@ def main() -> int:
         if existing is None:
             new_text = new_text.rstrip() + "\n\n" + bibtex_for(w) + "\n"
             added.append(w)
+        elif existing["doi"] == w["doi"] and w["journal"] != "arXiv" and w["title"] and norm_title(existing["title"]) != t:
+            # same DOI but the published title differs (e.g. changed during review): use the journal title
+            seg_start = new_text.find("{" + existing["key"] + ",")
+            seg_end = new_text.find("\n}", seg_start) + 2
+            entry = new_text[seg_start:seg_end]
+            upd = re.sub(r"(?im)^(\s*)title\s*=.*$", lambda m: f"{m.group(1)}title = {{{w['title']}}},", entry, count=1)
+            new_text = new_text[:seg_start] + upd + new_text[seg_end:]
+            retitled.append((existing["title"], w))
         elif w["journal"] != "arXiv" and existing["journal"].lower() in ("arxiv", "chemrxiv", "") and existing["doi"] != w["doi"]:
             # journal version of an entry that is still a preprint on the site
             seg = new_text[new_text.find("{" + existing["key"] + ","):]
@@ -268,6 +277,8 @@ def main() -> int:
         lines += ["### Added to papers.bib"] + [f"- {w['title']} — *{w['journal']}* ({w['date']}) {w['doi']}" for w in added] + [""]
     if updated:
         lines += ["### Preprints updated to their journal version"] + [f"- `{k}` → *{w['journal']}* {w['doi']}" for k, w in updated] + [""]
+    if retitled:
+        lines += ["### Titles updated to the published title"] + [f"- {old} → **{w['title']}** ({w['journal']})" for old, w in retitled] + [""]
     if news:
         lines += ["### News items written"] + [f"- `{p.relative_to(ROOT)}`" for p in news] + [""]
     lines += [
@@ -281,7 +292,7 @@ def main() -> int:
     print("\n".join(lines))
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
-            fh.write(f"changes={'true' if (added or updated or news) else 'false'}\n")
+            fh.write(f"changes={'true' if (added or updated or retitled or news) else 'false'}\n")
     return 0
 
 
