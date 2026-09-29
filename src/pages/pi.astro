@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
 ---
-<Base title="KyuJung Jun" description="KyuJung Jun, Assistant Professor, Korea University.">
+<Base title="KyuJung Jun (전규정)" description="KyuJung Jun (전규정), Assistant Professor, Korea University (고려대학교 기계공학부 · 스마트모빌리티학부).">
   <div class="wrap">
     <div class="pi">
       <img src="/img/people/kyujung-jun.jpg" alt="KyuJung Jun" />
       <div class="txt">
-        <h1>KyuJung Jun</h1>
-        <p class="role">Assistant Professor<br />School of Mechanical Engineering and School of Smart Mobility, Korea University</p>
+        <h1>KyuJung Jun <span class="ko" lang="ko">전규정</span></h1>
+        <p class="role">Assistant Professor<br />School of Mechanical Engineering and School of Smart Mobility, Korea University<br /><span lang="ko">고려대학교 기계공학부 · 스마트모빌리티학부 조교수</span></p>
         <div class="prose">
           <p>I am an Assistant Professor at Korea University in the <a href="https://me.korea.ac.kr/eng/main/main.html">School of Mechanical Engineering</a> and the <a href="https://mobility.korea.ac.kr/">School of Smart Mobility</a>. Previously, I was a postdoctoral researcher at MIT in the Department of Materials Science and Engineering, working with <a href="https://gomezbombarelli.mit.edu/">Prof. Rafael Gómez-Bombarelli</a>. I received my Ph.D. from the Department of Materials Science and Engineering at UC Berkeley, advised by <a href="https://ceder.berkeley.edu">Prof. Gerbrand Ceder</a>, and my B.S. from Seoul National University (major in Nuclear Engineering, minor in Materials Science and Engineering).</p>
         </div>
@@ -59,6 +59,7 @@ import { site } from '../data/site';
   .txt { display: flex; flex-direction: column; gap: 12px; }
   .txt h1 { font-size: clamp(38px, 5vw, 56px); font-weight: 850; letter-spacing: -0.03em; }
   .role { font-weight: 600; }
+  h1 .ko { font-weight: 700; color: var(--ink-2); font-size: .6em; letter-spacing: 0; }
   .role { color: var(--ink-2); }
   .links { display: flex; flex-wrap: wrap; gap: 6px; }
   .office { font-size: 14px; color: var(--ink-3); }

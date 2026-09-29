@@ -27,7 +27,7 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
         <h1>MINDS Lab</h1>
         <p class="full">Materials Intelligence for<br />Design and Simulations</p>
         <p class="lead">{intro}</p>
-        <p class="aff">{site.units.join(' · ')}<br />{site.university}</p>
+        <p class="aff">{site.units.join(' · ')}<br />{site.university}<br /><span lang="ko">{site.university_ko} {site.units_ko.join(' · ')}</span></p>
         <div class="hero-actions">
           <a class="btn primary" href="/research/">Research</a>
           <a class="btn" href="/publications/">Publications</a>

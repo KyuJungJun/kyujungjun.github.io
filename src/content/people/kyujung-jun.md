@@ -1,7 +1,9 @@
 ---
 name: KyuJung Jun
+name_ko: 전규정
 role: pi
 title: Assistant Professor
+title_ko: 고려대학교 기계공학부 · 스마트모빌리티학부 조교수
 affiliation: School of Mechanical Engineering and School of Smart Mobility, Korea University
 email: kyujung@korea.ac.kr
 photo: kyujung-jun.jpg

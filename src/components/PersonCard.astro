@@ -9,8 +9,9 @@ const isAlum = p.role === 'alumni';
     ? <img class="photo" src={`/img/people/${p.photo}`} alt={p.name} loading="lazy" />
     : <div class="photo empty" aria-hidden="true">{initials}</div>}
   <div class="pbody">
-    <h3>{p.website && p.website.startsWith('/') ? <a href={p.website}>{p.name}</a> : p.name}</h3>
+    <h3>{p.website && p.website.startsWith('/') ? <a href={p.website}>{p.name}</a> : p.name}{p.name_ko && <span class="ko" lang="ko"> {p.name_ko}</span>}</h3>
     <span class="ptitle">{p.title}{p.affiliation && p.role !== 'pi' ? ` · ${p.affiliation}` : ''}</span>
+    {p.title_ko && <span class="ptitle" lang="ko">{p.title_ko}</span>}
     {body && <span class="topic">{body}</span>}
     {isAlum && p.next_position && <span class="next"><b>Now</b> · {p.next_position}</span>}
     {isAlum && (p.start || p.end) && <span class="edu">In the lab: {[p.start, p.end].filter(Boolean).join(' – ')}</span>}
@@ -26,3 +27,7 @@ const isAlum = p.role === 'alumni';
     </div>
   </div>
 </article>
+
+<style>
+  .ko { font-weight: 600; color: var(--ink-2); font-size: .85em; }
+</style>

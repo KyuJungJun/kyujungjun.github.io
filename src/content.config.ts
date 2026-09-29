@@ -11,6 +11,7 @@ const people = defineCollection({
     name_ko: z.string().optional(),
     role: z.enum(['pi', 'postdoc', 'phd', 'ms', 'visiting', 'ug', 'alumni']),
     title: z.string(),
+    title_ko: z.string().optional(),
     affiliation: z.string().optional(),
     email: z.string().optional(),
     photo: z.string().optional(),          // file name in public/img/people/

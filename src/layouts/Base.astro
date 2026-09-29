@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
     <div class="wrap">
       <a class="brand" href="/">
         <Logo />
-        <span><span class="bname">{site.name}</span><span class="bsub">{site.university}</span></span>
+        <span><span class="bname">{site.name}</span><span class="bsub">{site.university} · <span lang="ko">{site.university_ko}</span></span></span>
       </a>
       <nav class="nav" aria-label="Main">
         {site.nav.map((n) => <a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a>)}
@@ -48,7 +48,7 @@ const year = new Date().getFullYear();
     <div class="wrap">
       <div>
         <h3>{site.name}</h3>
-        <p>{site.fullName}<br />{site.units.join(' · ')}<br />{site.university}</p>
+        <p>{site.fullName}<br />{site.units.join(' · ')}, {site.university}<br /><span lang="ko">{site.university_ko} {site.units_ko.join(' · ')}</span></p>
         <p style="margin-top:8px">{site.address_ko}</p>
       </div>
       <div>
