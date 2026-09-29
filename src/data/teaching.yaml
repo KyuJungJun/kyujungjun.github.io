@@ -1,0 +1,42 @@
+# One entry per course. term_order: larger = more recent (e.g. 20262 = 2026 fall, 20261 = 2026 spring).
+- id: pl1-2026f
+  term: Fall 2026
+  term_order: 20262
+  title: Programming Languages I
+  title_ko: 프로그래밍언어1
+  level: Undergraduate (1st year)
+  unit: School of Smart Mobility and School of Mechanical Engineering
+  schedule: "Tue lecture (75 min); Thu lecture (75 min) + lab (75 min)"
+  description: Introductory programming in Python for first-year students. Taught in English.
+- id: am2-2026f
+  term: Fall 2026
+  term_order: 20262
+  title: Applied Mathematics II
+  level: Graduate
+  unit: School of Mechanical Engineering
+- id: se1-2026f
+  term: Fall 2026
+  term_order: 20262
+  title: Smart Energy Experiments I
+  level: Undergraduate
+  unit: School of Smart Mobility (energy track)
+- id: em2-2026s
+  term: Spring 2026
+  term_order: 20261
+  title: Engineering Mathematics II
+  title_ko: 공업수학 II
+  code: MOBI 204
+  level: Undergraduate
+  unit: School of Smart Mobility
+  schedule: "Tue/Thu, 10:30–12:00"
+  description: Continues from Engineering Mathematics I and covers vector differential and integral calculus, Fourier series and transforms, and core topics in linear algebra.
+- id: fes-2026s
+  term: Spring 2026
+  term_order: 20261
+  title: Fundamentals of Energy Systems
+  title_ko: 에너지 시스템의 이해
+  code: MOBI 108
+  level: Undergraduate
+  unit: School of Smart Mobility
+  schedule: "Tue/Thu, 12:00–13:30"
+  description: An introduction to energy conversion and storage systems, combining thermodynamics, electrochemistry, and heat transfer, with guest seminars and a team project analyzing a real-world energy technology.
