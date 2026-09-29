@@ -35,6 +35,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
@@ -109,7 +110,19 @@ section + section { margin-top: 64px; }
 .tag:hover { border-color: var(--ink); color: var(--ink); }
 
 /* Papers */
-.paper { display: flex; flex-direction: column; gap: 4px; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.paper { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px 28px; align-items: start; padding-block: 18px; border-bottom: 1px solid var(--line); }
+.paper.has-fig { grid-template-columns: minmax(0, 1fr) 240px; }
+.paper.small.has-fig { grid-template-columns: minmax(0, 1fr) 120px; gap: 12px 18px; }
+.paper .pmain { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.paper .pfig { display: flex; align-items: center; justify-content: center; height: 160px; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.paper.small .pfig { height: 90px; padding: 4px; }
+.paper .pfig img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.paper .pfig:hover { border-color: var(--amber); }
+@media (max-width: 640px) {
+  .paper.has-fig, .paper.small.has-fig { grid-template-columns: minmax(0, 1fr); }
+  .paper .pfig { height: auto; max-height: 220px; justify-content: flex-start; width: fit-content; max-width: 100%; }
+  .paper .pfig img { max-height: 200px; }
+}
 .paper:last-child { border-bottom: 0; }
 .paper .ptitle { font-weight: 700; font-size: 17px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
 .paper .pauth { color: var(--ink-2); font-size: 15px; }

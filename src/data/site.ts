@@ -11,7 +11,7 @@ export const site = {
   email: 'kyujung@korea.ac.kr',
   office: '정운오 IT 교양관 709호',
   address_ko: '서울특별시 성북구 안암로 145 고려대학교 정운오 IT 교양관 709호',
-  address_en: 'Room 709 (정운오 IT 교양관), Korea University, 145 Anam-ro, Seongbuk-gu, Seoul 02841, Korea',
+  address_en: 'Jung Woonoh IT & General Education Center #709, Korea University, 145 Anam-ro, Seongbuk-gu, Seoul, 02841, Republic of Korea',
   links: {
     scholar: 'https://scholar.google.com/citations?user=SmYXEicAAAAJ&hl=en',
     github: 'https://github.com/KyuJungJun',
@@ -25,10 +25,10 @@ export const site = {
     intro: 'MINDS Lab에서 머신러닝과 원자 단위 시뮬레이션으로 배터리 소재를 연구할 신입 대학원생(석사·박사), 학부연구생, 방문연구생, 박사후연구원을 모집합니다.',
     points: [
       'AI 기반 자율 소재 탐색, 머신러닝 원자간 퍼텐셜, 고체전해질의 이온 전도 메커니즘 등 연구 분야',
-      '매주 지도교수 1:1 미팅, 다수의 CPU·GPU 계산 클러스터, 해외 대학 연구실과의 공동연구',
-      '다른 대학·다른 학과, 고려대학교 다른 학과, 학연협동과정 학생 모두 지원 가능 (면담 상시 가능)',
+      '그룹 미팅 및 지도교수와의 1:1 연구 미팅, 다수의 CPU·GPU 계산 클러스터, 해외 대학 연구실과의 공동연구',
+      '기계공학, 신소재공학, 화학공학, 물리학, 화학, 에너지공학 등 다양한 전공 환영',
     ],
-    closing: '연구실에 관심 있는 학생은 메일로 연락 바랍니다.',
+    closing: '관심 있는 학생은 부담 없이 메일로 연락 주세요.',
     contact: '전규정 교수',
   },
   nav: [

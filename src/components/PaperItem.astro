@@ -1,12 +1,13 @@
 ---
 import type { Paper } from '../lib/papers';
 import { formatAuthor } from '../lib/papers';
-interface Props { paper: Paper; showBib?: boolean; }
-const { paper: p, showBib = true } = Astro.props;
+interface Props { paper: Paper; showBib?: boolean; small?: boolean; }
+const { paper: p, showBib = true, small = false } = Astro.props;
 const venueBits = [p.volume, p.number ? `(${p.number})` : '', p.pages].filter(Boolean).join(' ');
 const doiUrl = p.doi && !p.doi.toLowerCase().includes('arxiv') ? `https://doi.org/${p.doi}` : undefined;
 ---
-<article class="paper" data-year={p.year} data-selected={p.selected ? '1' : '0'} data-text={`${p.title} ${p.authors.map(formatAuthor).join(' ')} ${p.journal} ${p.year}`.toLowerCase()}>
+<article class:list={['paper', { 'has-fig': p.preview, small }]} data-year={p.year} data-selected={p.selected ? '1' : '0'} data-text={`${p.title} ${p.authors.map(formatAuthor).join(' ')} ${p.journal} ${p.year}`.toLowerCase()}>
+  <div class="pmain">
   <span class="ptitle">{p.title}</span>
   <span class="pauth">
     {p.authors.map((a, i) => (<>{a.isPI ? <b>{formatAuthor(a)}</b> : formatAuthor(a)}{(a.cofirst || a.cocorr) && <sup class="mk">{a.cofirst ? '*' : ''}{a.cocorr ? '†' : ''}</sup>}{i < p.authors.length - 1 ? ', ' : ''}</>))}
@@ -24,4 +25,10 @@ const doiUrl = p.doi && !p.doi.toLowerCase().includes('arxiv') ? `https://doi.or
     )}
     {p.selected && <span class="sel">Selected</span>}
   </div>
+  </div>
+  {p.preview && (
+    <a class="pfig" href={doiUrl ?? (p.arxiv ? `https://arxiv.org/abs/${p.arxiv}` : p.url)} tabindex="-1" aria-hidden="true">
+      <img src={`/img/papers/${p.preview}`} alt="" loading="lazy" decoding="async" />
+    </a>
+  )}
 </article>

@@ -5,6 +5,7 @@
 //   status = {under review} or journal = {Under review} -> listed under "Under review"
 //   cofirst = {1,2}         -> authors 1 and 2 marked * (equal contribution)
 //   cocorresponding = {2,3} -> authors 2 and 3 marked † (co-corresponding)
+//   preview = {name.jpg}    -> figure shown next to the paper (file in public/img/papers/)
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from '@retorquere/bibtex-parser';
@@ -21,6 +22,7 @@ export type Paper = {
   doi?: string;
   arxiv?: string;
   url?: string;
+  preview?: string;
   selected: boolean;
   underReview: boolean;
   bibtex: string;
@@ -96,6 +98,7 @@ export function getPapers(): Paper[] {
       doi,
       arxiv: f.arxiv || f.eprint || (doi?.toLowerCase().includes('arxiv.') ? doi.split('arxiv.').pop() : undefined),
       url: f.url,
+      preview: f.preview ? String(f.preview).trim() : undefined,
       selected: String(f.selected).toLowerCase() === 'true',
       underReview: status.includes('review') || /under review|in preparation|submitted/i.test(journal),
       bibtex: cleanBibtex(e.input),
