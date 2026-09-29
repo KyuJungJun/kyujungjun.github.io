@@ -155,3 +155,12 @@ section + section { margin-top: 64px; }
 .btn.primary:hover { opacity: .88; background: var(--ink); }
 .btn.amber { background: var(--amber); border-color: var(--amber); color: #111827; }
 .btn.amber:hover { opacity: .9; background: var(--amber); }
+
+/* Key terms in running text: bold with an orange highlighter band (use <b class="hl">) */
+b.hl, strong.hl {
+  font-weight: 750;
+  color: var(--ink);
+  background: linear-gradient(transparent 60%, rgba(245, 158, 11, .38) 60%, rgba(245, 158, 11, .38) 92%, transparent 92%);
+  padding: 0 1px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}

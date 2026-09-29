@@ -9,7 +9,9 @@ import { getPapers } from '../lib/papers';
 import { monthYear } from '../lib/format';
 import { site } from '../data/site';
 
-const intro = 'We use machine learning and atomistic simulation to find out how ions move in solids, polymers, and liquids, and use that understanding to design materials for batteries.';
+// Lab introduction. Words inside <b class="hl">...</b> are shown in bold with an orange highlight.
+const intro = 'MINDS Lab at Korea University works on <b class="hl">AI-driven materials design and discovery</b>. We combine <b>machine learning</b>, <b>atomistic simulation</b>, and <b>autonomous discovery loops</b> to understand how ions move in solids, polymers, and liquids, and to find new materials for <b class="hl">batteries</b>.';
+const intro_ko = '고려대학교 MINDS Lab은 <b>AI 기반 소재 설계 및 탐색</b>을 연구합니다. 머신러닝, 원자 단위 시뮬레이션, 자율 탐색을 결합해 고체·고분자·액체 내 이온 이동을 이해하고 새로운 <b>배터리 소재</b>를 찾습니다.';
 
 const areas = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
 const papers = getPapers().filter((p) => !p.underReview).slice(0, 5);
@@ -26,8 +28,9 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
       <div class="hero-text">
         <h1>MINDS Lab</h1>
         <p class="full">Materials Intelligence for<br />Design and Simulations</p>
-        <p class="lead">{intro}</p>
-        <p class="aff">{site.units.join(' · ')}<br />{site.university}<br /><span lang="ko">{site.university_ko} {site.units_ko.join(' · ')}</span></p>
+        <p class="lead" set:html={intro} />
+        <p class="lead-ko" lang="ko" set:html={intro_ko} />
+        <p class="aff">{site.units.join(' · ')}<br /><span lang="ko">{site.units_ko.join(' · ')}</span></p>
         <div class="hero-actions">
           <a class="btn primary" href="/research/">Research</a>
           <a class="btn" href="/publications/">Publications</a>
@@ -69,6 +72,7 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
 
     <section>
       <div class="sec-head"><h2>People</h2><a href="/people/">Members and alumni</a></div>
+      <p class="pi-line">Principal Investigator: <a href="/pi/"><b>KyuJung Jun</b> (전규정)</a>, Assistant Professor. Ph.D., UC Berkeley; postdoctoral researcher, MIT.</p>
       <div class="strip">
         {members.map((m) => (
           <a class="mini" href="/people/">
@@ -104,7 +108,10 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
   .hero-text { display: flex; flex-direction: column; gap: 18px; }
   .hero h1 { font-size: clamp(52px, 8.2vw, 100px); font-weight: 900; letter-spacing: -0.045em; line-height: .9; white-space: nowrap; }
   .full { font-size: clamp(22px, 2.6vw, 30px); font-weight: 750; line-height: 1.2; letter-spacing: -0.02em; }
-  .lead { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 40ch; }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--ink); max-width: 42ch; }
+  .lead-ko { font-size: 16px; line-height: 1.7; color: var(--ink-2); max-width: 46ch; }
+  .lead-ko :global(b) { color: var(--ink); }
+  .pi-line { font-size: 16px; color: var(--ink-2); margin: -4px 0 20px; }
   .aff { color: var(--ink); font-size: 15.5px; font-weight: 600; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
   @media (max-width: 880px) { .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 36px; } }
