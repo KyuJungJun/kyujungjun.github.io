@@ -14,6 +14,7 @@ const years = [...new Set(published.map((p) => p.year))].sort((a, b) => b - a);
     <header class="page-head">
       <h1>Publications</h1>
       <p>{published.length} papers and preprints. Full list on <a href={site.links.scholar}>Google Scholar</a>.</p>
+      <p class="legend"><sup>*</sup> equal contribution (co-first author) &nbsp;·&nbsp; <sup>†</sup> co-corresponding author</p>
       <div class="controls">
         <div class="seg" role="group" aria-label="Show">
           <button type="button" data-filter="all" aria-pressed="true">All</button>
@@ -45,6 +46,8 @@ const years = [...new Set(published.map((p) => p.year))].sort((a, b) => b - a);
   .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
   .search { display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; max-width: 420px; }
   .sl { font-size: 14px; font-weight: 700; }
+  .legend { font-size: 15px !important; color: var(--ink-3) !important; }
+  .legend sup { font-weight: 700; color: var(--ink); }
   .search input { font: inherit; font-size: 15px; padding: 8px 12px; border: 2px solid var(--line-2); border-radius: 6px; background: var(--bg); color: var(--ink); }
   .yr + .yr { margin-top: 36px; }
 </style>

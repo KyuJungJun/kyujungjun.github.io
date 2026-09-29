@@ -114,6 +114,7 @@ section + section { margin-top: 64px; }
 .paper .ptitle { font-weight: 700; font-size: 17px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
 .paper .pauth { color: var(--ink-2); font-size: 15px; }
 .paper .pauth b { color: var(--ink); font-weight: 800; }
+.paper .mk { font-size: .75em; font-weight: 700; color: var(--ink); margin-left: 1px; }
 .paper .pvenue { font-size: 15px; color: var(--ink-2); }
 .paper .pvenue i { color: var(--ink); font-weight: 600; }
 .paper .plinks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; align-items: center; }

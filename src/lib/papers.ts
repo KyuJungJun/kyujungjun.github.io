@@ -3,6 +3,8 @@
 //   selected = {true}      -> shown under "Selected" and on the home page
 //   arxiv = {2602.16636}   -> adds an arXiv link
 //   status = {under review} or journal = {Under review} -> listed under "Under review"
+//   cofirst = {1,2}         -> authors 1 and 2 marked * (equal contribution)
+//   cocorresponding = {2,3} -> authors 2 and 3 marked † (co-corresponding)
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from '@retorquere/bibtex-parser';
@@ -10,7 +12,7 @@ import { parse } from '@retorquere/bibtex-parser';
 export type Paper = {
   key: string;
   title: string;
-  authors: { first: string; last: string; isPI: boolean }[];
+  authors: { first: string; last: string; isPI: boolean; cofirst: boolean; cocorr: boolean }[];
   journal: string;
   year: number;
   volume?: string;
@@ -27,7 +29,7 @@ export type Paper = {
 // Fields that are for the website or a reference manager only; they are removed from the BibTeX shown to visitors.
 const HIDDEN_FIELDS = [
   'abstract', 'keywords', 'local-url', 'google_scholar_id', 'altmetric', 'dimensions', 'selected',
-  'preview', 'status', 'pmid', 'pmcid', 'issn', 'annotation', 'file',
+  'preview', 'status', 'pmid', 'pmcid', 'issn', 'annotation', 'file', 'cofirst', 'cocorresponding',
 ];
 
 const PI_LAST = 'Jun';
@@ -72,10 +74,12 @@ export function getPapers(): Paper[] {
   }
   const papers: Paper[] = lib.entries.map((e) => {
     const f = e.fields as Record<string, any>;
-    const authors = (f.author || []).map((a: any) => {
+    const idx = (v: any) => new Set(String(v || '').split(/[,\s]+/).filter(Boolean).map((x) => parseInt(x, 10)));
+    const cf = idx(f.cofirst), cc = idx(f.cocorresponding);
+    const authors = (f.author || []).map((a: any, i: number) => {
       const first = (a.firstName || '').trim();
       const last = (a.lastName || a.name || '').trim();
-      return { first, last, isPI: last === PI_LAST && PI_FIRST.test(first.replace(/\s/g, '')) };
+      return { first, last, isPI: last === PI_LAST && PI_FIRST.test(first.replace(/\s/g, '')), cofirst: cf.has(i + 1), cocorr: cc.has(i + 1) };
     });
     const journal = (f.journal || f.booktitle || '').trim();
     const status = String(f.status || '').toLowerCase();

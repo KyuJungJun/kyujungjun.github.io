@@ -9,7 +9,7 @@ const doiUrl = p.doi && !p.doi.toLowerCase().includes('arxiv') ? `https://doi.or
 <article class="paper" data-year={p.year} data-selected={p.selected ? '1' : '0'} data-text={`${p.title} ${p.authors.map(formatAuthor).join(' ')} ${p.journal} ${p.year}`.toLowerCase()}>
   <span class="ptitle">{p.title}</span>
   <span class="pauth">
-    {p.authors.map((a, i) => (<>{a.isPI ? <b>{formatAuthor(a)}</b> : formatAuthor(a)}{i < p.authors.length - 1 ? ', ' : ''}</>))}
+    {p.authors.map((a, i) => (<>{a.isPI ? <b>{formatAuthor(a)}</b> : formatAuthor(a)}{(a.cofirst || a.cocorr) && <sup class="mk">{a.cofirst ? '*' : ''}{a.cocorr ? '†' : ''}</sup>}{i < p.authors.length - 1 ? ', ' : ''}</>))}
   </span>
   <span class="pvenue"><i>{p.journal}</i>{venueBits && `, ${venueBits}`}{p.year ? ` (${p.year})` : ''}</span>
   <div class="plinks">

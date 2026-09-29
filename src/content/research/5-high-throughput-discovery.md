@@ -1,6 +1,6 @@
 ---
 title: High-throughput and machine-learning-guided materials discovery
-order: 4
+order: 5
 question: Which compositions are fast ion conductors and remain stable under operating conditions?
 methods:
   - First-principles calculations (DFT)
