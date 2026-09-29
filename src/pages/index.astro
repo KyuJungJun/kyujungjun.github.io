@@ -1,7 +1,7 @@
 ---
 // Front page. Text blocks are near the top of this file so they are easy to edit.
 import Base from '../layouts/Base.astro';
-import IonHop from '../components/IonHop.astro';
+import AtomGraph from '../components/AtomGraph.astro';
 import PaperItem from '../components/PaperItem.astro';
 import RecruitPopup from '../components/RecruitPopup.astro';
 import { getCollection, render } from 'astro:content';
@@ -37,7 +37,7 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
           <a class="btn amber" href="/recruiting/">Recruiting</a>
         </div>
       </div>
-      <IonHop height={440} />
+      <AtomGraph height={440} />
     </section>
 
     <section>
