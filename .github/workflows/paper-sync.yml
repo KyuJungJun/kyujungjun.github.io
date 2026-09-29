@@ -1,0 +1,42 @@
+# Weekly check for new papers. Opens (or updates) a pull request named "Paper check" when
+# something new is found: new BibTeX entries, preprints updated to their journal version,
+# and one news item per recently published paper. Review and merge the pull request.
+# Needs: Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".
+name: Paper check
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"   # Mondays 00:00 UTC (09:00 KST)
+  workflow_dispatch:
+    inputs:
+      since_days:
+        description: "Write news for papers published within this many days"
+        default: "180"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: sync
+        env:
+          SINCE_DAYS: ${{ github.event.inputs.since_days || '180' }}
+        run: python3 scripts/paper_sync.py
+      - if: steps.sync.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: paper-check
+          delete-branch: true
+          commit-message: "Paper check: new papers and news"
+          title: "Paper check: new papers and news"
+          body-path: pr-body.md
+          add-paths: |
+            src/data/papers.bib
+            src/content/news/*.md
