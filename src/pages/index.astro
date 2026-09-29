@@ -2,8 +2,8 @@
 // Front page. Text blocks are near the top of this file so they are easy to edit.
 import Base from '../layouts/Base.astro';
 import IonHop from '../components/IonHop.astro';
-import Figure from '../components/Figure.astro';
 import PaperItem from '../components/PaperItem.astro';
+import RecruitPopup from '../components/RecruitPopup.astro';
 import { getCollection, render } from 'astro:content';
 import { getPapers } from '../lib/papers';
 import { monthYear } from '../lib/format';
@@ -20,29 +20,28 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
   .sort((a, b) => roleOrder.indexOf(a.data.role) - roleOrder.indexOf(b.data.role) || a.data.order - b.data.order);
 ---
 <Base>
+  <RecruitPopup />
   <div class="wrap">
     <section class="hero">
       <div class="hero-text">
-        <span class="label">{site.fullName}</span>
         <h1>MINDS Lab</h1>
+        <p class="full">Materials Intelligence for<br />Design and Simulations</p>
         <p class="lead">{intro}</p>
-        <p class="aff">{site.units.join(' · ')}, {site.university}</p>
+        <p class="aff">{site.units.join(' · ')}<br />{site.university}</p>
         <div class="hero-actions">
           <a class="btn primary" href="/research/">Research</a>
           <a class="btn" href="/publications/">Publications</a>
-          <a class="btn" href="/join/">Join the lab</a>
+          <a class="btn amber" href="/recruiting/">Recruiting</a>
         </div>
       </div>
-      <IonHop height={380} />
+      <IonHop height={440} />
     </section>
 
     <section>
-      <div class="sec-head"><h2>Research areas</h2><a href="/research/">All research →</a></div>
+      <div class="sec-head"><h2>Research</h2><a href="/research/">All research</a></div>
       <div class="areas">
-        {areas.map((a, i) => (
-          <a class="area panel" href={`/research/#${a.id}`}>
-            <Figure name={a.data.figure} image={a.data.image} alt={a.data.title} />
-            <span class="label">{String(i + 1).padStart(2, '0')}</span>
+        {areas.map((a) => (
+          <a class="area" href={`/research/#${a.id}`}>
             <h3>{a.data.title}</h3>
             <p>{a.data.question}</p>
           </a>
@@ -52,11 +51,11 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
 
     <section class="two-col">
       <div>
-        <div class="sec-head"><h2>Recent publications</h2><a href="/publications/">All →</a></div>
+        <div class="sec-head"><h2>Recent publications</h2><a href="/publications/">All publications</a></div>
         <div>{papers.map((p) => <PaperItem paper={p} showBib={false} />)}</div>
       </div>
       <div>
-        <div class="sec-head"><h2>News</h2><a href="/news/">All →</a></div>
+        <div class="sec-head"><h2>News</h2><a href="/news/">All news</a></div>
         <div class="news-list">
           {newsBodies.map(({ n, C }) => (
             <div class="news-item compact">
@@ -69,7 +68,7 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
     </section>
 
     <section>
-      <div class="sec-head"><h2>People</h2><a href="/people/">All members and alumni →</a></div>
+      <div class="sec-head"><h2>People</h2><a href="/people/">Members and alumni</a></div>
       <div class="strip">
         {members.map((m) => (
           <a class="mini" href="/people/">
@@ -80,55 +79,60 @@ const members = (await getCollection('people', (p) => p.data.role !== 'alumni'))
         ))}
       </div>
     </section>
+  </div>
 
-    <section class="recruit panel">
+  <section class="recruit">
+    <div class="wrap recruit-in">
       <div>
-        <h2>Open positions</h2>
+        <h2>Recruiting</h2>
         <p>We are recruiting M.S. and Ph.D. students, undergraduate researchers, and postdocs. Students from mechanical engineering, materials science, chemical engineering, physics, chemistry, energy engineering, and related fields are welcome.</p>
       </div>
       <div lang="ko">
         <h2>연구실 모집</h2>
-        <p>석·박사과정 대학원생, 학부 연구 인턴, 박사후연구원을 모집합니다. 기계공학, 신소재공학, 화학공학, 물리학, 화학, 에너지공학 등 다양한 배경의 학생을 환영합니다.</p>
+        <p>석·박사과정 대학원생, 학부연구생, 박사후연구원을 모집합니다. 기계공학, 신소재공학, 화학공학, 물리학, 화학, 에너지공학 등 다양한 배경의 학생을 환영합니다.</p>
       </div>
       <div class="recruit-actions">
-        <a class="btn primary" href="/join/">Details / 자세히 보기</a>
-        <span class="label">Contact: {site.email}</span>
+        <a class="btn amber" href="/recruiting/">Details / 자세히 보기</a>
+        <a class="mail" href={`mailto:${site.email}`}>{site.email}</a>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </Base>
 
 <style>
-  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 40px; align-items: center; padding-block: 52px 8px; }
-  .hero-text { display: flex; flex-direction: column; gap: 14px; }
-  .hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
-  .lead { font-size: 19px; line-height: 1.6; color: var(--ink); max-width: 38ch; }
-  .aff { color: var(--ink-2); font-size: 15px; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; align-items: center; padding-block: 64px 16px; }
+  .hero-text { display: flex; flex-direction: column; gap: 18px; }
+  .hero h1 { font-size: clamp(52px, 8.2vw, 100px); font-weight: 900; letter-spacing: -0.045em; line-height: .9; white-space: nowrap; }
+  .full { font-size: clamp(22px, 2.6vw, 30px); font-weight: 750; line-height: 1.2; letter-spacing: -0.02em; }
+  .lead { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 40ch; }
+  .aff { color: var(--ink); font-size: 15.5px; font-weight: 600; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 32px; } }
+  @media (max-width: 880px) { .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 36px; } }
 
-  .areas { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-  .area { display: flex; flex-direction: column; gap: 8px; padding: 12px 12px 16px; text-decoration: none; color: var(--ink); transition: border-color .15s; }
-  .area:hover { border-color: var(--amber); }
-  .area h3 { font-size: 16px; font-weight: 700; }
-  .area p { font-size: 14px; color: var(--ink-2); line-height: 1.55; }
-  .area .label { margin-top: 4px; }
+  .areas { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 32px 28px; }
+  .area { display: flex; flex-direction: column; gap: 10px; padding-top: 14px; border-top: 4px solid var(--amber); text-decoration: none; color: var(--ink); }
+  .area h3 { font-size: 21px; font-weight: 800; line-height: 1.2; }
+  .area p { font-size: 16px; color: var(--ink-2); line-height: 1.5; }
+  .area:hover h3 { text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 
-  .two-col { display: grid; grid-template-columns: 1.35fr 1fr; gap: 40px; }
-  @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; } }
-  .news-item.compact { grid-template-columns: 80px 1fr; padding-block: 12px; }
-  .news-item.compact h3 { font-size: 15px; font-weight: 600; }
-  .news-item.compact .prose { font-size: 15px; }
+  .two-col { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; }
+  @media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
+  .news-item.compact { grid-template-columns: 84px 1fr; padding-block: 14px; }
+  .news-item.compact h3 { font-size: 16px; font-weight: 700; }
+  .news-item.compact .prose { font-size: 15.5px; }
 
-  .strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
-  .mini { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--ink); }
-  .mini img, .mini .ph { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: 8px; background: var(--line); }
-  .mname { font-weight: 700; font-size: 15px; margin-top: 4px; }
-  .mrole { font-size: 13px; color: var(--ink-2); }
+  .strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; }
+  .mini { display: flex; flex-direction: column; gap: 3px; text-decoration: none; color: var(--ink); }
+  .mini img, .mini .ph { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: var(--radius); background: var(--soft); }
+  .mname { font-weight: 800; font-size: 17px; margin-top: 8px; }
+  .mrole { font-size: 14px; color: var(--ink-2); }
 
-  .recruit { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; padding: 28px; border-left: 4px solid var(--amber); }
-  .recruit h2 { font-size: 20px; margin-bottom: 8px; }
-  .recruit p { color: var(--ink-2); }
-  .recruit-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
-  @media (max-width: 720px) { .recruit { grid-template-columns: 1fr; padding: 20px; } }
+  .recruit { background: var(--ink); color: #fff; margin-top: 80px; margin-bottom: -88px; padding-block: 56px; }
+  @media (prefers-color-scheme: dark) { .recruit { background: #1b2430; } }
+  .recruit-in { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 56px; }
+  .recruit h2 { font-size: clamp(28px, 3.4vw, 40px); font-weight: 850; margin-bottom: 12px; color: #fff; }
+  .recruit p { color: #d1d5db; font-size: 17px; }
+  .recruit-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+  .recruit .mail { color: #fff; font-weight: 600; }
+  @media (max-width: 760px) { .recruit-in { grid-template-columns: 1fr; } }
 </style>

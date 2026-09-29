@@ -2,7 +2,6 @@
 title: Machine-learning interatomic potentials and accelerated simulation
 order: 5
 question: How can simulations keep first-principles accuracy while reaching nanosecond time scales and nanometer length scales?
-figure: network
 methods:
   - Universal and fine-tuned machine-learning interatomic potentials
   - Generative models for accelerated dynamics

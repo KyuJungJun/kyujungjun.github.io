@@ -1,0 +1,73 @@
+---
+// Recruiting popup on the front page. Text lives in src/data/site.ts (popup).
+// "닫기" hides it for the rest of the visit; "24시간 동안 보지 않기" hides it for 24 hours.
+import { site } from '../data/site';
+const p = site.popup;
+---
+{p.enabled && (
+  <div class="rp-backdrop" id="recruit-popup" hidden>
+    <div class="rp" role="dialog" aria-modal="true" aria-labelledby="rp-title" lang="ko">
+      <button class="rp-x" type="button" data-rp-close aria-label="닫기">×</button>
+      <h2 id="rp-title">{p.title}</h2>
+      <p class="rp-intro">{p.intro}</p>
+      <ul>{p.points.map((t) => <li>{t}</li>)}</ul>
+      <p class="rp-closing">{p.closing}</p>
+      <p class="rp-contact"><b>{p.contact}</b> · <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <a class="rp-more" href="/recruiting/">모집 안내 자세히 보기 / Details in English</a>
+      <div class="rp-actions">
+        <button type="button" class="rp-btn" data-rp-day>24시간 동안 보지 않기</button>
+        <button type="button" class="rp-btn dark" data-rp-close>닫기</button>
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  .rp-backdrop { position: fixed; inset: 0; z-index: 50; background: rgba(17, 24, 39, .55); display: grid; place-items: center; padding: 16px; }
+  .rp-backdrop[hidden] { display: none; }
+  .rp { position: relative; width: min(560px, 100%); max-height: calc(100vh - 32px); overflow-y: auto; background: var(--bg); color: var(--ink); border-radius: 8px; border-top: 6px solid var(--amber); padding: 30px 30px 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.3); }
+  .rp h2 { font-size: 26px; font-weight: 850; letter-spacing: -0.02em; padding-right: 28px; }
+  .rp-intro { color: var(--ink-2); font-size: 16px; }
+  .rp ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .rp li { position: relative; padding: 10px 0 10px 18px; border-bottom: 1px dashed var(--line-2); font-size: 15.5px; color: var(--ink-2); }
+  .rp li:first-child { border-top: 1px dashed var(--line-2); }
+  .rp li::before { content: ""; position: absolute; left: 2px; top: 19px; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+  .rp-closing { font-size: 15.5px; color: var(--ink-2); }
+  .rp-contact { font-size: 16px; }
+  .rp-contact a { font-weight: 700; }
+  .rp-more { font-size: 14.5px; font-weight: 600; }
+  .rp-x { position: absolute; top: 14px; right: 16px; border: 0; background: none; font-size: 28px; line-height: 1; color: var(--ink-3); cursor: pointer; padding: 4px; }
+  .rp-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+  .rp-btn { font: inherit; font-size: 15px; font-weight: 600; padding: 11px 18px; border-radius: 6px; border: 1px solid var(--line-2); background: var(--bg); color: var(--ink-2); cursor: pointer; }
+  .rp-btn.dark { background: var(--ink); border-color: var(--ink); color: var(--bg); font-weight: 700; }
+  @media (max-width: 480px) { .rp { padding: 26px 20px 20px; } .rp h2 { font-size: 22px; } }
+</style>
+
+<script>
+  const KEY = 'minds-recruit-popup-hide-until';
+  const el = document.getElementById('recruit-popup');
+  if (el) {
+    let show = true;
+    try {
+      const until = Number(localStorage.getItem(KEY) || 0);
+      if (until > Date.now() || sessionStorage.getItem(KEY) === '1') show = false;
+    } catch { /* storage blocked: show once per page load */ }
+    const close = (mode?: 'day') => {
+      el.hidden = true;
+      try {
+        if (mode === 'day') localStorage.setItem(KEY, String(Date.now() + 24 * 60 * 60 * 1000));
+        sessionStorage.setItem(KEY, '1');
+      } catch {}
+      document.removeEventListener('keydown', onKey);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
+    if (show) {
+      el.hidden = false;
+      (el.querySelector('.rp-btn.dark') as HTMLElement | null)?.focus();
+      document.addEventListener('keydown', onKey);
+    }
+    el.querySelectorAll('[data-rp-close]').forEach((b) => b.addEventListener('click', () => close()));
+    el.querySelector('[data-rp-day]')?.addEventListener('click', () => close('day'));
+    el.addEventListener('click', (e) => { if (e.target === el) close(); });
+  }
+</script>

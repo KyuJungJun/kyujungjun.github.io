@@ -2,7 +2,6 @@
 title: AI-driven autonomous materials discovery for batteries
 order: 1
 question: How can machine-learning models, simulations, and experiments be connected so that each round chooses the next material to make and test?
-figure: loop
 methods:
   - Bayesian optimization and active learning
   - High-throughput simulation as a surrogate for experiments

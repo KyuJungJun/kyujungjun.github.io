@@ -14,12 +14,25 @@ export const site = {
     linkedin: 'https://www.linkedin.com/in/kyujung-jun',
     orcid: 'https://orcid.org/0000-0003-1974-028X',
   },
+  // Recruiting popup shown on the front page. Set enabled: false to turn it off.
+  popup: {
+    enabled: true,
+    title: '대학원생 · 학부연구생 모집',
+    intro: 'MINDS Lab에서 머신러닝과 원자 단위 시뮬레이션으로 배터리 소재를 연구할 신입 대학원생(석사·박사)과 학부연구생을 모집합니다.',
+    points: [
+      'AI 기반 자율 소재 탐색, 고체전해질의 이온 전도 메커니즘, 머신러닝 원자간 퍼텐셜 등 연구 분야',
+      '매주 지도교수 1:1 미팅, 다수의 CPU·GPU 계산 클러스터, MIT·UC Berkeley와의 공동연구',
+      '기계공학부: 학부연구생·석사·박사 / 스마트모빌리티학부: 학부연구생 (면담 상시 가능)',
+    ],
+    closing: '연구실에 관심 있는 학생은 메일로 연락 바랍니다.',
+    contact: 'KyuJung Jun 교수',
+  },
   nav: [
     { href: '/research/', label: 'Research' },
     { href: '/people/', label: 'People' },
     { href: '/publications/', label: 'Publications' },
     { href: '/news/', label: 'News' },
     { href: '/teaching/', label: 'Teaching' },
-    { href: '/join/', label: 'Join' },
+    { href: '/recruiting/', label: 'Recruiting' },
   ],
 };

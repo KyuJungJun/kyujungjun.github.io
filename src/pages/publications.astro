@@ -12,7 +12,6 @@ const years = [...new Set(published.map((p) => p.year))].sort((a, b) => b - a);
 <Base title="Publications" description="Publications of MINDS Lab and KyuJung Jun.">
   <div class="wrap">
     <header class="page-head">
-      <span class="label">Publications</span>
       <h1>Publications</h1>
       <p>{published.length} papers and preprints. Full list on <a href={site.links.scholar}>Google Scholar</a>.</p>
       <div class="controls">
@@ -20,7 +19,7 @@ const years = [...new Set(published.map((p) => p.year))].sort((a, b) => b - a);
           <button type="button" data-filter="all" aria-pressed="true">All</button>
           <button type="button" data-filter="selected" aria-pressed="false">Selected</button>
         </div>
-        <label class="search"><span class="label">Search</span><input id="q" type="search" placeholder="title, author, journal, year" /></label>
+        <label class="search"><span class="sl">Search</span><input id="q" type="search" placeholder="Title, author, journal, year" /></label>
       </div>
     </header>
 
@@ -41,11 +40,12 @@ const years = [...new Set(published.map((p) => p.year))].sort((a, b) => b - a);
 </Base>
 <style>
   .controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin-top: 8px; }
-  .seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 8px; overflow: hidden; }
-  .seg button { font: inherit; font-size: 14px; font-weight: 600; padding: 7px 14px; border: 0; background: var(--panel); color: var(--ink-2); cursor: pointer; }
+  .seg { display: inline-flex; border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; }
+  .seg button { font: inherit; font-size: 15px; font-weight: 700; padding: 8px 16px; border: 0; background: var(--bg); color: var(--ink); cursor: pointer; }
   .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
   .search { display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; max-width: 420px; }
-  .search input { font: inherit; font-size: 15px; padding: 8px 12px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--panel); color: var(--ink); }
+  .sl { font-size: 14px; font-weight: 700; }
+  .search input { font: inherit; font-size: 15px; padding: 8px 12px; border: 2px solid var(--line-2); border-radius: 6px; background: var(--bg); color: var(--ink); }
   .yr + .yr { margin-top: 36px; }
 </style>
 <script>

@@ -2,7 +2,6 @@
 title: Ion transport mechanisms in superionic conductors
 order: 2
 question: Why do some crystal structures conduct Li and Na ions orders of magnitude faster than others?
-figure: lattice
 methods:
   - Ab initio and machine-learning molecular dynamics
   - Algorithms that detect correlated ion hops and anion-group motion

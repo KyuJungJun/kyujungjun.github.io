@@ -49,7 +49,6 @@ const research = defineCollection({
     methods: z.array(z.string()).default([]),
     papers: z.array(z.string()).default([]),   // DOIs or BibTeX keys from papers.bib
     image: z.string().optional(),              // e.g. /img/research/area1.png ; if absent a schematic is drawn
-    figure: z.string().optional(),             // name of the built-in schematic
   }),
 });
 

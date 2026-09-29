@@ -2,7 +2,6 @@
 title: High-throughput and machine-learning-guided materials discovery
 order: 4
 question: Which compositions are fast ion conductors and remain stable under operating conditions?
-figure: funnel
 methods:
   - First-principles calculations (DFT)
   - Machine-learning screening of large candidate sets

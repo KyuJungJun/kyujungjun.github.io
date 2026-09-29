@@ -11,7 +11,8 @@ The site is built with [Astro](https://astro.build). Routine updates are edits t
 | News | `src/content/news/<date>-<topic>.md` |
 | Research areas | `src/content/research/<n>-<topic>.md`, optional figures in `public/img/research/` |
 | Teaching | `src/data/teaching.yaml` |
-| Join / Open positions | `src/pages/join.astro` (English and Korean text) |
+| Recruiting page | `src/pages/recruiting.astro` (English and Korean text) |
+| Recruiting popup (front page) | `popup` in `src/data/site.ts`; `enabled: false` turns it off |
 | PI page | `src/pages/pi.astro` |
 | Front page text | top of `src/pages/index.astro` |
 | Site name, email, address, links, menu | `src/data/site.ts` |
@@ -35,7 +36,7 @@ Text in Markdown.
 
 **Paper.** Add a BibTeX entry to `src/data/papers.bib`. Optional fields: `selected = {true}` (Selected list and front page), `arxiv = {2602.16636}`, `status = {under review}`. Fields such as `abstract`, `local-url`, `google_scholar_id` are removed from the BibTeX that visitors see.
 
-**Research figure.** Put an image in `public/img/research/` and add `image: /img/research/<file>` to the area's Markdown file. It replaces the drawn schematic.
+**Research figure.** Put an image in `public/img/research/` and add `image: /img/research/<file>` to the area's Markdown file. It is shown next to the text on the Research page.
 
 ## Automatic paper check
 

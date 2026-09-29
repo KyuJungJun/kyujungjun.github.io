@@ -4,3 +4,4 @@ dist/
 .DS_Store
 pr-body.md
 __pycache__/
+Claude outputs/

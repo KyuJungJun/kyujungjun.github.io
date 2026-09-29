@@ -2,7 +2,6 @@
 title: Mechanistic decomposition of transport in liquid, polymer, and amorphous electrolytes
 order: 3
 question: Which microscopic events carry the charge in an electrolyte, and how much does each contribute to the measured conductivity?
-figure: decomposition
 methods:
   - Event detection in molecular dynamics trajectories
   - Decomposition of Onsager transport coefficients into additive contributions

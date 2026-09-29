@@ -3,17 +3,16 @@ import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
 const updated = '2026-09-29';
 ---
-<Base title="Join" description="Open positions at MINDS Lab, Korea University: M.S./Ph.D. students, undergraduate researchers, postdocs.">
+<Base title="Recruiting" description="Recruiting at MINDS Lab, Korea University: M.S./Ph.D. students, undergraduate researchers, postdocs.">
   <div class="wrap">
     <header class="page-head">
-      <span class="label">Join · 모집</span>
-      <h1>Open positions</h1>
+      <h1>Recruiting</h1>
       <p>We are recruiting M.S. and Ph.D. students, undergraduate researchers, and postdoctoral researchers. Last updated {updated}.</p>
       <nav class="lang"><a href="#en">English</a><a href="#ko">한국어</a></nav>
     </header>
 
     <div class="cols">
-      <article id="en" class="panel doc">
+      <article id="en" class="doc">
         <h2>Who can apply</h2>
         <ul>
           <li><b>School of Mechanical Engineering students:</b> undergraduate research internships, M.S., and Ph.D. positions.</li>
@@ -40,7 +39,7 @@ const updated = '2026-09-29';
         <p>Email <a href={`mailto:${site.email}`}>{site.email}</a> with your CV and a short note on your research interests. See <a href="/research/">Research</a> for current topics.</p>
       </article>
 
-      <article id="ko" class="panel doc" lang="ko">
+      <article id="ko" class="doc" lang="ko">
         <h2>지원 대상</h2>
         <ul>
           <li><b>기계공학부 학생:</b> 학부 연구 인턴, 석사과정, 박사과정 지원 가능합니다.</li>
@@ -70,10 +69,10 @@ const updated = '2026-09-29';
   </div>
 </Base>
 <style>
-  .lang { display: flex; gap: 12px; font-size: 14px; }
+  .lang { display: flex; gap: 16px; font-size: 16px; font-weight: 700; }
   .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
-  .doc { padding: 24px 28px; display: flex; flex-direction: column; gap: 10px; scroll-margin-top: 84px; }
-  .doc h2 { font-size: 18px; margin-top: 12px; }
+  .doc { padding: 28px 30px; display: flex; flex-direction: column; gap: 10px; scroll-margin-top: 84px; background: var(--soft); border-radius: 8px; border-top: 5px solid var(--amber); }
+  .doc h2 { font-size: 21px; font-weight: 800; margin-top: 14px; }
   .doc h2:first-child { margin-top: 0; }
   .doc ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: var(--ink-2); }
   .doc b { color: var(--ink); }
