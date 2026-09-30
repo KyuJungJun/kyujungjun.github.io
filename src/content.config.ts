@@ -53,6 +53,23 @@ const research = defineCollection({
   }),
 });
 
+// Patents: src/data/patents.yaml
+const patents = defineCollection({
+  loader: file('src/data/patents.yaml'),
+  schema: z.object({
+    title: z.string(),
+    inventors: z.array(z.string()),
+    status: z.enum(['granted', 'pending']),
+    number: z.string(),             // publication or patent number, e.g. US 11,876,225 B2
+    application: z.string(),        // U.S. application serial number
+    filed: z.coerce.date(),
+    published: z.coerce.date().optional(),
+    granted: z.coerce.date().optional(),
+    note: z.string().optional(),
+    url: z.string().optional(),
+  }),
+});
+
 // Teaching: src/data/teaching.yaml
 const teaching = defineCollection({
   loader: file('src/data/teaching.yaml'),
@@ -69,4 +86,4 @@ const teaching = defineCollection({
   }),
 });
 
-export const collections = { people, news, research, teaching };
+export const collections = { people, news, research, teaching, patents };

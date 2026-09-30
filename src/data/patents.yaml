@@ -1,0 +1,50 @@
+# Patents and published patent applications. Newest first within each status.
+# status: granted | pending
+# Checked against Google Patents / Justia on 2026-09-30.
+- id: us20260217555
+  title: Methods of making sacrificial cathode additives for lithium-ion batteries and a high fluorine disordered rock-salt cathode material
+  inventors: [Haegyeom Kim, Venkata Sai Avvaru, KyuJung Jun]
+  status: pending
+  number: US 2026/0217555 A1
+  application: 19/457,356
+  filed: 2026-01-23
+  published: 2026-07-30
+  note: Claims priority to U.S. Provisional Application 63/749,211 (filed Jan 24, 2025).
+  url: https://patents.justia.com/patent/20260217555
+- id: us20240356028
+  title: Solid-state lithium-ion conductor and methods of manufacture thereof
+  inventors: [KyuJung Jun, Gerbrand Ceder, Yingzhi Sun, Yan Wang, Lincoln Miara, Yan Zeng, Yihan Xiao]
+  status: pending
+  number: US 2024/0356028 A1
+  application: 18/760,755
+  filed: 2024-07-01
+  published: 2024-10-24
+  note: Continuation of U.S. Application 17/321,714 (US 12,062,790 B2).
+  url: https://patents.google.com/patent/US20240356028A1
+- id: us12126022
+  title: Solid-state lithium-ion conductor and methods of manufacture thereof
+  inventors: [Yihan Xiao, Gerbrand Ceder, KyuJung Jun, Yingzhi Sun, Yan Wang, Lincoln Miara]
+  status: granted
+  number: US 12,126,022 B2
+  application: 17/323,074
+  filed: 2021-05-18
+  granted: 2024-10-22
+  url: https://patents.google.com/patent/US12126022B2
+- id: us12062790
+  title: Solid-state lithium-ion conductor and methods of manufacture thereof
+  inventors: [KyuJung Jun, Gerbrand Ceder, Yingzhi Sun, Yan Wang, Lincoln Miara, Yan Zeng, Yihan Xiao]
+  status: granted
+  number: US 12,062,790 B2
+  application: 17/321,714
+  filed: 2021-05-17
+  granted: 2024-08-13
+  url: https://patents.google.com/patent/US12062790B2
+- id: us11876225
+  title: Solid-state lithium-ion conductor and methods of manufacture thereof
+  inventors: [KyuJung Jun, Gerbrand Ceder, Yan Wang, Lincoln Miara, Yan Zeng, Yihan Xiao]
+  status: granted
+  number: US 11,876,225 B2
+  application: 17/322,325
+  filed: 2021-05-17
+  granted: 2024-01-16
+  url: https://patents.google.com/patent/US11876225B2

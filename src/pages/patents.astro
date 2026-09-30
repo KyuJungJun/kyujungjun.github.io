@@ -1,0 +1,50 @@
+---
+// Patents page. Entries are in src/data/patents.yaml.
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { fullDate } from '../lib/format';
+
+const all = (await getCollection('patents')).map((p) => p.data);
+const byDate = (a: typeof all[number], b: typeof all[number]) =>
+  +(b.granted ?? b.published ?? b.filed) - +(a.granted ?? a.published ?? a.filed);
+const granted = all.filter((p) => p.status === 'granted').sort(byDate);
+const pending = all.filter((p) => p.status === 'pending').sort(byDate);
+const groups = [
+  { title: 'Granted patents', items: granted },
+  { title: 'Published applications', items: pending },
+];
+const isPI = (n: string) => /^KyuJung Jun$/i.test(n);
+---
+<Base title="Patents" description="Patents and patent applications of KyuJung Jun, MINDS Lab.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Patents</h1>
+      <p>{granted.length} granted U.S. patents and {pending.length} published U.S. patent applications.</p>
+    </header>
+
+    {groups.filter((g) => g.items.length).map((g) => (
+      <section>
+        <div class="sec-head"><h2>{g.title}</h2></div>
+        {g.items.map((p) => (
+          <article class="paper patent">
+            <div class="pmain">
+              <span class="ptitle">{p.title}</span>
+              <span class="pauth">{p.inventors.map((n, i) => (<>{isPI(n) ? <b>{n}</b> : n}{i < p.inventors.length - 1 ? ', ' : ''}</>))}</span>
+              <span class="pvenue">
+                <i>{p.number}</i>
+                {p.granted ? `, granted ${fullDate(p.granted)}` : p.published ? `, published ${fullDate(p.published)}` : ''}
+              </span>
+              <span class="pmeta">U.S. Application {p.application}, filed {fullDate(p.filed)}{p.note ? `. ${p.note}` : ''}</span>
+              {p.url && (
+                <div class="plinks"><a class="tag" href={p.url}>{p.url.includes('google') ? 'Google Patents' : 'Patent record'}</a></div>
+              )}
+            </div>
+          </article>
+        ))}
+      </section>
+    ))}
+  </div>
+</Base>
+<style>
+  .pmeta { font-size: 14px; color: var(--ink-3); }
+</style>

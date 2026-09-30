@@ -35,6 +35,7 @@ export const site = {
     { href: '/research/', label: 'Research' },
     { href: '/people/', label: 'People' },
     { href: '/publications/', label: 'Publications' },
+    { href: '/patents/', label: 'Patents' },
     { href: '/news/', label: 'News' },
     { href: '/teaching/', label: 'Teaching' },
     { href: '/recruiting/', label: 'Recruiting' },
