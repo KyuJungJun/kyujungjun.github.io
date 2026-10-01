@@ -6,6 +6,7 @@ methods:
   - Bayesian optimization and active learning
   - High-throughput simulation as a surrogate for experiments
   - Closed-loop coupling with automated synthesis and testing
+image: /img/research/autonomous-discovery.svg
 papers:
   - 10.1016/j.matt.2026.102922
   - 10.1016/j.cpblue.2026.100012

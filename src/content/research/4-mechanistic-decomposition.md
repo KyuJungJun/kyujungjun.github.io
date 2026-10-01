@@ -6,6 +6,7 @@ methods:
   - Event detection in molecular dynamics trajectories
   - Decomposition of Onsager transport coefficients into additive contributions
   - Large-scale classical and machine-learning molecular dynamics
+image: /img/research/mechanistic-decomposition.svg
 papers:
   - 10.48550/arxiv.2602.16636
   - 10.1021/acs.jpclett.5c02680

@@ -6,6 +6,7 @@ methods:
   - Ab initio and machine-learning molecular dynamics
   - Algorithms that detect correlated ion hops and anion-group motion
   - Structure–property analysis across material families
+image: /img/research/superionic-mechanisms.svg
 papers:
   - 10.1038/s41563-022-01222-4
   - 10.1073/pnas.2316493121

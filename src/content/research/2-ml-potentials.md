@@ -6,6 +6,7 @@ methods:
   - Universal and fine-tuned machine-learning interatomic potentials
   - Generative models for accelerated dynamics
   - Free-energy methods
+image: /img/research/ml-potentials.svg
 papers:
   - 10.1038/s42256-023-00716-3
   - 10.1038/s42256-025-01125-4

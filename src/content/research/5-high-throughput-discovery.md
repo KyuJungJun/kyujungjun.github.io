@@ -6,6 +6,7 @@ methods:
   - First-principles calculations (DFT)
   - Machine-learning screening of large candidate sets
   - Stability analysis (phase diagrams, electrochemical windows)
+image: /img/research/high-throughput-discovery.svg
 papers:
   - Jun2024Nitride
   - 10.1002/aenm.202403946
