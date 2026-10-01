@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 510" width="600" height="510" role="img" aria-label="Decomposing ion transport into mechanisms. Event detection splits each ion trajectory into time windows labeled by mechanism, and the conductivity is decomposed into additive contributions from each mechanism" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<title>Decomposing ion transport into mechanisms</title>
+<rect width="600" height="510" fill="#ffffff"/>
+<text x="30" y="52" font-size="26" font-weight="800" fill="#111827" letter-spacing="-0.5">Decomposing ion transport into mechanisms</text>
+<rect x="30" y="66" width="44" height="4" fill="#F59E0B"/>
+<g transform="translate(0,80)">
+
+<defs>
+<marker id="pai" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111827"/></marker>
+<marker id="paa" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#F59E0B"/></marker>
+<marker id="pag" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9ca3af"/></marker>
+</defs>
+<rect width="600" height="420" fill="#ffffff"/>
+<text x="100" y="36" font-size="15" font-weight="700" fill="#111827" text-anchor="middle" >MD trajectory</text>
+<text x="318" y="36" font-size="15" font-weight="700" fill="#111827" text-anchor="middle" >Event detection</text>
+<text x="520" y="36" font-size="15" font-weight="700" fill="#111827" text-anchor="middle" >Conductivity</text>
+<rect x="20" y="48" width="160" height="170" rx="8" fill="#f3f4f6" stroke="none" stroke-width="1.5" opacity="1"/>
+<circle cx="100" cy="128" r="40" fill="none" stroke="#4b5563" stroke-width="1.5" opacity="1"/>
+<circle cx="100" cy="128" r="40" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-dasharray="4 4"/>
+<circle cx="137.58770483143633" cy="141.68080573302674" r="7" fill="#111827" stroke="none" stroke-width="0" opacity="1"/>
+<circle cx="69.35822227524088" cy="153.7115043874616" r="7" fill="#111827" stroke="none" stroke-width="0" opacity="1"/>
+<circle cx="86.31919426697326" cy="90.41229516856366" r="7" fill="#111827" stroke="none" stroke-width="0" opacity="1"/>
+<circle cx="37.98028702813004" cy="105.42667054050587" r="6" fill="#9ca3af" stroke="none" stroke-width="0" opacity="1"/>
+<circle cx="32.342131303414604" cy="152.62545031944816" r="6" fill="#9ca3af" stroke="none" stroke-width="0" opacity="1"/>
+<circle cx="88.53922027398261" cy="192.99731169880573" r="6" fill="#9ca3af" stroke="none" stroke-width="0" opacity="1"/>
+<path d="M102.2,132.4 L105.3,136.0 L104.3,135.6 L91.5,127.4 L108.0,130.7 L107.2,121.0 L99.4,123.4 L100.8,129.3 L91.2,122.9 L96.0,135.5 L104.8,121.9 L105.3,121.5 L102.1,121.3 L91.0,134.7 L94.8,122.9 L108.7,134.7 L96.2,136.3 L100.7,131.2 L104.2,125.1 L113.1,119.8 L120.4,110.3 L123.2,104.0 L127.9,97.9 L134.8,95.6 L139.0,90.6 L147.0,82.9 L156.5,81.7 L149.4,81.7 L154.9,75.8 L158.7,75.3 L155.5,86.8 L145.3,86.0 L150.1,83.1 L145.1,75.7 L147.5,88.4 L147.8,85.6" stroke="#F59E0B" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+<circle cx="152" cy="82" r="6" fill="#F59E0B" stroke="none" stroke-width="0" opacity="0.5"/>
+<circle cx="100" cy="128" r="8" fill="#F59E0B" stroke="none" stroke-width="0" opacity="1"/>
+<text x="100" y="238" font-size="12" font-weight="500" fill="#4b5563" text-anchor="middle" >Li⁺ and its first shell</text>
+<line x1="186" y1="128" x2="226" y2="128" stroke="#111827" stroke-width="2" stroke-linecap="round" marker-end="url(#pai)" opacity="1"/>
+<rect x="236.0" y="72" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="252.5" y="72" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="269.0" y="72" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="285.5" y="72" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="302.0" y="72" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="318.5" y="72" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="335.0" y="72" width="15.0" height="22" rx="2" fill="#F59E0B"/>
+<rect x="351.5" y="72" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="368.0" y="72" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="384.5" y="72" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="236.0" y="112" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="252.5" y="112" width="15.0" height="22" rx="2" fill="#F59E0B"/>
+<rect x="269.0" y="112" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="285.5" y="112" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="302.0" y="112" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="318.5" y="112" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="335.0" y="112" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="351.5" y="112" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="368.0" y="112" width="15.0" height="22" rx="2" fill="#F59E0B"/>
+<rect x="384.5" y="112" width="15.0" height="22" rx="2" fill="#F59E0B"/>
+<rect x="236.0" y="152" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="252.5" y="152" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="269.0" y="152" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="285.5" y="152" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="302.0" y="152" width="15.0" height="22" rx="2" fill="#F59E0B"/>
+<rect x="318.5" y="152" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="335.0" y="152" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="351.5" y="152" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<rect x="368.0" y="152" width="15.0" height="22" rx="2" fill="#6b7280"/>
+<rect x="384.5" y="152" width="15.0" height="22" rx="2" fill="#d1d5db"/>
+<line x1="236" y1="200" x2="401.0" y2="200" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" marker-end="url(#pai)" opacity="1"/>
+<text x="401.0" y="216" font-size="12" font-weight="500" fill="#4b5563" text-anchor="end" >time windows Δt</text>
+<line x1="412" y1="128" x2="458" y2="128" stroke="#111827" stroke-width="2" stroke-linecap="round" marker-end="url(#pai)" opacity="1"/>
+<rect x="470" y="136" width="56" height="64" fill="#6b7280"/>
+<text x="534" y="172.0" font-size="12" font-weight="600" fill="#111827" text-anchor="start" >vehicular</text>
+<rect x="470" y="78" width="56" height="58" fill="#F59E0B"/>
+<text x="534" y="111.0" font-size="12" font-weight="600" fill="#111827" text-anchor="start" >hopping</text>
+<rect x="470" y="42" width="56" height="36" fill="#d1d5db"/>
+<text x="534" y="64.0" font-size="12" font-weight="600" fill="#111827" text-anchor="start" >local</text>
+<line x1="470" y1="200" x2="526" y2="200" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+<line x1="20" y1="262" x2="580" y2="262" stroke="#d1d5db" stroke-width="1.5" stroke-linecap="round" opacity="1"/>
+<text x="300" y="300" font-size="18" font-weight="700" fill="#111827" text-anchor="middle" >σ  =  σ<tspan font-size="12" dy="4">vehicular</tspan><tspan dy="-4"> </tspan>  +  σ<tspan font-size="12" dy="4">hopping</tspan><tspan dy="-4"> </tspan>  +  σ<tspan font-size="12" dy="4">local</tspan><tspan dy="-4"> </tspan>  +  …</text>
+<text x="300" y="330" font-size="13" font-weight="500" fill="#4b5563" text-anchor="middle" >additive terms of the Onsager transport coefficients</text>
+<rect x="45" y="356" width="150" height="40" rx="20" fill="#f3f4f6" stroke="none" stroke-width="1.5" opacity="1"/>
+<text x="120" y="381" font-size="13" font-weight="600" fill="#111827" text-anchor="middle" >inorganic crystals</text>
+<rect x="225" y="356" width="150" height="40" rx="20" fill="#f3f4f6" stroke="none" stroke-width="1.5" opacity="1"/>
+<text x="300" y="381" font-size="13" font-weight="600" fill="#111827" text-anchor="middle" >polymers</text>
+<rect x="405" y="356" width="150" height="40" rx="20" fill="#f3f4f6" stroke="none" stroke-width="1.5" opacity="1"/>
+<text x="480" y="381" font-size="13" font-weight="600" fill="#111827" text-anchor="middle" >liquids</text>
+</g>
+</svg>
