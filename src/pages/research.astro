@@ -42,7 +42,7 @@ const items = await Promise.all(areas.map(async (a) => ({
         {papers.length > 0 && (
           <div class="rp">
             <h3>Representative papers</h3>
-            {papers.map((p) => <PaperItem paper={p!} showBib={false} />)}
+            {papers.map((p) => <PaperItem paper={p!} compact />)}
           </div>
         )}
       </section>
@@ -55,6 +55,11 @@ const items = await Promise.all(areas.map(async (a) => ({
   .area { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 22px; border-top: 4px solid var(--ink); scroll-margin-top: 84px; }
   .area.has-img { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
   .area.has-img .rp { grid-column: 1 / -1; }
+  .area + .area { margin-top: 80px; }
+  .rp { background: var(--soft); border-radius: 10px; padding: 20px 24px 8px; margin-top: 12px; }
+  .rp h3 { font-size: 19px; font-weight: 800; padding-bottom: 10px; border-bottom: 2px solid var(--ink); margin-bottom: 0; }
+  .rp .paper { border-bottom-color: var(--line-2); }
+  @media (max-width: 560px) { .rp { padding: 16px 16px 4px; margin-inline: -4px; } }
   .fig { width: 100%; border-radius: var(--radius); }
   .txt { display: flex; flex-direction: column; gap: 14px; }
   .txt h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 850; letter-spacing: -0.025em; }

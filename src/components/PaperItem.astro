@@ -1,19 +1,33 @@
 ---
 import type { Paper } from '../lib/papers';
 import { formatAuthor } from '../lib/papers';
-interface Props { paper: Paper; showBib?: boolean; small?: boolean; }
-const { paper: p, showBib = true, small = false } = Astro.props;
+interface Props { paper: Paper; showBib?: boolean; small?: boolean; compact?: boolean; }
+// compact: title links to the paper, long author lists are shortened, no button row (used on the Research page)
+const { paper: p, showBib = true, small = false, compact = false } = Astro.props;
 const venueBits = [p.volume, p.number ? `(${p.number})` : '', p.pages].filter(Boolean).join(' ');
 const doiUrl = p.doi && !p.doi.toLowerCase().includes('arxiv') ? `https://doi.org/${p.doi}` : undefined;
+const mainUrl = doiUrl ?? (p.arxiv ? `https://arxiv.org/abs/${p.arxiv}` : p.url);
+// Author list: in compact mode, more than 6 authors -> first 3, the PI, and the last author, with ellipses.
+type A = Paper['authors'][number];
+let shown: (A | null)[] = p.authors;
+if (compact && p.authors.length > 6) {
+  const n = p.authors.length;
+  const keep = new Set([0, 1, 2, n - 1]);
+  const pi = p.authors.findIndex((a) => a.isPI);
+  if (pi >= 0) keep.add(pi);
+  shown = [];
+  let prev = -1;
+  [...keep].sort((a, b) => a - b).forEach((i) => { if (i - prev > 1) shown.push(null); shown.push(p.authors[i]); prev = i; });
+}
 ---
-<article class:list={['paper', { 'has-fig': p.preview, small }]} data-year={p.year} data-selected={p.selected ? '1' : '0'} data-text={`${p.title} ${p.authors.map(formatAuthor).join(' ')} ${p.journal} ${p.year}`.toLowerCase()}>
+<article class:list={['paper', { 'has-fig': p.preview, small: small || compact, compact }]} data-year={p.year} data-selected={p.selected ? '1' : '0'} data-text={`${p.title} ${p.authors.map(formatAuthor).join(' ')} ${p.journal} ${p.year}`.toLowerCase()}>
   <div class="pmain">
-  <span class="ptitle">{p.title}</span>
+  {compact && mainUrl ? <a class="ptitle" href={mainUrl}>{p.title}</a> : <span class="ptitle">{p.title}</span>}
   <span class="pauth">
-    {p.authors.map((a, i) => (<>{a.isPI ? <b>{formatAuthor(a)}</b> : formatAuthor(a)}{(a.cofirst || a.cocorr) && <sup class="mk">{a.cofirst ? '*' : ''}{a.cocorr ? '†' : ''}</sup>}{i < p.authors.length - 1 ? ', ' : ''}</>))}
+    {shown.map((a, i) => (<>{a === null ? '…' : (<>{a.isPI ? <b>{formatAuthor(a)}</b> : formatAuthor(a)}{(a.cofirst || a.cocorr) && <sup class="mk">{a.cofirst ? '*' : ''}{a.cocorr ? '†' : ''}</sup>}</>)}{i < shown.length - 1 ? ', ' : ''}</>))}
   </span>
   <span class="pvenue"><i>{p.journal}</i>{venueBits && `, ${venueBits}`}{p.year ? ` (${p.year})` : ''}</span>
-  <div class="plinks">
+  {!compact && <div class="plinks">
     {doiUrl && <a class="tag" href={doiUrl}>DOI</a>}
     {p.arxiv && <a class="tag" href={`https://arxiv.org/abs/${p.arxiv}`}>arXiv</a>}
     {p.url && !doiUrl && <a class="tag" href={p.url}>Link</a>}
@@ -24,10 +38,10 @@ const doiUrl = p.doi && !p.doi.toLowerCase().includes('arxiv') ? `https://doi.or
       </details>
     )}
     {p.selected && <span class="sel">Selected</span>}
-  </div>
+  </div>}
   </div>
   {p.preview && (
-    <a class="pfig" href={doiUrl ?? (p.arxiv ? `https://arxiv.org/abs/${p.arxiv}` : p.url)} tabindex="-1" aria-hidden="true">
+    <a class="pfig" href={mainUrl} tabindex="-1" aria-hidden="true">
       <img src={`/img/papers/${p.preview}`} alt="" loading="lazy" decoding="async" />
     </a>
   )}

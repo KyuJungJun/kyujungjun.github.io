@@ -118,11 +118,21 @@ section + section { margin-top: 64px; }
 .paper.small .pfig { height: 90px; padding: 4px; }
 .paper .pfig img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
 .paper .pfig:hover { border-color: var(--amber); }
+.paper.compact { padding-block: 14px; gap: 10px 20px; }
+.paper.compact .ptitle { font-size: 16px; text-decoration: none; }
+.paper.compact a.ptitle:hover { text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.paper.compact .pauth, .paper.compact .pvenue { font-size: 14px; }
 @media (max-width: 640px) {
   .paper.has-fig, .paper.small.has-fig { grid-template-columns: minmax(0, 1fr); }
   .paper .pfig { height: auto; max-height: 220px; justify-content: flex-start; width: fit-content; max-width: 100%; }
   .paper .pfig img { max-height: 200px; }
 }
+@media (max-width: 640px) {
+  .paper.compact.has-fig { grid-template-columns: minmax(0, 1fr) 84px; gap: 10px 14px; }
+  .paper.compact .pfig { height: 72px; width: 84px; padding: 3px; justify-content: center; }
+  .paper.compact .pfig img { max-height: 100%; }
+}
+
 .paper:last-child { border-bottom: 0; }
 .paper .ptitle { font-weight: 700; font-size: 17px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
 .paper .pauth { color: var(--ink-2); font-size: 15px; }
