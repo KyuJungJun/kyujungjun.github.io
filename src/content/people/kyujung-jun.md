@@ -13,14 +13,18 @@ github: https://github.com/KyuJungJun
 linkedin: https://www.linkedin.com/in/kyujung-jun
 start: 2026-03
 education:
+  - degree: Postdoc
+    school: MIT
+    dept: Materials Science and Engineering
+    year: "2024–2026"
+    advisor: Rafael Gómez-Bombarelli
   - degree: Ph.D.
     school: UC Berkeley
     dept: Materials Science and Engineering
     year: "2024"
+    advisor: Gerbrand Ceder
   - degree: B.S.
     school: Seoul National University
     dept: Nuclear Engineering (minor in Materials Science and Engineering)
     year: "2018"
 ---
-
-Machine-learning-driven simulations for ion transport and electrochemical materials.

@@ -9,6 +9,10 @@ export const site = {
   units: ['School of Mechanical Engineering', 'School of Smart Mobility'],
   units_ko: ['기계공학부', '스마트모빌리티학부'],
   email: 'kyujung@korea.ac.kr',
+  // Visitor statistics. Fill in ONE of these after creating a free account; leave empty to turn off.
+  //   goatcounter: the site code from goatcounter.com, e.g. 'mindslab' for https://mindslab.goatcounter.com
+  //   cloudflareToken: the token from Cloudflare Web Analytics (dash.cloudflare.com > Analytics > Web Analytics)
+  analytics: { goatcounter: '', cloudflareToken: '' },
   office: '정운오 IT 교양관 709호',
   address_ko: '서울특별시 성북구 안암로 145 고려대학교 정운오 IT 교양관 709호',
   address_en: 'Jung Woonoh IT & General Education Center #709, Korea University, 145 Anam-ro, Seongbuk-gu, Seoul, 02841, Republic of Korea',

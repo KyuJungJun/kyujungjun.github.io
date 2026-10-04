@@ -22,6 +22,12 @@ const year = new Date().getFullYear();
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL('/img/brand/og.png', Astro.site)} />
+  {site.analytics?.goatcounter && (
+    <script is:inline async data-goatcounter={`https://${site.analytics.goatcounter}.goatcounter.com/count`} src="https://gc.zgo.at/count.js"></script>
+  )}
+  {site.analytics?.cloudflareToken && (
+    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: site.analytics.cloudflareToken })}></script>
+  )}
 </head>
 <body>
   <header class="site-header">

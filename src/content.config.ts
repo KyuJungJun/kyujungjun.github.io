@@ -24,7 +24,7 @@ const people = defineCollection({
     next_position: z.string().optional(),  // alumni
     order: z.number().default(0),          // smaller shows first within a section
     education: z
-      .array(z.object({ degree: z.string(), school: z.string(), dept: z.string().optional(), year: z.string().optional() }))
+      .array(z.object({ degree: z.string(), school: z.string(), dept: z.string().optional(), year: z.string().optional(), advisor: z.string().optional() }))
       .default([]),
   }),
 });
