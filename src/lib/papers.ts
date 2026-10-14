@@ -3,6 +3,7 @@
 //   selected = {true}      -> shown under "Selected" and on the home page
 //   arxiv = {2602.16636}   -> adds an arXiv link
 //   status = {under review} or journal = {Under review} -> listed under "Under review"
+//   status = {just accepted} -> listed with the published papers, venue followed by "just accepted"
 //   cofirst = {1,2}         -> authors 1 and 2 marked * (equal contribution)
 //   cocorresponding = {2,3} -> authors 2 and 3 marked † (co-corresponding)
 //   preview = {name.jpg}    -> figure shown next to the paper (file in public/img/papers/)
@@ -25,6 +26,7 @@ export type Paper = {
   preview?: string;
   selected: boolean;
   underReview: boolean;
+  accepted: boolean;
   bibtex: string;
 };
 
@@ -101,6 +103,7 @@ export function getPapers(): Paper[] {
       preview: f.preview ? String(f.preview).trim() : undefined,
       selected: String(f.selected).toLowerCase() === 'true',
       underReview: status.includes('review') || /under review|in preparation|submitted/i.test(journal),
+      accepted: status.includes('accepted'),
       bibtex: cleanBibtex(e.input),
     };
   });

@@ -26,7 +26,7 @@ if (compact && p.authors.length > 6) {
   <span class="pauth">
     {shown.map((a, i) => (<>{a === null ? '…' : (<>{a.isPI ? <b>{formatAuthor(a)}</b> : formatAuthor(a)}{(a.cofirst || a.cocorr) && <sup class="mk">{a.cofirst ? '*' : ''}{a.cocorr ? '†' : ''}</sup>}</>)}{i < shown.length - 1 ? ', ' : ''}</>))}
   </span>
-  <span class="pvenue"><i>{p.journal}</i>{venueBits && `, ${venueBits}`}{p.year ? ` (${p.year})` : ''}</span>
+  <span class="pvenue"><i>{p.journal}</i>{venueBits && `, ${venueBits}`}{p.year ? ` (${p.year})` : ''}{p.accepted ? ', just accepted' : ''}</span>
   {!compact && <div class="plinks">
     {doiUrl && <a class="tag" href={doiUrl}>DOI</a>}
     {p.arxiv && <a class="tag" href={`https://arxiv.org/abs/${p.arxiv}`}>arXiv</a>}

@@ -4,8 +4,9 @@
 What it does (run by .github/workflows/paper-sync.yml, results arrive as a pull request):
   1. Lists KyuJung Jun's works from OpenAlex (by ORCID) and arXiv (by name).
   2. Adds works that are not yet in src/data/papers.bib (BibTeX fetched from doi.org).
-  3. If a new journal article has the same title as an arXiv-only entry, updates that entry
-     (journal, year, DOI) instead of adding a duplicate. If an entry's DOI matches but the
+  3. If a new journal article has the same title as an arXiv-only, under-review, or accepted
+     (no DOI yet) entry, updates that entry (journal, year, DOI; drops `status`) instead of
+     adding a duplicate. If an entry's DOI matches but the
      published title differs, replaces the title with the published one.
   4. Writes one news item per paper published within the last N days (default 180) that does
      not have a news item yet. News items are linked to papers by the `paper:` field.
@@ -250,12 +251,12 @@ def main() -> int:
             upd = re.sub(r"(?im)^(\s*)title\s*=.*$", lambda m: f"{m.group(1)}title = {{{w['title']}}},", entry, count=1)
             new_text = new_text[:seg_start] + upd + new_text[seg_end:]
             retitled.append((existing["title"], w))
-        elif w["journal"] != "arXiv" and existing["journal"].lower() in ("arxiv", "chemrxiv", "") and existing["doi"] != w["doi"]:
-            # journal version of an entry that is still a preprint on the site
+        elif w["journal"] != "arXiv" and (existing["journal"].lower() in ("arxiv", "chemrxiv", "") or not existing["doi"]) and existing["doi"] != w["doi"]:
+            # journal version of an entry that is still a preprint, under review, or accepted without a DOI on the site
             seg = new_text[new_text.find("{" + existing["key"] + ","):]
             end = seg.find("\n}") + 2
             entry = seg[:end]
-            upd = entry
+            upd = re.sub(r"(?im)^\s*status\s*=.*\n", "", entry)
             for k, v in (("journal", w["journal"]), ("doi", w["doi"]), ("year", w["date"][:4])):
                 if re.search(rf"(?im)^\s*{k}\s*=", upd):
                     upd = re.sub(rf"(?im)^(\s*){k}\s*=.*$", lambda m, k=k, v=v: f"{m.group(1)}{k} = {{{v}}},", upd, count=1)
@@ -276,7 +277,7 @@ def main() -> int:
     if added:
         lines += ["### Added to papers.bib"] + [f"- {w['title']} — *{w['journal']}* ({w['date']}) {w['doi']}" for w in added] + [""]
     if updated:
-        lines += ["### Preprints updated to their journal version"] + [f"- `{k}` → *{w['journal']}* {w['doi']}" for k, w in updated] + [""]
+        lines += ["### Preprints / under-review / accepted entries updated to their journal version"] + [f"- `{k}` → *{w['journal']}* {w['doi']}" for k, w in updated] + [""]
     if retitled:
         lines += ["### Titles updated to the published title"] + [f"- {old} → **{w['title']}** ({w['journal']})" for old, w in retitled] + [""]
     if news:
